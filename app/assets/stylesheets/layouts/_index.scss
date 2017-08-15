@@ -3,3 +3,66 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+body{
+margin: 0 auto;
+
+  background-image: image-url("fruits.gif");
+   background-repeat: no-repeat;
+   background-size: cover;
+    height: 100vh;
+
+}
+.navbar-wagon
+{
+    margin-left: -8%;
+    margin-right: -8%;
+
+}
+
+.homepage
+{
+    color:white;
+    text-align: center;
+    justify-content: center;
+    /* color: black; */
+    padding-top: 20%;
+
+}
+.login
+{
+
+  background-color:#ffffb3;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+.change_your_password
+{
+ background-color:#ffffb3;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+.forgot_your_password
+{
+ background-color:#ffffb3;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+.sign_up
+{
+  background-color:#ffffb3;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+
+}
+.content
+{
+  min-height: 570px;
+}
