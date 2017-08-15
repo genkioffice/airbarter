@@ -4,28 +4,26 @@
 // @import "profile";
 // @import "map";
 body{
-margin: 0 auto;
-
-  background-image: image-url("fruits.gif");
-   background-repeat: no-repeat;
-   background-size: cover;
-    height: 100vh;
+  // margin: 0 auto;
+  // background-image: image-url("fruits.gif");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // height: 100vh;
 
 }
 .navbar-wagon
 {
     margin-left: -8%;
     margin-right: -8%;
-
 }
 
 .homepage
 {
-    color:white;
+    // color:white;
     text-align: center;
     justify-content: center;
-    /* color: black; */
-    margin-top: 20%;
+    color: black;
+    padding-top: 20%;
 
 }
 .login
@@ -61,4 +59,8 @@ margin: 0 auto;
   padding-bottom: 10px;
   border-radius: 5px;
 
+}
+.content
+{
+  min-height: 570px;
 }
