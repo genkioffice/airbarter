@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :transactions do
+    member do
+      patch :change_status
+    end
+  end
   resources :entries
   resources :products
   devise_for :users

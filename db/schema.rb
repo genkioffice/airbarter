@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815112317) do
+ActiveRecord::Schema.define(version: 20170815132756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,22 @@ ActiveRecord::Schema.define(version: 20170815112317) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "proposed_product_id"
+    t.integer "proposed_product_quantity"
+    t.bigint "proposed_by_user_id"
+    t.bigint "wanted_product_id"
+    t.integer "wanted_product_quantity"
+    t.bigint "accepted_by_user_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accepted_by_user_id"], name: "index_transactions_on_accepted_by_user_id"
+    t.index ["proposed_by_user_id"], name: "index_transactions_on_proposed_by_user_id"
+    t.index ["proposed_product_id"], name: "index_transactions_on_proposed_product_id"
+    t.index ["wanted_product_id"], name: "index_transactions_on_wanted_product_id"
   end
 
   create_table "users", force: :cascade do |t|
