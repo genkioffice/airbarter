@@ -4,27 +4,25 @@
 // @import "profile";
 // @import "map";
 body{
-margin: 0 auto;
-
-  background-image: image-url("fruits.gif");
-   background-repeat: no-repeat;
-   background-size: cover;
-    height: 100vh;
+  // margin: 0 auto;
+  // background-image: image-url("fruits.gif");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // height: 100vh;
 
 }
 .navbar-wagon
 {
     margin-left: -8%;
     margin-right: -8%;
-
 }
 
 .homepage
 {
-    color:white;
+    // color:white;
     text-align: center;
     justify-content: center;
-    /* color: black; */
+    color: black;
     padding-top: 20%;
 
 }
