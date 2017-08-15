@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @entry.quantity %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @entry.user %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @entry.product %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
