@@ -8,6 +8,7 @@ class TransactionsController < ApplicationController
     @proposed_transactions = Transaction.where(status: 0).order(:proposed_by_user_id)
     @accepted_transactions = Transaction.where(status: 1).order(id: :desc)
     @removed_transactions = Transaction.where(status: 2).order(id: :desc)
+
   end
 
   # GET /transactions/1
