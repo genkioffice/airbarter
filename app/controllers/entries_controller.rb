@@ -5,6 +5,8 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     @entries = Entry.all
+    @my_entries = @entries.select{ |entry|  entry.user_id == current_user.id  }
+    @other_entries = @entries.select{ |entry|  entry.user_id != current_user.id  }
   end
 
   # GET /entries/1
@@ -27,6 +29,7 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
+    @entry.user = current_user
 
     respond_to do |format|
       if @entry.save

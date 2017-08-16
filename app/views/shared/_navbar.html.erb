@@ -12,6 +12,7 @@
 
       <!-- Links when logged in -->
       <%= link_to "Transactions", transactions_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Inventory", entries_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Products", products_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
@@ -50,6 +51,7 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to "Transactions", transactions_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "My Inventory", entries_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Products", products_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
