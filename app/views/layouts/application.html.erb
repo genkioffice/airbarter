@@ -9,26 +9,25 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <%= yield :banner %>
 
-      <%= render 'shared/navbar' %>
-      <%= render 'shared/flashes' %>
-
-      <div class="content">
-        <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fa fa-github"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
       </div>
-      <div class="footer">
-        <div class="footer-links">
-          <a href="#"><i class="fa fa-github"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-        </div>
-        <div class="footer-copyright">
-          <i class="fa fa-heart"></i> My Team
-        </div>
+      <div class="footer-copyright">
+        <i class="fa fa-heart"></i> My Team
       </div>
-
+    </div>
     <%= javascript_include_tag 'application' %>
 
   </body>
