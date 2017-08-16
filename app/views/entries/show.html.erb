@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1>Entry</h1>
+<p>
+  <strong>User:</strong>
+  <%= @entry.user.email %>
+</p>
 
 <p>
   <strong>Quantity:</strong>
@@ -6,14 +10,9 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @entry.user %>
-</p>
-
-<p>
   <strong>Product:</strong>
-  <%= @entry.product %>
+  <%= @entry.product.name %>
 </p>
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to 'Entries', entries_path %>
