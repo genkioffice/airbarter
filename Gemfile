@@ -19,7 +19,7 @@ gem 'uglifier'
 
 # for facebook login
 gem 'omniauth-facebook'
-
+gem 'geocoder'
 
 
 group :development, :test do
