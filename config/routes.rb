@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     end
   end
   resources :entries
-  resources :products, only:[:index, :show, :new, :create, :edit, :update]
+  resources :products, only:[:index, :new, :create, :show]
   root to: 'pages#home'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
