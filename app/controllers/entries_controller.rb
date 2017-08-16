@@ -15,6 +15,8 @@ class EntriesController < ApplicationController
   # GET /entries/new
   def new
     @entry = Entry.new
+    @entry.user_id = params[:user_id] if params[:user_id]
+    @entry.product_id = params[:product_id] if params[:product_id]
   end
 
   # GET /entries/1/edit
