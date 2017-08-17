@@ -35,8 +35,9 @@
   <%# @transaction.accepted_by_user.email %>
 <!-- </p> -->
 
-<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-<%= link_to 'Transactions', transactions_path %>
+<%= link_to 'Edit', edit_transaction_path(@transaction),  class:"btn btn-success" %>
+<%= link_to 'Back', transactions_path, class:"btn btn-success" %>
+<%= link_to 'Accept', change_status_transaction_path(@transaction, status: :accepted), method: :patch, class:"btn btn-danger" %>
 
 <div>
   <% @transaction.photos.each do |photo| %>

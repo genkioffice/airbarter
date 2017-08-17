@@ -17,9 +17,10 @@ Product.create!(name: "Beans")
 Product.create!(name: "Euros")
 Product.create!(name: "Bitcoin")
 
-user1 = User.create!(email: "contact@gooddeal.com", password: "123456")
-user2 = User.create!(email: "barter@exchange.com", password: "123456")
-user3 = User.create!(email: "finnpedersenkazes@gmail.com", password: "123456")
+user1 = User.create!(email: "contact@gooddeal.com", password: "123456", first_name:"Abrar")
+user1 = User.create!(email: "contdact@gooddeal.com", password: "123456", first_name:"Mohamed")
+user2 = User.create!(email: "barter@exchange.com", password: "123456", first_name:"Amira")
+user3 = User.create!(email: "finnpedersenkazes@gmail.com", password: "123456", first_name:"Finn")
 
 Entry.create!(
   quantity: 10,
@@ -58,6 +59,7 @@ Entry.create!(
   )
 
 Transaction.create!(
+  address: "Lisbon",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
@@ -67,6 +69,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
+  address:"Japan",
   proposed_product: product5,
   proposed_product_quantity: 8,
   proposed_by_user: user1,
@@ -76,6 +79,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
+  address:"Kyoto",
   proposed_product: product5,
   proposed_product_quantity: 2,
   proposed_by_user: user1,
@@ -85,6 +89,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
+  address:"Osaka",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
@@ -94,6 +99,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
+  address:"Okinawa",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
@@ -103,6 +109,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
+  address:"North Korea",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
@@ -112,7 +119,56 @@ Transaction.create!(
   accepted_by_user: user2
   )
 
-
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
 
 
 
