@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <strong>Address:</strong>
+  <%= @transaction.address %>
+</p>
+
+<p>
   <strong>Wanted product:</strong>
   <%= @transaction.wanted_product.name %>
 </p>
@@ -32,3 +37,25 @@
 
 <%= link_to 'Edit', edit_transaction_path(@transaction) %> |
 <%= link_to 'Transactions', transactions_path %>
+
+<p></p>
+
+<div id="map"></div>
+
+<% content_for :after_js do %>
+    <script type="text/javascript">
+      $(document).on('ready', function() {
+        var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
+        handler.buildMap({ internal: { id: 'map' } }, function(){
+          markers = handler.addMarkers([
+            {
+              "lat": <%= @transaction.latitude %>,
+              "lng": <%= @transaction.longitude %>,
+              "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
+            }
+          ]);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+      })
+    </script><% end %>

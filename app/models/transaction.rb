@@ -4,6 +4,9 @@ class Transaction < ApplicationRecord
   belongs_to :wanted_product, :class_name => 'Product'
   belongs_to :accepted_by_user, :class_name => 'User', optional: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   def change_status!(status)
     self.status = status
     self.save
