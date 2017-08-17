@@ -109,7 +109,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  # address:"Sweden",
+  address:"North Korea",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
@@ -119,7 +119,56 @@ Transaction.create!(
   accepted_by_user: user2
   )
 
-
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
+Transaction.create!(
+  address:"North Korea",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 6,
+  status: 1,
+  accepted_by_user: user2
+  )
 
 
 
