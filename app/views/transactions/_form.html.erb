@@ -4,9 +4,9 @@
 
   <div class="form-inputs">
     <%= f.input :proposed_product_quantity %>
-    <%= f.association :proposed_product %>
+    <%= f.association :proposed_product, collection: (1..10) %>
     <%= f.input :wanted_product_quantity %>
-    <%= f.association :wanted_product %>
+    <%= f.association :wanted_product, collection: (1..10) %>
 
     <%# f.association :proposed_by_user %>
     <%# f.input :accepted_by_user %>
