@@ -4,6 +4,8 @@ class Transaction < ApplicationRecord
   belongs_to :wanted_product, :class_name => 'Product'
   belongs_to :accepted_by_user, :class_name => 'User', optional: true
 
+  has_attachments :photos, maximum: 3
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 

@@ -96,6 +96,6 @@ class TransactionsController < ApplicationController
     def transaction_params
       params.require(:transaction).permit(:proposed_product_id, :proposed_product_quantity,
         :proposed_by_user_id, :wanted_product_id, :wanted_product_quantity, :accepted_by_user_id,
-        :status, :address, :longitude, :latitude)
+        :status, :address, :longitude, :latitude, photos: [])
     end
 end
