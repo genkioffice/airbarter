@@ -8,7 +8,7 @@
       <th colspan="2">Proposed product</th>
       <th>Proposed by user</th>
       <th colspan="2">Wanted product</th>
-      <th colspan="4">Actions</th>
+      <th colspan="2">Actions</th>
     </tr>
   </thead>
 
@@ -21,8 +21,7 @@
         <td><%= transaction.wanted_product_quantity %></td>
         <td><%= link_to transaction.wanted_product.name, transaction.wanted_product %></td>
         <td><%= link_to 'Show', transaction %></td>
-        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to "Remove", change_status_transaction_path(transaction, status: :removed), method: :patch %></td>
+
         <td><%= link_to "Accept", change_status_transaction_path(transaction, status: :accepted), method: :patch %></td>
       </tr>
     <% end %>
