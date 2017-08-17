@@ -4,6 +4,9 @@ class Transaction < ApplicationRecord
   belongs_to :wanted_product, :class_name => 'Product'
   belongs_to :accepted_by_user, :class_name => 'User', optional: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   validates :proposed_product_quantity, :numericality => {:greater_than => 0}, presence: true
   validates :wanted_product_quantity, :numericality => {:greater_than => 0}, presence: true
 
