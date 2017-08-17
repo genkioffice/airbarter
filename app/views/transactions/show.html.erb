@@ -38,6 +38,11 @@
 <%= link_to 'Edit', edit_transaction_path(@transaction) %> |
 <%= link_to 'Transactions', transactions_path %>
 
+<div>
+  <% @transaction.photos.each do |photo| %>
+    <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fit %>
+  <% end %>
+</div>
 <p></p>
 
 <div id="map"></div>
