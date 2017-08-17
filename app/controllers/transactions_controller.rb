@@ -9,11 +9,19 @@ class TransactionsController < ApplicationController
     @accepted_transactions = Transaction.where(status: 1).order(id: :desc)
     @removed_transactions = Transaction.where(status: 2).order(id: :desc)
 
+    @transactions_on_map = Transaction.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@transactions_on_map) do |transaction, marker|
+      marker.lat transaction.latitude
+      marker.lng transaction.longitude
+      marker.infowindow render_to_string(partial: "/transactions/map_box", locals: { transaction: transaction })
+    end
   end
 
   # GET /transactions/1
   # GET /transactions/1.json
   def show
+    @transaction_coordinates = { lat: @transaction.latitude, lng: @transaction.longitude }
   end
 
   # GET /transactions/new
@@ -86,6 +94,8 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:proposed_product_id, :proposed_product_quantity, :proposed_by_user_id, :wanted_product_id, :wanted_product_quantity, :accepted_by_user_id, :status)
+      params.require(:transaction).permit(:proposed_product_id, :proposed_product_quantity,
+        :proposed_by_user_id, :wanted_product_id, :wanted_product_quantity, :accepted_by_user_id,
+        :status, :address, :longitude, :latitude)
     end
 end

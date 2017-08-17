@@ -3,14 +3,13 @@
   <%# @transaction.errors.inspect %>
 
   <div class="form-inputs">
+
     <%= f.association :wanted_product, label: "What do you want?" %>
     <%= f.input :wanted_product_quantity, collection: (1..10), :label => "How many?" %>
     <%= f.association :proposed_product, label: "What can you exchange?" %>
     <%= f.input :proposed_product_quantity, collection: (1..10), :label => "How many?" %>
-
-    <%# f.association :proposed_by_user %>
-    <%# f.input :accepted_by_user %>
-
+    <%= f.input :address %>                                
+                                
   </div>
 
   <div class="form-actions">
