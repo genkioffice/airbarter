@@ -1,0 +1,24 @@
+<h3>My Entries</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Product</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <% @user.entries.each do |entry| %>
+        <tr>
+          <td><%= entry.product.name %></td>
+          <td><%= entry.quantity %></td>
+        </tr>
+      <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to 'New Entry', new_entry_path, class: "btn btn-success" %>
