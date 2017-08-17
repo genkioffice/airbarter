@@ -8,8 +8,9 @@
     <%= f.input :wanted_product_quantity, collection: (1..10), :label => "How many?" %>
     <%= f.association :proposed_product, label: "What can you exchange?" %>
     <%= f.input :proposed_product_quantity, collection: (1..10), :label => "How many?" %>
-    <%= f.input :address %>                                
-                                
+    <%= f.input :address %>
+    <%= f.input :photos, as: :attachinary %>
+
   </div>
 
   <div class="form-actions">
