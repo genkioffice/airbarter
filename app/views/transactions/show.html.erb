@@ -51,11 +51,20 @@
             {
               "lat": <%= @transaction.latitude %>,
               "lng": <%= @transaction.longitude %>,
-              "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
+              // "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
             }
           ]);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
+
+          handler.getMap().setZoom(15);
+
+          // if (markers.length == 0) {
+          //   handler.getMap().setZoom(2);
+          // } else if (markers.length == 1) {
+          //   handler.getMap().setZoom(15);
+          // }
+
         });
       })
     </script><% end %>
