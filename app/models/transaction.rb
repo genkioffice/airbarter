@@ -7,6 +7,9 @@ class Transaction < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
+  validates :proposed_product_quantity, :numericality => {:greater_than => 0}, presence: true
+  validates :wanted_product_quantity, :numericality => {:greater_than => 0}, presence: true
+
   def change_status!(status)
     self.status = status
     self.save
