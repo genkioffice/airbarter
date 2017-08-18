@@ -18,9 +18,11 @@ Product.create!(name: "Euros")
 Product.create!(name: "Bitcoin")
 
 user1 = User.create!(email: "contact@gooddeal.com", password: "123456", first_name:"Abrar")
-user1 = User.create!(email: "contdact@gooddeal.com", password: "123456", first_name:"Mohamed")
+user1 = User.create!(email: "contact@verygooddeal.com", password: "123456", first_name:"Shannon")
 user2 = User.create!(email: "barter@exchange.com", password: "123456", first_name:"Amira")
 user3 = User.create!(email: "finnpedersenkazes@gmail.com", password: "123456", first_name:"Finn")
+user4 = User.create!(email: "mohamad4alzobi@gmail.com", password: "123456", first_name:"Mohamed")
+user5 = User.create!(email: "genki.takahashi.contact@gmail.com", password: "123456", first_name:"Genki")
 
 Entry.create!(
   quantity: 10,
