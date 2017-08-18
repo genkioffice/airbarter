@@ -45,27 +45,27 @@
   </p>
 <% end %>
 
-<%= link_to 'Transactions', transactions_path, class:"btn btn-success" %>
+<%= link_to 'Transactions', transactions_path, class: "btn btn-success" %>
 
 <% if @transaction.status == "proposed" && @transaction.proposed_by_user.id == current_user.id %>
-  <%= link_to 'Edit', edit_transaction_path(@transaction),  class:"btn btn-primary" %>
+  <%= link_to 'Edit', edit_transaction_path(@transaction),  class: "btn btn-primary" %>
 <% end %>
 
 <% if @transaction.status == "proposed" && @transaction.proposed_by_user.id != current_user.id %>
-  <%= link_to 'Accept', change_status_transaction_path(@transaction, status: :accepted), method: :patch, class:"btn btn-primary" %>
+  <%= link_to 'Accept', change_status_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
 <% end %>
 
 <% if @transaction.status != "removed" && @transaction.proposed_by_user.id == current_user.id %>
-  <%= link_to 'Remove', change_status_transaction_path(@transaction, status: :removed), method: :patch, class:"btn btn-warning" %>
+  <%= link_to 'Remove', change_status_transaction_path(@transaction, status: :removed), method: :patch, class: "btn btn-warning" %>
 <% end %>
 
 <% if @transaction.status == "removed" && @transaction.proposed_by_user.id == current_user.id %>
-  <%= link_to 'Propose Again', change_status_transaction_path(@transaction, status: :proposed), method: :patch, class:"btn btn-primary" %>
+  <%= link_to 'Propose Again', change_status_transaction_path(@transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
 <% end %>
 
 
 <% if @transaction.status == "removed" && @transaction.proposed_by_user.id == current_user.id%>
-  <%= link_to 'Delete Permanently', @transaction, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+  <%= link_to 'Delete Permanently', @transaction, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 <% end %>
 
 
