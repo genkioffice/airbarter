@@ -1,22 +1,27 @@
 .footer {
   background: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  padding: 0px;
+  margin: 0px;
+  width: 100vw;
   color: rgba(0,0,0,0.3);
   font-size: 15px;
   padding: 0px 10px;
+}
+.footer-content{
+  padding: 10px;
 }
 .footer-var{
   justify-content: space-between;
   display: inline-flex;
   width: 100vw;
+  margin-bottom: 0px
+}
+.links{
+  display: inline !important
 }
 .footer-links {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 .footer-links a {
   color: black;
@@ -32,5 +37,6 @@
   color: #D23333;
 }
 .footer-brand{
+  padding-bottom: 3px;
   height: 33px;
 }
