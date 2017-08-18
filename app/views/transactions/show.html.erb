@@ -1,3 +1,4 @@
+<div>
 <% if @transaction.status == "proposed" %>
   <h1>Proposed Transaction</h1>
 <% elsif @transaction.status == "accepted" %>
@@ -67,11 +68,13 @@
 <% if @transaction.status == "removed" && @transaction.proposed_by_user.id == current_user.id%>
   <%= link_to 'Delete Permanently', @transaction, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 <% end %>
+</div>
 
+<p></p>
 
 <div>
   <% @transaction.photos.each do |photo| %>
-    <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fit %>
+    <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fit %>
   <% end %>
 </div>
 <p></p>
