@@ -25,11 +25,13 @@
         <td><%= transaction.wanted_product_quantity %></td>
         <td><%= transaction.wanted_product.name %></td>
         <% if transaction.proposed_by_user.id != current_user.id %>
-          <td><%= link_to "Accept", change_status_transaction_path(transaction, status: :accepted), method: :patch, class: "btn btn-primary" %></td>
+          <% if @entries.select{ |e| e.product == transaction.wanted_product } != [] && transaction.wanted_product_quantity <= @entries.select{ |e| e.product == transaction.wanted_product }.first.quantity %>
+            <td><%= link_to "Accept", change_status_transaction_path(transaction, status: :accepted), method: :patch, class: "btn btn-primary" %></td>
+          <% else %>
+            <td>Not in inventory</td>
+          <% end %>
         <% else %>
           <td><%= link_to 'Edit', edit_transaction_path(transaction), class: "btn btn-primary" %></td>
-
-
         <% end %>
       </tr>
     <% end %>
