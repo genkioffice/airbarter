@@ -1,11 +1,18 @@
 .footer {
-  background: #F4F4F4;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 60px;
   padding: 0px;
   color: rgba(0,0,0,0.3);
+  font-size: 15px;
+  padding: 0px 10px;
+}
+.footer-var{
+  justify-content: space-between;
+  display: inline-flex;
+  width: 100vw;
 }
 .footer-links {
   display: flex;
@@ -23,4 +30,7 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+.footer-brand{
+  height: 33px;
 }
