@@ -9,6 +9,8 @@ class TransactionsController < ApplicationController
     @accepted_transactions = Transaction.where(status: 1).order(id: :desc)
     @removed_transactions = Transaction.where(status: 2).order(id: :desc)
 
+    @entries = current_user.entries
+
     @transactions_on_map = Transaction.where.not(latitude: nil, longitude: nil)
 
     @hash = Gmaps4rails.build_markers(@transactions_on_map) do |transaction, marker|
@@ -70,8 +72,17 @@ class TransactionsController < ApplicationController
   end
 
   def change_status
-    @transaction.accepted_by_user = current_user
+    if params[:status] == "accepted"
+      @transaction.accepted_by_user = current_user
+
+      Entry.remove_from_inventory(@transaction.proposed_by_user,@transaction.proposed_product,@transaction.proposed_product_quantity)
+      Entry.add_to_inventory(@transaction.proposed_by_user,@transaction.wanted_product,@transaction.wanted_product_quantity)
+      Entry.add_to_inventory(@transaction.accepted_by_user,@transaction.proposed_product,@transaction.proposed_product_quantity)
+      Entry.remove_from_inventory(@transaction.accepted_by_user,@transaction.wanted_product,@transaction.wanted_product_quantity)
+
+    end
     @transaction.change_status!(params[:status])
+
     redirect_to transactions_path
   end
 
