@@ -1,53 +1,55 @@
-<h3>My Entries</h3>
+<div class="modify-for-footer">
+  <h3>My Entries</h3>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Quantity</th>
-      <th>Product</th>
-      <th colspan="3">Action</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @my_entries.each do |entry| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= entry.quantity %></td>
-        <td><%= entry.product.name %></td>
-        <td><%= link_to 'Show', entry, class: "btn btn-primary" %></td>
-        <!-- <td><%# link_to 'Edit', edit_entry_path(entry) %></td> -->
-        <!-- <td><%# link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <th>Quantity</th>
+        <th>Product</th>
+        <th colspan="3">Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<%= link_to 'New Entry', new_entry_path, class: "btn btn-success" %>
+    <tbody>
+      <% @my_entries.each do |entry| %>
+        <tr>
+          <td><%= entry.quantity %></td>
+          <td><%= entry.product.name %></td>
+          <td><%= link_to 'Show', entry, class: "btn btn-primary" %></td>
+          <!-- <td><%# link_to 'Edit', edit_entry_path(entry) %></td> -->
+          <!-- <td><%# link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
+  <%= link_to 'New Entry', new_entry_path, class: "btn btn-success" %>
 
-<h3>Other People's Entries</h3>
+  <br>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Quantity</th>
-      <th>Product</th>
-    </tr>
-  </thead>
+  <h3>Other People's Entries</h3>
 
-  <tbody>
-    <% @other_entries.each do |entry| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <% if entry.user.first_name %>
-          <td><%= entry.user.first_name %> <%= entry.user.last_name %></td>
-        <% else %>
-          <td><%= entry.user.email %></td>
-        <% end %>
-        <td><%= entry.quantity %></td>
-        <td><%= entry.product.name %></td>
+        <th>User</th>
+        <th>Quantity</th>
+        <th>Product</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @other_entries.each do |entry| %>
+        <tr>
+          <% if entry.user.first_name %>
+            <td><%= entry.user.first_name %> <%= entry.user.last_name %></td>
+          <% else %>
+            <td><%= entry.user.email %></td>
+          <% end %>
+          <td><%= entry.quantity %></td>
+          <td><%= entry.product.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
