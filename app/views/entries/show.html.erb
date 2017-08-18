@@ -1,7 +1,8 @@
 <h1>Entry</h1>
 <p>
   <strong>User:</strong>
-  <%= @entry.user.email %>
+  <%= @entry.user.email %> <br>
+  <%= @entry.user.first_name %> <%= @entry.user.last_name %>
 </p>
 
 <p>
@@ -14,5 +15,9 @@
   <%= @entry.product.name %>
 </p>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Entries', entries_path %>
+<%= link_to 'Entries', entries_path, class:"btn btn-success" %>
+
+<% if @entry.user.id == current_user.id %>
+  <%= link_to 'Edit', edit_entry_path(@entry), class:"btn btn-primary" %>
+  <%= link_to 'Delete Permanently', @entry, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+<% end %>
