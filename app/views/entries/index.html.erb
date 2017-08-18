@@ -1,6 +1,6 @@
 <h3>My Entries</h3>
 
-<table class="table table-bordered">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Quantity</th>
@@ -14,9 +14,9 @@
       <tr>
         <td><%= entry.quantity %></td>
         <td><%= entry.product.name %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', entry, class: "btn btn-primary" %></td>
+        <!-- <td><%# link_to 'Edit', edit_entry_path(entry) %></td> -->
+        <!-- <td><%# link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -28,7 +28,7 @@
 
 <h3>Other People's Entries</h3>
 
-<table class="table table-bordered">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>User</th>
@@ -40,7 +40,11 @@
   <tbody>
     <% @other_entries.each do |entry| %>
       <tr>
-        <td><%= entry.user.email %></td>
+        <% if entry.user.first_name %>
+          <td><%= entry.user.first_name %> <%= entry.user.last_name %></td>
+        <% else %>
+          <td><%= entry.user.email %></td>
+        <% end %>
         <td><%= entry.quantity %></td>
         <td><%= entry.product.name %></td>
       </tr>
