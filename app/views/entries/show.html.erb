@@ -15,9 +15,9 @@
   <%= @entry.product.name %>
 </p>
 
-<%= link_to 'Entries', entries_path, class:"btn btn-success" %>
+<%= link_to 'Entries', entries_path, class: "btn btn-success" %>
 
 <% if @entry.user.id == current_user.id %>
-  <%= link_to 'Edit', edit_entry_path(@entry), class:"btn btn-primary" %>
-  <%= link_to 'Delete Permanently', @entry, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+  <%= link_to 'Edit', edit_entry_path(@entry), class: "btn btn-primary" %>
+  <%= link_to 'Delete Permanently', @entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 <% end %>
