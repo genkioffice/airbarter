@@ -109,7 +109,11 @@
         <% if transaction.accepted_by_user %>
           <td><%= transaction.accepted_by_user.email %></td>
         <% else %>
-          <td></td>
+          <td>
+            <% if transaction.proposed_by_user.id == current_user.id %>
+              <%= link_to 'Propose Again', change_status_transaction_path(transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
+            <% end %>
+          </td>
         <% end %>
         <!-- <td><%# link_to 'Show', transaction %></td> -->
         <!-- <td><%# link_to 'Edit', edit_transaction_path(transaction) %></td> -->
