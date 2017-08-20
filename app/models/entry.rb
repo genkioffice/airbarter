@@ -5,13 +5,11 @@ class Entry < ApplicationRecord
 
   def self.remove_from_inventory(user, product, quantity)
     entry = self.where(user_id: user.id).where(product_id: product.id).first
-    if entry
-      if entry.quantity > quantity
-        entry.quantity -= quantity
-        entry.save
-      else
-        # render some message
-      end
+    if entry && entry.quantity > quantity
+      entry.quantity -= quantity
+      entry.save
+    else
+      # We should not arrive here, case should be prevented in the view.
     end
   end
 
@@ -21,7 +19,7 @@ class Entry < ApplicationRecord
       entry.quantity += quantity
       entry.save
     else
-      self.new(user: user, product: product, quantity: quantity)
+      self.create(user: user, product: product, quantity: quantity)
     end
   end
 end
