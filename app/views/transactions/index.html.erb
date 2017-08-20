@@ -106,7 +106,11 @@
         <% end %>
         <td><%= transaction.wanted_product_quantity %></td>
         <td><%= transaction.wanted_product.name %></td>
-        <td><%= transaction.accepted_by_user.email %></td>
+        <% if transaction.accepted_by_user %>
+          <td><%= transaction.accepted_by_user.email %></td>
+        <% else %>
+          <td></td>
+        <% end %>
         <!-- <td><%# link_to 'Show', transaction %></td> -->
         <!-- <td><%# link_to 'Edit', edit_transaction_path(transaction) %></td> -->
         <!-- <td><%# link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
