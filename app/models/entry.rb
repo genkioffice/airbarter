@@ -10,8 +10,10 @@ class Entry < ApplicationRecord
         entry.quantity -= quantity
         entry.save
       else
-        # render some message
+        entry.destroy
       end
+    else
+      # We should not arrive here, case should be prevented in the view.
     end
   end
 
@@ -21,7 +23,7 @@ class Entry < ApplicationRecord
       entry.quantity += quantity
       entry.save
     else
-      self.new(user: user, product: product, quantity: quantity)
+      self.create(user: user, product: product, quantity: quantity)
     end
   end
 end
