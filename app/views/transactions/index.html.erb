@@ -106,7 +106,15 @@
         <% end %>
         <td><%= transaction.wanted_product_quantity %></td>
         <td><%= transaction.wanted_product.name %></td>
-        <td><%= transaction.accepted_by_user.email %></td>
+        <% if transaction.accepted_by_user %>
+          <td><%= transaction.accepted_by_user.email %></td>
+        <% else %>
+          <td>
+            <% if transaction.proposed_by_user.id == current_user.id %>
+              <%= link_to 'Propose Again', change_status_transaction_path(transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
+            <% end %>
+          </td>
+        <% end %>
         <!-- <td><%# link_to 'Show', transaction %></td> -->
         <!-- <td><%# link_to 'Edit', edit_transaction_path(transaction) %></td> -->
         <!-- <td><%# link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
