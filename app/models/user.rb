@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_many :accepted_transactions, class_name: 'Transaction', foreign_key: 'accepted_by_user_id', dependent: :destroy
   has_many :accepted_products, class_name: 'Product', foreign_key: 'accepted_by_user_id', through: :accepted_transactions
 
-
+  # To upload image
+  mount_uploader :facebook_picture_url, PhotoUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
