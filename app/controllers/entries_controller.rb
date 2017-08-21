@@ -19,6 +19,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new
     @entry.user_id = params[:user_id] if params[:user_id]
     @entry.product_id = params[:product_id] if params[:product_id]
+    authorize @entry
   end
 
   # GET /entries/1/edit
@@ -30,6 +31,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     @entry.user = current_user
+    authorize @entry
 
     respond_to do |format|
       if @entry.save
@@ -70,6 +72,7 @@ class EntriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_entry
       @entry = Entry.find(params[:id])
+      authorize @entry
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

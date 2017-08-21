@@ -1,13 +1,17 @@
 class TransactionsController < ApplicationController
-  before_action :set_transaction, only: [:show, :edit, :update, :destroy, :change_status]
+  before_action :set_transaction, only: [:show, :edit, :update, :destroy, :change_status, :accept]
 
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.all
-    @proposed_transactions = Transaction.where(status: 0).order(:proposed_by_user_id)
-    @accepted_transactions = Transaction.where(status: 1).order(id: :desc)
-    @removed_transactions = Transaction.where(status: 2).order(id: :desc)
+    @transactions = policy_scope(Transaction)
+    # @proposed_transactions = Transaction.where(status: 0).order(:proposed_by_user_id)
+    # @accepted_transactions = Transaction.where(status: 1).order(id: :desc)
+    # @removed_transactions = Transaction.where(status: 2).order(id: :desc)
+
+    @proposed_transactions = policy_scope(Transaction).where(status: 0).order(:proposed_by_user_id)
+    @accepted_transactions = policy_scope(Transaction).where(status: 1).order(id: :desc)
+    @removed_transactions = policy_scope(Transaction).where(status: 2).order(id: :desc)
 
     @entries = current_user.entries
 
@@ -32,6 +36,7 @@ class TransactionsController < ApplicationController
     @transaction.proposed_by_user = params[:proposed_by_user_id] if params[:proposed_by_user_id]
     @transaction.proposed_product = params[:proposed_product_id] if params[:proposed_product_id]
     @transaction.wanted_product = params[:wanted_product_id] if params[:wanted_product_id]
+    authorize @transaction
   end
 
   # GET /transactions/1/edit
@@ -44,6 +49,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(transaction_params)
     @transaction.proposed_by_user = current_user
     @transaction.status = 0
+    authorize @transaction
 
     respond_to do |format|
       if @transaction.save
@@ -71,18 +77,20 @@ class TransactionsController < ApplicationController
     end
   end
 
-  def change_status
-    if params[:status] == "accepted"
-      @transaction.accepted_by_user = current_user
-
-      Entry.remove_from_inventory(@transaction.proposed_by_user,@transaction.proposed_product,@transaction.proposed_product_quantity)
-      Entry.add_to_inventory(@transaction.proposed_by_user,@transaction.wanted_product,@transaction.wanted_product_quantity)
-      Entry.add_to_inventory(@transaction.accepted_by_user,@transaction.proposed_product,@transaction.proposed_product_quantity)
-      Entry.remove_from_inventory(@transaction.accepted_by_user,@transaction.wanted_product,@transaction.wanted_product_quantity)
-
-    end
+  def accept
+    @transaction.accepted_by_user = current_user
+    Entry.remove_from_inventory(@transaction.proposed_by_user,@transaction.proposed_product,@transaction.proposed_product_quantity)
+    Entry.add_to_inventory(@transaction.proposed_by_user,@transaction.wanted_product,@transaction.wanted_product_quantity)
+    Entry.add_to_inventory(@transaction.accepted_by_user,@transaction.proposed_product,@transaction.proposed_product_quantity)
+    Entry.remove_from_inventory(@transaction.accepted_by_user,@transaction.wanted_product,@transaction.wanted_product_quantity)
     @transaction.change_status!(params[:status])
+    authorize @transaction
+    redirect_to transactions_path
+  end
 
+  def change_status
+    @transaction.change_status!(params[:status])
+    authorize @transaction
     redirect_to transactions_path
   end
 
@@ -101,6 +109,7 @@ class TransactionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_transaction
       @transaction = Transaction.find(params[:id])
+      authorize @transaction
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :transactions do
     member do
       patch :change_status
+      patch :accept
     end
   end
   resources :entries
