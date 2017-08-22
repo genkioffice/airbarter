@@ -28,6 +28,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/1.json
   def show
     @transaction_coordinates = { lat: @transaction.latitude, lng: @transaction.longitude }
+    @entries = current_user.entries
   end
 
   # GET /transactions/new

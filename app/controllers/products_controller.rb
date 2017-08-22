@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.order(:name)
+    @products = policy_scope(Product).order(:name)
   end
 
   # GET /products/1

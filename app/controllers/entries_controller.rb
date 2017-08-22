@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entries = policy_scope(Entry)
     @my_entries = @entries.select{ |entry|  entry.user_id == current_user.id  }
     @other_entries = @entries.select{ |entry|  entry.user_id != current_user.id  }
   end

@@ -48,17 +48,16 @@
 
 <%= link_to 'Transactions', transactions_path, class: "btn btn-success" %>
 
-<% if policy(@transaction).edit? %>
-  <% if @transaction.status == "proposed" %>
-    <%= link_to 'Edit', edit_transaction_path(@transaction),  class: "btn btn-primary" %>
+<% if policy(@transaction).accept? && @transaction.status == "proposed" %>
+  <% if @entries.select{ |e| e.product == @transaction.wanted_product } != [] && @transaction.wanted_product_quantity <= @entries.select{ |e| e.product == @transaction.wanted_product }.first.quantity %>
+    <%= link_to "Accept", accept_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
+  <% else %>
+    Information: The wanted product is not in your current inventory or in sufficient quantity
   <% end %>
+<% elsif policy(@transaction).edit? %>
+  <%= link_to 'Edit', edit_transaction_path(@transaction), class: "btn btn-primary" %>
 <% end %>
 
-<% if policy(@transaction).accept? %>
-  <% if @transaction.status == "proposed" %>
-    <%= link_to 'Accept', accept_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
-  <% end %>
-<% end %>
 
 <% if policy(@transaction).change_status? %>
   <% if @transaction.status != "removed" %>
