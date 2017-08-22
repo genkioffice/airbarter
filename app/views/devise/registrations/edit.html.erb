@@ -8,24 +8,31 @@
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
-
       <div class="form-inputs">
+        <%= f.input :photo, as: :attachinary, label: false %>
         <%= f.input :email, required: true, autofocus: true %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
-
+        <%= f.input :address %>
         <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
         <%= f.input :password_confirmation, required: false %>
         <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-        <%= f.input :photo, as: :attachinary %>
       </div>
-
       <div class="form-actions">
         <%= f.button :submit, "Update", class: "btn btn-success" %>
       </div>
     <% end %>
+  </div>
+  <div class="col-xs-12 col-sm-7">
+    <div class="user-description">
+      <h3>your description</h3>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :description %>
+      <% end %>
+    </div>
   </div>
 </div>
 

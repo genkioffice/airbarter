@@ -39,7 +39,7 @@
   <%= @transaction.wanted_product_quantity %>
 </p>
 
-<% if @transaction.status == 1 %>
+<% if @transaction.status == "accepted" %>
   <p>
     <strong>Accepted by user:</strong>
     <%= @transaction.accepted_by_user.email %>
@@ -48,25 +48,33 @@
 
 <%= link_to 'Transactions', transactions_path, class: "btn btn-success" %>
 
-<% if @transaction.status == "proposed" && @transaction.proposed_by_user.id == current_user.id %>
-  <%= link_to 'Edit', edit_transaction_path(@transaction),  class: "btn btn-primary" %>
-<% end %>
-
-<% if @transaction.status == "proposed" && @transaction.proposed_by_user.id != current_user.id %>
-  <%= link_to 'Accept', change_status_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
-<% end %>
-
-<% if @transaction.status != "removed" && @transaction.proposed_by_user.id == current_user.id %>
-  <%= link_to 'Remove', change_status_transaction_path(@transaction, status: :removed), method: :patch, class: "btn btn-warning" %>
-<% end %>
-
-<% if @transaction.status == "removed" && @transaction.proposed_by_user.id == current_user.id %>
-  <%= link_to 'Propose Again', change_status_transaction_path(@transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
+<% if policy(@transaction).accept? && @transaction.status == "proposed" %>
+  <% if @entries.select{ |e| e.product == @transaction.wanted_product } != [] && @transaction.wanted_product_quantity <= @entries.select{ |e| e.product == @transaction.wanted_product }.first.quantity %>
+    <%= link_to "Accept", accept_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
+  <% else %>
+    Information: The wanted product is not in your current inventory or in sufficient quantity
+  <% end %>
+<% elsif policy(@transaction).edit? %>
+  <%= link_to 'Edit', edit_transaction_path(@transaction), class: "btn btn-primary" %>
 <% end %>
 
 
-<% if @transaction.status == "removed" && @transaction.proposed_by_user.id == current_user.id%>
-  <%= link_to 'Delete Permanently', @transaction, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<% if policy(@transaction).change_status? %>
+  <% if @transaction.status != "removed" %>
+    <%= link_to 'Remove', change_status_transaction_path(@transaction, status: :removed), method: :patch, class: "btn btn-warning" %>
+  <% end %>
+<% end %>
+
+<% if policy(@transaction).change_status? %>
+  <% if @transaction.status == "removed" %>
+    <%= link_to 'Propose Again', change_status_transaction_path(@transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+
+<% if policy(@transaction).destroy? %>
+  <% if @transaction.status == "removed" %>
+    <%= link_to 'Delete Permanently', @transaction, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <% end %>
 <% end %>
 </div>
 
@@ -82,28 +90,29 @@
 <div id="map"></div>
 
 <% content_for :after_js do %>
-    <script type="text/javascript">
-      $(document).on('ready', function() {
-        var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
-        handler.buildMap({ internal: { id: 'map' } }, function(){
-          markers = handler.addMarkers([
-            {
-              "lat": <%= @transaction.latitude %>,
-              "lng": <%= @transaction.longitude %>,
-              // "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
-            }
-          ]);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers([
+          {
+            "lat": <%= @transaction.latitude %>,
+            "lng": <%= @transaction.longitude %>,
+            // "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
+          }
+        ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
 
-          handler.getMap().setZoom(15);
+        handler.getMap().setZoom(15);
 
-          // if (markers.length == 0) {
-          //   handler.getMap().setZoom(2);
-          // } else if (markers.length == 1) {
-          //   handler.getMap().setZoom(15);
-          // }
+        // if (markers.length == 0) {
+        //   handler.getMap().setZoom(2);
+        // } else if (markers.length == 1) {
+        //   handler.getMap().setZoom(15);
+        // }
 
-        });
-      })
-    </script><% end %>
+      });
+    })
+  </script>
+<% end %>
