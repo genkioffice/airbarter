@@ -12,9 +12,10 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield :banner %>
-
-    <div class="container">
-      <%= yield %>
+    <div id="wrap">
+      <div class="container">
+        <%= yield %>
+      </div>
     </div>
     <!-- to add contact page, it's better to add link to the bottom -->
     <%= render 'shared/footer' %>
