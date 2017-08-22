@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.4'
 
-gem 'devise'
+gem 'devise' # Authentication
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
@@ -19,7 +19,12 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+
+# for authorization
 gem 'pundit'
+
+# for translating Authentication
+gem 'devise-i18n', '~> 1.2'
 
 # for facebook login
 gem 'omniauth-facebook'

@@ -1,6 +1,7 @@
+<h1><%= t('activerecord.models.product.one') %></h1>
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('activerecord.attributes.product.name') %>:</strong>
   <%= @product.name %>
 </p>
 
-<%= link_to 'Products', products_path, class: "btn btn-success" %>
+<%= link_to t('activerecord.models.product.othet'), products_path, class: "btn btn-success" %>

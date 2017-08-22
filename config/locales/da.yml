@@ -1,31 +1,31 @@
-en:
-  hello: "Hello world"
+da:
+  hello: "Hej verden"
   pages:
     home:
-      title_html: "Change your life: <strong>Exchange Items</strong>"
+      title_html: "Få et ny liv med <strong>Byttehandel</strong>"
 
   activerecord:
     models:
       product:
-        one: "Product"
-        other: "Products"
+        one: "Produkt"
+        other: "Produkter"
     attributes:
       product:
-        name: "Name"
+        name: "Navn"
 
   products:
     edit:
-      title: "Update Product"
-      show: "Show Product"
+      title: "Opdater produkt"
+      show: "Vis produkt"
     new:
-      title: "New Product"
+      title: "Nyt produkt"
 
   helpers:
     submit:
       product:
-        create: "Add Product"
-        update: "Save Changes"
-        destroy: "Permanently Delete Product"
+        create: "Tilføj produkt"
+        update: "Gem ændringer"
+        destroy: "Fjern produkt"
 
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
@@ -57,3 +57,4 @@ en:
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
+

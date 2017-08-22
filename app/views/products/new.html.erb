@@ -1,6 +1,6 @@
-<h1>New Product</h1>
+<h1><%= t('.title') %></h1>
 
 <%= render 'form', product: @product %>
 
 <br>
-<%= link_to 'Products', products_path, class: "btn btn-success" %>
+<%= link_to t('activerecord.models.product.other'), products_path, class: "btn btn-success" %>
