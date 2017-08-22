@@ -24,14 +24,17 @@
         <% end %>
         <td><%= transaction.wanted_product_quantity %></td>
         <td><%= transaction.wanted_product.name %></td>
-        <% if transaction.proposed_by_user.id != current_user.id %>
+
+        <% if policy(transaction).accept? %>
           <% if @entries.select{ |e| e.product == transaction.wanted_product } != [] && transaction.wanted_product_quantity <= @entries.select{ |e| e.product == transaction.wanted_product }.first.quantity %>
-            <td><%= link_to "Accept", change_status_transaction_path(transaction, status: :accepted), method: :patch, class: "btn btn-primary" %></td>
+            <td><%= link_to "Accept", accept_transaction_path(transaction, status: :accepted), method: :patch, class: "btn btn-primary" %></td>
           <% else %>
             <td>Not in inventory</td>
           <% end %>
-        <% else %>
+        <% elsif policy(transaction).edit? %>
           <td><%= link_to 'Edit', edit_transaction_path(transaction), class: "btn btn-primary" %></td>
+        <% else %>
+          <td></td>
         <% end %>
       </tr>
     <% end %>
@@ -39,7 +42,6 @@
 </table>
 
 <%= link_to 'Propose New Transaction', new_transaction_path, class: "btn btn-success" %>
-
 
 <h3>Accepted Transactions</h3>
 
@@ -50,7 +52,6 @@
       <th>Proposed by user</th>
       <th colspan="2">Wanted product</th>
       <th>Accepted by user</th>
-      <!-- <th colspan="3">Actions</th> -->
     </tr>
   </thead>
 
@@ -71,9 +72,6 @@
         <% else %>
           <td><%= transaction.accepted_by_user.email %></td>
         <% end %>
-        <!-- <td><%# link_to 'Show', transaction %></td> -->
-        <!-- <td><%# link_to 'Edit', edit_transaction_path(transaction) %></td> -->
-        <!-- <td><%# link_to "Remove", change_status_transaction_path(transaction, status: :removed), method: :patch %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -90,7 +88,6 @@
       <th>Proposed by user</th>
       <th colspan="2">Wanted product</th>
       <th>Accepted by user</th>
-      <!-- <th colspan="1">Actions</th> -->
     </tr>
   </thead>
 
@@ -110,14 +107,11 @@
           <td><%= transaction.accepted_by_user.email %></td>
         <% else %>
           <td>
-            <% if transaction.proposed_by_user.id == current_user.id %>
+            <% if policy(transaction).change_status? %>
               <%= link_to 'Propose Again', change_status_transaction_path(transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
             <% end %>
           </td>
         <% end %>
-        <!-- <td><%# link_to 'Show', transaction %></td> -->
-        <!-- <td><%# link_to 'Edit', edit_transaction_path(transaction) %></td> -->
-        <!-- <td><%# link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
