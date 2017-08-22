@@ -1,8 +1,10 @@
 <div class="user-info row">
   <div class="col-xs-12 col-sm-5">
-    <% avatar_url = @user.facebook_picture_url %>
-    <%= cl_image_tag @user.facebook_picture_url, class: "avatar_picture" %>
-    <!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
+    <% if @user.photo? %>
+      <%= cl_image_tag @user.photo.path, width: 200, height: 300, crop: :fill %>
+    <% elsif @user.facebook_picture_url? %>
+      <%= cl_image_tag @user.facebook_picture_url, height: 300, width: 400, crop: :fill %>
+    <% end %>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
@@ -17,8 +19,7 @@
         <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
         <%= f.input :password_confirmation, required: false %>
         <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-        <%= f.input :facebook_picture_url %>
-        <%= f.input :facebook_picture_url_cache, as: :hidden %>
+        <%= f.input :photo, as: :attachinary %>
       </div>
 
       <div class="form-actions">

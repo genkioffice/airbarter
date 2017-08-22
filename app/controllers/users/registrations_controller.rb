@@ -48,11 +48,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:photo])
   end
 
   def user_params
-  params.require(:user).permit(:email, :address, :facebook_picture_url, :facebook_picture_url_cache, :first_name, :last_name)
+  params.require(:user).permit(:email, :address, :facebook_picture_url, :first_name, :last_name, :photo)
   end
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
