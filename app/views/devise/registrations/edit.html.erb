@@ -1,5 +1,5 @@
 <div class="user-info row">
-  <div class="col-xs-12 col-sm-5">
+  <div class="col-xs-12 col-sm-4">
     <% if @user.photo? %>
       <%= cl_image_tag @user.photo.path, width: 200, height: 300, crop: :fill %>
     <% elsif @user.facebook_picture_url? %>
@@ -25,7 +25,7 @@
       </div>
     <% end %>
   </div>
-  <div class="col-xs-12 col-sm-7">
+  <div class="col-xs-12 col-sm-8">
     <div class="user-description">
       <h3>your description</h3>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
