@@ -8,33 +8,33 @@
       <th colspan="2"><%= t('activerecord.attributes.transaction.proposed_product') %></th>
       <th><%= t('activerecord.attributes.transaction.proposed_by_user') %></th>
       <th colspan="2"><%= t('activerecord.attributes.transaction.wanted_product') %></th>
-      <th colspan="2"><%= t('.actions') %></th>
+      <th colspan="2" style="text-align:center"><%= t('.actions') %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @proposed_transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.proposed_product_quantity %></td>
+        <td align="right"><%= transaction.proposed_product_quantity %></td>
         <td><%= link_to transaction.proposed_product.name, transaction %></td>
         <% if transaction.proposed_by_user.first_name %>
           <td><%= transaction.proposed_by_user.first_name %> <%= transaction.proposed_by_user.last_name %></td>
         <% else %>
           <td><%= transaction.proposed_by_user.email %></td>
         <% end %>
-        <td><%= transaction.wanted_product_quantity %></td>
+        <td align="right"><%= transaction.wanted_product_quantity %></td>
         <td><%= transaction.wanted_product.name %></td>
 
         <% if policy(transaction).accept? %>
           <% if @entries.select{ |e| e.product == transaction.wanted_product } != [] && transaction.wanted_product_quantity <= @entries.select{ |e| e.product == transaction.wanted_product }.first.quantity %>
-            <td><%= link_to t('.accept'), accept_transaction_path(transaction, status: :accepted), method: :patch, class: "btn btn-primary" %></td>
+            <td style="text-align:center"><%= link_to t('.accept'), accept_transaction_path(transaction, status: :accepted), method: :patch, class: "btn btn-primary" %></td>
           <% else %>
-            <td><%= t('.other') %></td>
+            <td style="text-align:center"><%= t('.other') %></td>
           <% end %>
         <% elsif policy(transaction).edit? %>
-          <td><%= link_to t('.edit'), edit_transaction_path(transaction), class: "btn btn-primary" %></td>
+          <td style="text-align:center"><%= link_to t('.edit'), edit_transaction_path(transaction), class: "btn btn-primary" %></td>
         <% else %>
-          <td></td>
+          <td style="text-align:center"></td>
         <% end %>
       </tr>
     <% end %>
@@ -58,14 +58,14 @@
   <tbody>
     <% @accepted_transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.proposed_product_quantity %></td>
+        <td style="text-align:right"><%= transaction.proposed_product_quantity %></td>
         <td><%= link_to transaction.proposed_product.name, transaction %></td>
         <% if transaction.proposed_by_user.first_name %>
           <td><%= transaction.proposed_by_user.first_name %> <%= transaction.proposed_by_user.last_name %></td>
         <% else %>
           <td><%= transaction.proposed_by_user.email %></td>
         <% end %>
-        <td><%= transaction.wanted_product_quantity %></td>
+        <td style="text-align:right"><%= transaction.wanted_product_quantity %></td>
         <td><%= transaction.wanted_product.name %></td>
         <% if transaction.accepted_by_user.first_name %>
           <td><%= transaction.accepted_by_user.first_name %> <%= transaction.accepted_by_user.last_name %></td>
@@ -94,14 +94,14 @@
   <tbody>
     <% @removed_transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.proposed_product_quantity %></td>
+        <td style="text-align:right"><%= transaction.proposed_product_quantity %></td>
         <td><%= link_to transaction.proposed_product.name, transaction %></td>
         <% if transaction.proposed_by_user.first_name %>
           <td><%= transaction.proposed_by_user.first_name %> <%= transaction.proposed_by_user.last_name %></td>
         <% else %>
           <td><%= transaction.proposed_by_user.email %></td>
         <% end %>
-        <td><%= transaction.wanted_product_quantity %></td>
+        <td style="text-align:right"><%= transaction.wanted_product_quantity %></td>
         <td><%= transaction.wanted_product.name %></td>
         <% if transaction.accepted_by_user %>
           <td><%= transaction.accepted_by_user.email %></td>
