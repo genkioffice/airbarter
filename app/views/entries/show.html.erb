@@ -1,26 +1,26 @@
-<h1>Entry</h1>
+<h1><%= t('activerecord.models.entry.one') %></h1>
 <p>
-  <strong>User:</strong>
+  <strong><%= t('activerecord.attributes.entry.user') %>:</strong>
   <%= @entry.user.email %> <br>
   <%= @entry.user.first_name %> <%= @entry.user.last_name %>
 </p>
 
 <p>
-  <strong>Quantity:</strong>
+  <strong><%= t('activerecord.attributes.entry.quantity') %>:</strong>
   <%= @entry.quantity %>
 </p>
 
 <p>
-  <strong>Product:</strong>
+  <strong><%= t('activerecord.attributes.entry.product') %>:</strong>
   <%= @entry.product.name %>
 </p>
 
-<%= link_to 'Entries', entries_path, class: "btn btn-success" %>
+<%= link_to t('activerecord.models.entry.other'), entries_path, class: "btn btn-success" %>
 
 <% if policy(@entry).edit? %>
-  <%= link_to 'Edit', edit_entry_path(@entry), class: "btn btn-primary" %>
+  <%= link_to t('.edit'), edit_entry_path(@entry), class: "btn btn-primary" %>
 <% end %>
 
 <% if policy(@entry).destroy? %>
-  <%= link_to 'Delete Permanently', @entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  <%= link_to t('helpers.submit.entry.destroy'), @entry, method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
 <% end %>

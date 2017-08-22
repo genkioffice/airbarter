@@ -9,9 +9,29 @@ en:
       product:
         one: "Product"
         other: "Products"
+      entry:
+        one: "Entry"
+        other: "Entries"
+      transaction:
+        one: "Transaction"
+        other: "Transactions"
     attributes:
       product:
         name: "Name"
+      entry:
+        quantity: "Quantity"
+        product: "Product"
+        user: "User"
+      transaction:
+        proposed_product: "Proposed Product"
+        proposed_product_quantity: "Proposed Quantity"
+        proposed_by_user: "Proposed by User"
+        wanted_product: "Wanted Product"
+        wanted_product_quantity: "Wanted Quantity"
+        accepted_by_user: "Accepted by User"
+        status: "Status"
+        address: "Address"
+        photos: "Photos"
 
   products:
     edit:
@@ -20,12 +40,73 @@ en:
     new:
       title: "New Product"
 
+  entries:
+    edit:
+      title: "Update Entry"
+      show: "Show Entry"
+    new:
+      title: "New Entry"
+    show:
+      edit: "Edit"
+      delete_confirmation: "Are you sure you want to delete the entry?"
+    index:
+      title: "My Entries"
+      title_other: "Other People's Entries"
+      actions: "Actions"
+      show: "Show"
+
+  transactions:
+    edit:
+      title: "Update Transaction"
+      show: "Show Transaction"
+    new:
+      title: "New Transaction"
+    show:
+      title:
+        proposed: "Proposed Transaction"
+        accepted: "Accepted Transaction"
+        removed: "Removed Transaction"
+        other: "Transaction"
+      accept: "Accept"
+      edit: "Edit"
+      remove: "Remove"
+      propose_again: "Propose Again"
+      delete_confirmation: "Are you sure you want to delete the transaction?"
+    index:
+      title:
+        proposed: "Proposed Transactions"
+        accepted: "Accepted Transactions"
+        removed: "Removed Transactions"
+      actions: "Actions"
+      accept: "Accept"
+      edit: "Edit"
+      other: "Not in inventory"
+      propose_again: "Propose Again"
+      propose_new: "Propose New Transaction"
+
   helpers:
     submit:
       product:
         create: "Add Product"
         update: "Save Changes"
         destroy: "Permanently Delete Product"
+      entry:
+        create: "Add Entry"
+        update: "Save Changes"
+        destroy: "Permanently Delete Entry"
+      transaction:
+        create: "Add Transaction"
+        update: "Save Changes"
+        destroy: "Permanently Delete Transaction"
+
+  simple_form:
+    labels:
+      transaction:
+        wanted_product: "What do you want?"
+        wanted_product_quantity: "How many?"
+        proposed_product: "What can you exchange?"
+        proposed_product_quantity: "How many?"
+
 
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other

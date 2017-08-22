@@ -1,9 +1,9 @@
-<h1>Editing Transaction</h1>
+<h1><%= t('.title') %></h1>
 
 <%= render 'form', transaction: @transaction %>
 
 <br>
 <div>
-  <%= link_to 'Show', @transaction, class: "btn btn-primary" %>
-  <%= link_to 'Transactions', transactions_path, class: "btn btn-success" %>
+  <%= link_to t('.show'), @transaction, class: "btn btn-primary" %>
+  <%= link_to t('activerecord.models.transaction.other'), transactions_path, class: "btn btn-success" %>
 </div>

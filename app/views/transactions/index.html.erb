@@ -1,14 +1,14 @@
 <br>
 <div id="map" style="width: 100%; height: 600px;"></div>
-<h3>Proposed Transactions</h3>
+<h3><%= t('.title.proposed') %></h3>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th colspan="2">Proposed product</th>
-      <th>Proposed by user</th>
-      <th colspan="2">Wanted product</th>
-      <th colspan="2">Actions</th>
+      <th colspan="2"><%= t('activerecord.attributes.transaction.proposed_product') %></th>
+      <th><%= t('activerecord.attributes.transaction.proposed_by_user') %></th>
+      <th colspan="2"><%= t('activerecord.attributes.transaction.wanted_product') %></th>
+      <th colspan="2"><%= t('.actions') %></th>
     </tr>
   </thead>
 
@@ -27,12 +27,12 @@
 
         <% if policy(transaction).accept? %>
           <% if @entries.select{ |e| e.product == transaction.wanted_product } != [] && transaction.wanted_product_quantity <= @entries.select{ |e| e.product == transaction.wanted_product }.first.quantity %>
-            <td><%= link_to "Accept", accept_transaction_path(transaction, status: :accepted), method: :patch, class: "btn btn-primary" %></td>
+            <td><%= link_to t('.accept'), accept_transaction_path(transaction, status: :accepted), method: :patch, class: "btn btn-primary" %></td>
           <% else %>
-            <td>Not in inventory</td>
+            <td><%= t('.other') %></td>
           <% end %>
         <% elsif policy(transaction).edit? %>
-          <td><%= link_to 'Edit', edit_transaction_path(transaction), class: "btn btn-primary" %></td>
+          <td><%= link_to t('.edit'), edit_transaction_path(transaction), class: "btn btn-primary" %></td>
         <% else %>
           <td></td>
         <% end %>
@@ -41,17 +41,17 @@
   </tbody>
 </table>
 
-<%= link_to 'Propose New Transaction', new_transaction_path, class: "btn btn-success" %>
+<%= link_to t('.propose_new'), new_transaction_path, class: "btn btn-success" %>
 
-<h3>Accepted Transactions</h3>
+<h3><%= t('.title.accepted') %></h3>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th colspan="2">Proposed product</th>
-      <th>Proposed by user</th>
-      <th colspan="2">Wanted product</th>
-      <th>Accepted by user</th>
+      <th colspan="2"><%= t('activerecord.attributes.transaction.proposed_product') %></th>
+      <th><%= t('activerecord.attributes.transaction.proposed_by_user') %></th>
+      <th colspan="2"><%= t('activerecord.attributes.transaction.wanted_product') %></th>
+      <th><%= t('activerecord.attributes.transaction.accepted_by_user') %></th>
     </tr>
   </thead>
 
@@ -79,15 +79,15 @@
 
 <br>
 
-<h3>Removed Transactions</h3>
+<h3><%= t('.title.removed') %></h3>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th colspan="2">Proposed product</th>
-      <th>Proposed by user</th>
-      <th colspan="2">Wanted product</th>
-      <th>Accepted by user</th>
+      <th colspan="2"><%= t('activerecord.attributes.transaction.proposed_product') %></th>
+      <th><%= t('activerecord.attributes.transaction.proposed_by_user') %></th>
+      <th colspan="2"><%= t('activerecord.attributes.transaction.wanted_product') %></th>
+      <th><%= t('activerecord.attributes.transaction.accepted_by_user') %></th>
     </tr>
   </thead>
 
@@ -108,7 +108,7 @@
         <% else %>
           <td>
             <% if policy(transaction).change_status? %>
-              <%= link_to 'Propose Again', change_status_transaction_path(transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
+              <%= link_to t('.propose_again'), change_status_transaction_path(transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
             <% end %>
           </td>
         <% end %>
