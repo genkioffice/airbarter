@@ -145,9 +145,9 @@ ar:
       transaction:
         address: المكان الذي يمكن أن يحدث التبادل
         proposed_product: المنتج الذي لديك
-        proposed_product_quantity: كوانيتي أن كنت تقترح
+        proposed_product_quantity: الكمية التي تقترحها
         wanted_product: المنتج الذي كنت مهتما في الحصول على
-        wanted_product_quantity: كوانيتي التي كنت ترغب في الحصول عليها
+        wanted_product_quantity: الكمية التي كنت ترغب في الحصول عليها
     labels:
       transaction:
         address: عنوان للتبادل
