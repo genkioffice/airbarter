@@ -144,9 +144,9 @@ ja:
       transaction:
         address: 交換ができる場所
         proposed_product: あなたが持っている製品
-        proposed_product_quantity: あなたが提案している疑問
+        proposed_product_quantity: あなたが提案している量
         wanted_product: あなたが興味を持っている製品
-        wanted_product_quantity: あなたが得ることに興味があるquanity
+        wanted_product_quantity: あなたが得ることに興味がある量
     labels:
       transaction:
         address: 交換のための住所
