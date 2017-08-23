@@ -1,161 +1,125 @@
+---
 da:
-  hello: "Hej verden"
-  pages:
-    home:
-      title_html: "Få et ny liv med <strong>Byttehandel</strong>"
-  shared:
-    navbar:
-      profile: "Profil"
-      home: "Hjem"
-      sign_out: "Log ud"
-      transactions: "Transaktioner"
-      inventory: "Mit lager"
-      products: "Produkter"
-
   activerecord:
-    models:
-      product:
-        one: "Produkt"
-        other: "Produkter"
-      entry:
-        one: "Lagerpost"
-        other: "Lagerposter"
-      transaction:
-        one: "Transaktion"
-        other: "Transaktioner"
     attributes:
-      product:
-        name: "Navn"
       entry:
-        quantity: "Antal"
-        product: "Produkt"
-        user: "Bruger"
+        product: Produkt
+        quantity: Antal
+        user: Bruger
+      product:
+        name: Navn
       transaction:
-        proposed_product: "Foreslået produkt"
-        proposed_product_quantity: "Foreslået antal"
-        proposed_by_user: "Foreslået af bruger"
-        wanted_product: "Ønsket produkt"
-        wanted_product_quantity: "Ønsket antal"
-        accepted_by_user: "Accepteret af bruger"
-        status: "Status"
-        address: "Adresse"
-        photos: "Billeder"
-
-  products:
-    edit:
-      title: "Opdater produkt"
-      show: "Vis produkt"
-    new:
-      title: "Nyt produkt"
-
+        accepted_by_user: Accepteret af bruger
+        address: Adresse
+        photos: Billeder
+        proposed_by_user: Foreslået af bruger
+        proposed_product: Foreslået produkt
+        proposed_product_quantity: Foreslået antal
+        status: Status
+        wanted_product: Ønsket produkt
+        wanted_product_quantity: Ønsket antal
+    models:
+      entry:
+        one: Lagerpost
+        other: Lagerposter
+      product:
+        one: Produkt
+        other: Produkter
+      transaction:
+        one: Transaktion
+        other: Transaktioner
   entries:
     edit:
-      title: "Opdater lagerpost"
-      show: "Vis lagerpost"
-    new:
-      title: "Ny lagerpost"
-    show:
-      edit: "Ret"
-      delete_confirmation: "Er du sikker på at du vil slette lagerposten?"
+      show: Vis lagerpost
+      title: Opdater lagerpost
     index:
-      title: "Mine lagerposter"
-      title_other: "De andres lagerposter"
-      actions: "Funktioner"
-      show: "Vis"
-
-  transactions:
-    edit:
-      title: "Opdater transaktion"
-      show: "Vis transaktion"
+      actions: Funktioner
+      show: Vis
+      title: Mine lagerposter
+      title_other: De andres lagerposter
     new:
-      title: "Ny transaktion"
+      title: Ny lagerpost
     show:
-      title:
-        proposed: "Foreslået transaktion"
-        accepted: "Accepteret transaktion"
-        removed: "Fjernet transaktion"
-        other: "Transaktion"
-      accept: "Accepter"
-      edit: "Ret"
-      remove: "Flyt til skrællespanden"
-      propose_again: "Foreslå igen"
-      delete_confirmation: "Er du sikker på at du vil slette transaktionen?"
-    index:
-      title:
-        proposed: "Foreslået transaktioner"
-        accepted: "Accepteret transaktioner"
-        removed: "Fjernet transaktioner"
-      actions: "Funktioner"
-      accept: "Accepter"
-      edit: "Ret"
-      other: "Ikke på lager"
-      propose_again: "Foreslå igen"
-      propose_new: "Foreslå ny transaktion"
-
+      delete_confirmation: Er du sikker på at du vil slette lagerposten?
+      edit: Ret
+  hello: Hej verden
   helpers:
     submit:
-      product:
-        create: "Tilføj produkt"
-        update: "Gem ændringer"
-        destroy: "Fjern produkt"
       entry:
-        create: "Tilføj lagerpost"
-        update: "Gem ændringer"
-        destroy: "Fjern lagerpost"
+        create: Tilføj lagerpost
+        destroy: Fjern lagerpost
+        update: Gem ændringer
+      product:
+        create: Tilføj produkt
+        destroy: Fjern produkt
+        update: Gem ændringer
       transaction:
-        create: "Tilføj transaktion"
-        update: "Gem ændringer"
-        destroy: "Fjern transaktion"
-
+        create: Tilføj transaktion
+        destroy: Fjern transaktion
+        update: Gem ændringer
+  pages:
+    home:
+      title_html: Få et ny liv med <strong>Byttehandel</strong>
+  products:
+    edit:
+      show: Vis produkt
+      title: Opdater produkt
+    new:
+      title: Nyt produkt
+  shared:
+    navbar:
+      home: Hjem
+      inventory: Mit lager
+      products: Produkter
+      profile: Profil
+      sign_out: Log ud
+      transactions: Transaktioner
   simple_form:
-    labels:
-      transaction:
-        wanted_product: "Hvad prøver du at finde?"
-        wanted_product_quantity: "Hvor mange?"
-        proposed_product: "Hvad kan du give i bytte?"
-        proposed_product_quantity: "Hvor mange?"
-        address: "Adresse på byttehandlen"
     hints:
       transaction:
-        wanted_product: 'Det du er interessered få i bytte'
-        wanted_product_quantity: 'Antal eller mængden af det forventer at få i bytte'
-        proposed_product: 'Det du er interessered give i bytte'
-        proposed_product_quantity: 'Antal eller mængden af det forventer at give i bytte'
-        address: "Stedet hvor byttehandlen kan finde sted"
+        address: Stedet hvor byttehandlen kan finde sted
+        proposed_product: Det du er interessered give i bytte
+        proposed_product_quantity: Antal eller mængden af det forventer at give i
+          bytte
+        wanted_product: Det du er interessered få i bytte
+        wanted_product_quantity: Antal eller mængden af det forventer at få i bytte
+    labels:
+      transaction:
+        address: Adresse på byttehandlen
+        proposed_product: Hvad kan du give i bytte?
+        proposed_product_quantity: Hvor mange?
+        wanted_product: Hvad prøver du at finde?
+        wanted_product_quantity: Hvor mange?
     placeholders:
       product:
-        name: 'Produkt navn'
+        name: Produkt navn
       transaction:
-        address: 'Adressen på transaktonen'
-
-
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+        address: Adressen på transaktonen
+  transactions:
+    edit:
+      show: Vis transaktion
+      title: Opdater transaktion
+    index:
+      accept: Accepter
+      actions: Funktioner
+      edit: Ret
+      other: Ikke på lager
+      propose_again: Foreslå igen
+      propose_new: Foreslå ny transaktion
+      title:
+        accepted: Accepteret transaktioner
+        proposed: Foreslået transaktioner
+        removed: Fjernet transaktioner
+    new:
+      title: Ny transaktion
+    show:
+      accept: Accepter
+      delete_confirmation: Er du sikker på at du vil slette transaktionen?
+      edit: Ret
+      propose_again: Foreslå igen
+      remove: Flyt til skrællespanden
+      title:
+        accepted: Accepteret transaktion
+        other: Transaktion
+        proposed: Foreslået transaktion
+        removed: Fjernet transaktion

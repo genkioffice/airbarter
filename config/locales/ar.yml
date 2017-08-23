@@ -1,161 +1,124 @@
+---
 ar:
-  hello: "Hello world"
-  pages:
-    home:
-      title_html: "Change your life: <strong>Exchange Items</strong>"
-  shared:
-    navbar:
-      profile: "Profile"
-      home: "Home"
-      sign_out: "Sign out"
-      transactions: "Transactions"
-      inventory: "My inventory"
-      products: "Products"
-
   activerecord:
-    models:
-      product:
-        one: "Product"
-        other: "Products"
-      entry:
-        one: "Entry"
-        other: "Entries"
-      transaction:
-        one: "Transaction"
-        other: "Transactions"
     attributes:
-      product:
-        name: "Name"
       entry:
-        quantity: "Quantity"
-        product: "Product"
-        user: "User"
+        product: Product
+        quantity: Quantity
+        user: User
+      product:
+        name: Name
       transaction:
-        proposed_product: "Proposed Product"
-        proposed_product_quantity: "Proposed Quantity"
-        proposed_by_user: "Proposed by User"
-        wanted_product: "Wanted Product"
-        wanted_product_quantity: "Wanted Quantity"
-        accepted_by_user: "Accepted by User"
-        status: "Status"
-        address: "Address"
-        photos: "Photos"
-
-  products:
-    edit:
-      title: "Update Product"
-      show: "Show Product"
-    new:
-      title: "New Product"
-
+        accepted_by_user: Accepted by User
+        address: Address
+        photos: Photos
+        proposed_by_user: Proposed by User
+        proposed_product: Proposed Product
+        proposed_product_quantity: Proposed Quantity
+        status: Status
+        wanted_product: Wanted Product
+        wanted_product_quantity: Wanted Quantity
+    models:
+      entry:
+        one: Entry
+        other: Entries
+      product:
+        one: Product
+        other: Products
+      transaction:
+        one: Transaction
+        other: Transactions
   entries:
     edit:
-      title: "Update Entry"
-      show: "Show Entry"
-    new:
-      title: "New Entry"
-    show:
-      edit: "Edit"
-      delete_confirmation: "Are you sure you want to delete the entry?"
+      show: Show Entry
+      title: Update Entry
     index:
-      title: "My Entries"
-      title_other: "Other People's Entries"
-      actions: "Actions"
-      show: "Show"
-
-  transactions:
-    edit:
-      title: "Update Transaction"
-      show: "Show Transaction"
+      actions: Actions
+      show: Show
+      title: My Entries
+      title_other: Other People's Entries
     new:
-      title: "New Transaction"
+      title: New Entry
     show:
-      title:
-        proposed: "Proposed Transaction"
-        accepted: "Accepted Transaction"
-        removed: "Removed Transaction"
-        other: "Transaction"
-      accept: "Accept"
-      edit: "Edit"
-      remove: "Remove"
-      propose_again: "Propose Again"
-      delete_confirmation: "Are you sure you want to delete the transaction?"
-    index:
-      title:
-        proposed: "Proposed Transactions"
-        accepted: "Accepted Transactions"
-        removed: "Removed Transactions"
-      actions: "Actions"
-      accept: "Accept"
-      edit: "Edit"
-      other: "Not in inventory"
-      propose_again: "Propose Again"
-      propose_new: "Propose New Transaction"
-
+      delete_confirmation: Are you sure you want to delete the entry?
+      edit: Edit
+  hello: Hello world
   helpers:
     submit:
-      product:
-        create: "Add Product"
-        update: "Save Changes"
-        destroy: "Permanently Delete Product"
       entry:
-        create: "Add Entry"
-        update: "Save Changes"
-        destroy: "Permanently Delete Entry"
+        create: Add Entry
+        destroy: Permanently Delete Entry
+        update: Save Changes
+      product:
+        create: Add Product
+        destroy: Permanently Delete Product
+        update: Save Changes
       transaction:
-        create: "Add Transaction"
-        update: "Save Changes"
-        destroy: "Permanently Delete Transaction"
-
+        create: Add Transaction
+        destroy: Permanently Delete Transaction
+        update: Save Changes
+  pages:
+    home:
+      title_html: 'Change your life: <strong>Exchange Items</strong>'
+  products:
+    edit:
+      show: Show Product
+      title: Update Product
+    new:
+      title: New Product
+  shared:
+    navbar:
+      home: Home
+      inventory: My inventory
+      products: Products
+      profile: Profile
+      sign_out: Sign out
+      transactions: Transactions
   simple_form:
-    labels:
-      transaction:
-        wanted_product: "What do you want?"
-        wanted_product_quantity: "How many?"
-        proposed_product: "What can you exchange?"
-        proposed_product_quantity: "How many?"
-        address: "Address for the exchange"
     hints:
       transaction:
-        wanted_product: 'The product that you are interested in getting'
-        wanted_product_quantity: 'The quanity that you are interested in obtaining'
-        proposed_product: 'The product that you have'
-        proposed_product_quantity: 'The quanity that you are proposing'
-        address: "The place where the exchange can take place"
+        address: The place where the exchange can take place
+        proposed_product: The product that you have
+        proposed_product_quantity: The quanity that you are proposing
+        wanted_product: The product that you are interested in getting
+        wanted_product_quantity: The quanity that you are interested in obtaining
+    labels:
+      transaction:
+        address: Address for the exchange
+        proposed_product: What can you exchange?
+        proposed_product_quantity: How many?
+        wanted_product: What do you want?
+        wanted_product_quantity: How many?
     placeholders:
       product:
-        name: 'Product name'
+        name: Product name
       transaction:
-        address: 'Address of the transaction'
-
-
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+        address: Address of the transaction
+  transactions:
+    edit:
+      show: Show Transaction
+      title: Update Transaction
+    index:
+      accept: Accept
+      actions: Actions
+      edit: Edit
+      other: Not in inventory
+      propose_again: Propose Again
+      propose_new: Propose New Transaction
+      title:
+        accepted: Accepted Transactions
+        proposed: Proposed Transactions
+        removed: Removed Transactions
+    new:
+      title: New Transaction
+    show:
+      accept: Accept
+      delete_confirmation: Are you sure you want to delete the transaction?
+      edit: Edit
+      propose_again: Propose Again
+      remove: Remove
+      title:
+        accepted: Accepted Transaction
+        other: Transaction
+        proposed: Proposed Transaction
+        removed: Removed Transaction
