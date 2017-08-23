@@ -10,22 +10,40 @@
 
     <% if user_signed_in? %>
 
-      <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".home", default: "Home"), root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Links when logged in -->
-      <%= link_to "Transactions", transactions_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Inventory", entries_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Products", products_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".transactions", default: "Transactions"), transactions_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".inventory", default: "My Inventory"), entries_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".products", default: "Products"), products_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <% if current_user.photo %>
-            <% avatar_url = current_user.photo %>
-          <% elsif current_user.facebook_picture_url %>
-            <% avatar_url = current_user.facebook_picture_url %>
-          <% else %>
-            <% avatar_url = "http://placehold.it/30x30" %>
-          <% end %>
-            <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+        <a href="#" class="dropdown-toggle navbar-wagon-link" id="navbar-wagon-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Languages <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to root_path(locale: "en") do %>
+                <i class="fa fa-language"></i> <%= t(".english", default: "English") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path(locale: "ja") do %>
+                <i class="fa fa-language"></i> <%= t(".japanese", default: "Japanese") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path(locale: "da") do %>
+                <i class="fa fa-language"></i> <%= t(".danish", default: "Danish") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to edit_user_registration_path do %>
@@ -34,7 +52,7 @@
             </li>
             <li>
               <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <i class="fa fa-home"></i>  <%= t(".home", default: "Home") %>
               <% end %>
             </li>
             <li>
@@ -56,12 +74,13 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Transactions", transactions_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "My Inventory", entries_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Products", products_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".transactions", default: "Transactions"), transactions_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".inventory", default: "My Inventory"), entries_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".products", default: "Products"), products_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".english", default: "English"), root_path(locale: "en"), class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".japanese", default: "Japanese"), root_path(locale: "ja"), class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".danish", default: "Danish"), root_path(locale: "da"), class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
 </div>
-

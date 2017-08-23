@@ -25,7 +25,7 @@ class ProductPolicy < ApplicationPolicy
 
   def user_is_admin?
     # user.admin
-    false # until we implement admin on User
+    true # until we implement admin on User
   end
 
 

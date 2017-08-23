@@ -1,8 +1,8 @@
-<h1>New Transaction</h1>
+<h1><%= t('.title') %></h1>
 
 <%= render 'form', transaction: @transaction %>
 
 <br>
 <div>
-  <%= link_to 'Transactions', transactions_path, class: "btn btn-success" %>
+  <%= link_to t('activerecord.models.transaction.other'), transactions_path, class: "btn btn-success" %>
 </div>

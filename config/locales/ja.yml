@@ -1,8 +1,8 @@
-en:
+ja:
   hello: "Hello world"
   pages:
     home:
-      title_html: "Change your life: <strong>Exchange Items</strong>"
+      title_html: "あなたの人生を変える：<strong>交換アイテム</strong>"
   shared:
     navbar:
       profile: "Profile"

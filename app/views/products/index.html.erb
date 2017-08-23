@@ -1,10 +1,10 @@
 <div class="modify-for-footer">
-  <h1>Products</h1>
+  <h1><%= t('activerecord.models.product.other') %></h1>
 
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Name</th>
+        <th><%= t('activerecord.attributes.product.name') %></th>
       </tr>
     </thead>
 
@@ -18,7 +18,7 @@
   </table>
 
 <% if policy(Product).new? %>
-  <%= link_to 'New Product', new_product_path, class: "btn btn-success" %>
+  <%= link_to t('helpers.submit.product.create'), new_product_path, class: "btn btn-success" %>
 <% end %>
 <br>
 </div>
