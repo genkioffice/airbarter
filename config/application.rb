@@ -21,6 +21,8 @@ Bundler.require(*Rails.groups)
 
 module Airbarter
   class Application < Rails::Application
+    #the line below is for ajax
+    config.action_view.embed_authenticity_token_in_remote_forms = true
     config.generators do |generate|
       generate.assets false
       generate.helper false

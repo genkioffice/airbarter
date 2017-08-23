@@ -1,0 +1,3 @@
+<% if @transaction.errors.any?%>
+  $('#new_transaction').html("<%= j render 'transactions/form' %>")
+<% end %>

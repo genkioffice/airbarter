@@ -52,10 +52,12 @@ class TransactionsController < ApplicationController
       if @transaction.save
         format.html { redirect_to transactions_path, notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @transaction }
+        format.js
       else
         # I deleted raise, because otherwise if we type something wrong, error page open.
         format.html { render :new }
         format.json { render json: @transaction.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
