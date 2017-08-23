@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
-  scope '(:locale)', locale: /en|ja|da/ do
+  scope '(:locale)', locale: /en|ja|da|ar|fr/ do
     resources :transactions do
       member do
         patch :change_status
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # this is to handle facebook login without language
   devise_for :users, only: :omniauth_callbacks,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  
+
   # to avoide user from showing the profile page.
   # get 'user',   to: 'pages#profile'
   # resources :users

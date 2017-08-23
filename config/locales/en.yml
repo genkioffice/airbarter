@@ -1,161 +1,192 @@
+---
 en:
-  hello: "Hello world"
-  pages:
-    home:
-      title_html: "Change your life: <strong>Exchange Items</strong>"
-  shared:
-    navbar:
-      profile: "Profile"
-      home: "Home"
-      sign_out: "Sign out"
-      transactions: "Transactions"
-      inventory: "My inventory"
-      products: "Products"
-
   activerecord:
-    models:
-      product:
-        one: "Product"
-        other: "Products"
-      entry:
-        one: "Entry"
-        other: "Entries"
-      transaction:
-        one: "Transaction"
-        other: "Transactions"
     attributes:
-      product:
-        name: "Name"
       entry:
-        quantity: "Quantity"
-        product: "Product"
-        user: "User"
+        product: Product
+        quantity: Quantity
+        user: User
+      product:
+        name: Name
       transaction:
-        proposed_product: "Proposed Product"
-        proposed_product_quantity: "Proposed Quantity"
-        proposed_by_user: "Proposed by User"
-        wanted_product: "Wanted Product"
-        wanted_product_quantity: "Wanted Quantity"
-        accepted_by_user: "Accepted by User"
-        status: "Status"
-        address: "Address"
-        photos: "Photos"
-
-  products:
-    edit:
-      title: "Update Product"
-      show: "Show Product"
-    new:
-      title: "New Product"
-
+        accepted_by_user: Accepted by User
+        address: Address
+        photos: Photos
+        proposed_by_user: Proposed by User
+        proposed_product: Proposed Product
+        proposed_product_quantity: Proposed Quantity
+        status: Status
+        wanted_product: Wanted Product
+        wanted_product_quantity: Wanted Quantity
+    models:
+      entry:
+        one: Entry
+        other: Entries
+      product:
+        one: Product
+        other: Products
+      transaction:
+        one: Transaction
+        other: Transactions
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: Resend confirmation instructions
+    mailer:
+      confirmation_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+      password_change:
+        greeting: Greeting
+        message: Message
+      reset_password_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+        instruction_2: Instruction 2
+        instruction_3: Instruction 3
+      unlock_instructions:
+        action: Action
+        greeting: Greeting
+        instruction: Instruction
+        message: Message
+    passwords:
+      edit:
+        change_my_password: Change my password
+        change_your_password: Change your password
+        confirm_new_password: Confirm new password
+        new_password: New password
+      new:
+        forgot_your_password: Forgot your password
+        send_me_reset_password_instructions: Send me reset password instructions
+    registrations:
+      edit:
+        are_you_sure: Are you sure
+        cancel_my_account: Cancel my account
+        currently_waiting_confirmation_for_email: Currently waiting confirmation for
+          email
+        leave_blank_if_you_don_t_want_to_change_it: Leave blank if you don t want
+          to change it
+        title: Title
+        unhappy: Unhappy
+        update: Update
+        we_need_your_current_password_to_confirm_your_changes: We need your current
+          password to confirm your changes
+      new:
+        sign_up: Sign up
+    sessions:
+      new:
+        sign_in: Sign in
+    shared:
+      links:
+        back: Back
+        didn_t_receive_confirmation_instructions: Didn t receive confirmation instructions
+        didn_t_receive_unlock_instructions: Didn t receive unlock instructions
+        forgot_your_password: Forgot your password
+        sign_in: Sign in
+        sign_in_with_provider: Sign in with provider
+        sign_up: Sign up
+    unlocks:
+      new:
+        resend_unlock_instructions: Resend unlock instructions
   entries:
     edit:
-      title: "Update Entry"
-      show: "Show Entry"
-    new:
-      title: "New Entry"
-    show:
-      edit: "Edit"
-      delete_confirmation: "Are you sure you want to delete the entry?"
+      show: Show Entry
+      title: Update Entry
     index:
-      title: "My Entries"
-      title_other: "Other People's Entries"
-      actions: "Actions"
-      show: "Show"
-
-  transactions:
-    edit:
-      title: "Update Transaction"
-      show: "Show Transaction"
+      actions: Actions
+      show: Show
+      title: My Entries
+      title_other: Other People's Entries
     new:
-      title: "New Transaction"
+      title: New Entry
     show:
-      title:
-        proposed: "Proposed Transaction"
-        accepted: "Accepted Transaction"
-        removed: "Removed Transaction"
-        other: "Transaction"
-      accept: "Accept"
-      edit: "Edit"
-      remove: "Remove"
-      propose_again: "Propose Again"
-      delete_confirmation: "Are you sure you want to delete the transaction?"
-    index:
-      title:
-        proposed: "Proposed Transactions"
-        accepted: "Accepted Transactions"
-        removed: "Removed Transactions"
-      actions: "Actions"
-      accept: "Accept"
-      edit: "Edit"
-      other: "Not in inventory"
-      propose_again: "Propose Again"
-      propose_new: "Propose New Transaction"
-
+      delete_confirmation: Are you sure you want to delete the entry?
+      edit: Edit
+  hello: Hello world
   helpers:
     submit:
-      product:
-        create: "Add Product"
-        update: "Save Changes"
-        destroy: "Permanently Delete Product"
       entry:
-        create: "Add Entry"
-        update: "Save Changes"
-        destroy: "Permanently Delete Entry"
+        create: Add Entry
+        destroy: Permanently Delete Entry
+        update: Save Changes
+      product:
+        create: Add Product
+        destroy: Permanently Delete Product
+        update: Save Changes
       transaction:
-        create: "Add Transaction"
-        update: "Save Changes"
-        destroy: "Permanently Delete Transaction"
-
+        create: Add Transaction
+        destroy: Permanently Delete Transaction
+        update: Save Changes
+  pages:
+    home:
+      title_html: 'Change your life: <strong>Exchange Items</strong>'
+  products:
+    edit:
+      show: Show Product
+      title: Update Product
+    new:
+      title: New Product
+  shared:
+    navbar:
+      arabic: عربى
+      danish: Dansk
+      english: English
+      french: Français
+      home: Home
+      inventory: My inventory
+      japanese: 日本語
+      products: Products
+      profile: Profile
+      sign_in: Sign in
+      sign_out: Sign out
+      transactions: Transactions
   simple_form:
-    labels:
-      transaction:
-        wanted_product: "What do you want?"
-        wanted_product_quantity: "How many?"
-        proposed_product: "What can you exchange?"
-        proposed_product_quantity: "How many?"
-        address: "Address for the exchange"
     hints:
       transaction:
-        wanted_product: 'The product that you are interested in getting'
-        wanted_product_quantity: 'The quanity that you are interested in obtaining'
-        proposed_product: 'The product that you have'
-        proposed_product_quantity: 'The quanity that you are proposing'
-        address: "The place where the exchange can take place"
+        address: The place where the exchange can take place
+        proposed_product: The product that you have
+        proposed_product_quantity: The quanity that you are proposing
+        wanted_product: The product that you are interested in getting
+        wanted_product_quantity: The quanity that you are interested in obtaining
+    labels:
+      transaction:
+        address: Address for the exchange
+        proposed_product: What can you exchange?
+        proposed_product_quantity: How many?
+        wanted_product: What do you want?
+        wanted_product_quantity: How many?
     placeholders:
       product:
-        name: 'Product name'
+        name: Product name
       transaction:
-        address: 'Address of the transaction'
-
-
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+        address: Address of the transaction
+  transactions:
+    edit:
+      show: Show Transaction
+      title: Update Transaction
+    index:
+      accept: Accept
+      actions: Actions
+      edit: Edit
+      other: Not in inventory
+      propose_again: Propose Again
+      propose_new: Propose New Transaction
+      title:
+        accepted: Accepted Transactions
+        proposed: Proposed Transactions
+        removed: Removed Transactions
+    new:
+      title: New Transaction
+    show:
+      accept: Accept
+      delete_confirmation: Are you sure you want to delete the transaction?
+      edit: Edit
+      propose_again: Propose Again
+      remove: Remove
+      title:
+        accepted: Accepted Transaction
+        other: Transaction
+        proposed: Proposed Transaction
+        removed: Removed Transaction
