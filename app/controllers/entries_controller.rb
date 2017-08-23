@@ -24,8 +24,6 @@ class EntriesController < ApplicationController
   end
 
   # GET /entries/1/edit
-  def edit
-  end
 
   # POST /entries
   # POST /entries.json
@@ -49,19 +47,24 @@ class EntriesController < ApplicationController
     end
   end
 
+  def edit
+  end
   # PATCH/PUT /entries/1
   # PATCH/PUT /entries/1.json
   def update
-    respond_to do |format|
+   respond_to do |format|
       if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
+        byebug
+        format.html { redirect_to entries_path , notice: 'entry was successfully updated.' }
         format.json { render :show, status: :ok, location: @entry }
       else
         format.html { render :edit }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
     end
+
   end
+
 
   # DELETE /entries/1
   # DELETE /entries/1.json
