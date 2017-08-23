@@ -3,6 +3,14 @@ en:
   pages:
     home:
       title_html: "Change your life: <strong>Exchange Items</strong>"
+  shared:
+    navbar:
+      profile: "Profile"
+      home: "Home"
+      sign_out: "Sign out"
+      transactions: "Transactions"
+      inventory: "My inventory"
+      products: "Products"
 
   activerecord:
     models:
