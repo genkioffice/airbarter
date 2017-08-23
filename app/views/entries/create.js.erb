@@ -1,0 +1,3 @@
+<% if @entry.errors.any? %>
+  $('#new_entry').html("<%= j render 'entries/form' %>")
+<% end %>
