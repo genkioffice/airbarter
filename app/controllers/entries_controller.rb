@@ -7,6 +7,7 @@ class EntriesController < ApplicationController
     @entries = policy_scope(Entry)
     @my_entries = @entries.select{ |entry|  entry.user_id == current_user.id  }
     @other_entries = @entries.select{ |entry|  entry.user_id != current_user.id  }
+    @entry = Entry.new
   end
 
   # GET /entries/1
@@ -33,14 +34,16 @@ class EntriesController < ApplicationController
     @entry.user = current_user
     authorize @entry
 
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to entries_path, notice: 'Entry was successfully created.' }
-        format.json { render :show, status: :created, location: @entry }
+    if @entry.save
+      respond_to do |format|
+        format.html { redirect_to entry_path(@entry), notice: 'Entry was successfully created.' }
+        #format.json { render :show, status: :created, location: @entry }
         format.js
-      else
+      end
+    else
+      respond_to do |format|
         format.html { render :new }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
+        #format.json { render json: @entry.errors, status: :unprocessable_entity }
         format.js
       end
     end

@@ -10,21 +10,15 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="appended_table">
     <% @my_entries.each do |entry| %>
-      <tr>
-        <td style="text-align:right"><%= entry.quantity %></td>
-        <td><%= entry.product.name %></td>
-        <% if policy(entry).show? %>
-          <td style="text-align:center"><%= link_to t('.show'), entry, class: "btn btn-primary" %></td>
-        <% end %>
-      </tr>
+      <%= render 'index-element-table', entry: entry %>
     <% end %>
   </tbody>
 </table>
 
 <% if policy(Entry).new? %>
-  <%= link_to t('helpers.submit.entry.create'), new_entry_path, class: "btn btn-success" %>
+  <%= render 'form', entry: @entry %>
 <% end %>
 
 <br>

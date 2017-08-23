@@ -1,3 +1,12 @@
 <% if @entry.errors.any? %>
   $('#new_entry').html("<%= j render 'entries/form' %>")
+<% else %>
+  $('#appended_table').append(
+      "<%= j render 'index-element-table', entry: @entry %>"
+  )
+
+  $('#new_entry').html("<%= j render 'entries/form' %>")
+
 <% end %>
+
+
