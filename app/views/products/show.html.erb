@@ -3,5 +3,29 @@
   <strong><%= t('activerecord.attributes.product.name') %>:</strong>
   <%= @product.name %>
 </p>
+<p>
+  <strong><%= t('activerecord.attributes.product.name_ja') %>:</strong>
+  <%= @product.name_ja %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.product.name_da') %>:</strong>
+  <%= @product.name_da %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.product.name_ar') %>:</strong>
+  <%= @product.name_ar %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.product.name_fr') %>:</strong>
+  <%= @product.name_fr %>
+</p>
 
 <%= link_to t('activerecord.models.product.other'), products_path, class: "btn btn-success" %>
+
+<% if policy(@product).edit? %>
+  <%= link_to t('.edit'), edit_product_path(@product), class: "btn btn-primary" %>
+<% end %>
+
+<% if policy(@product).destroy? %>
+  <%= link_to t('helpers.submit.product.destroy'), @product, method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
+<% end %>

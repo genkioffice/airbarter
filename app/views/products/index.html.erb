@@ -5,13 +5,23 @@
     <thead>
       <tr>
         <th><%= t('activerecord.attributes.product.name') %></th>
+        <th><%= t('activerecord.attributes.product.name_ja') %></th>
+        <th><%= t('activerecord.attributes.product.name_da') %></th>
+        <th><%= t('activerecord.attributes.product.name_ar') %></th>
+        <th><%= t('activerecord.attributes.product.name_fr') %></th>
       </tr>
     </thead>
 
     <tbody>
       <% @products.each do |product| %>
         <tr>
-          <td><%= product.name %></td>
+          <% if policy(product).show? %>
+            <td style="text-align:center"><%= link_to product.name, product %></td>
+          <% end %>
+          <td><%= product.name_ja %></td>
+          <td><%= product.name_da %></td>
+          <td><%= product.name_ar %></td>
+          <td><%= product.name_fr %></td>
         </tr>
       <% end %>
     </tbody>

@@ -7,7 +7,11 @@ ar:
         quantity: كمية
         user: المستعمل
       product:
-        name: اسم
+        name: الاسم باللغة الإنجليزية
+        name_ar: عربى
+        name_da: دانماركي
+        name_fr: الفرنسية
+        name_ja: اليابانية
       transaction:
         accepted_by_user: مقبول من قبل المستخدم
         address: عنوان
@@ -126,6 +130,9 @@ ar:
       title: تحديث المنتج
     new:
       title: منتج جديد
+    show:
+      delete_confirmation: هل تريد بالتأكيد حذف المنتج؟
+      edit: تصحيح
   shared:
     navbar:
       arabic: عربى
