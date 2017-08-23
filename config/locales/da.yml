@@ -118,13 +118,15 @@ da:
     hints:
       transaction:
         wanted_product: 'Det du er interessered få i bytte'
-        wanted_product_quanity: 'Antal eller mængden af det forventer at få i bytte'
+        wanted_product_quantity: 'Antal eller mængden af det forventer at få i bytte'
         proposed_product: 'Det du er interessered give i bytte'
         proposed_product_quantity: 'Antal eller mængden af det forventer at give i bytte'
         address: "Stedet hvor byttehandlen kan finde sted"
     placeholders:
       product:
         name: 'Produkt navn'
+      transaction:
+        address: 'Adressen på transaktonen'
 
 
 # Files in the config/locales directory are used for internationalization

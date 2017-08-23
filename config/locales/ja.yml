@@ -118,13 +118,15 @@ ja:
     hints:
       transaction:
         wanted_product: 'The product that you are interested in getting'
-        wanted_product_quanity: 'The quanity that you are interested in obtaining'
+        wanted_product_quantity: 'The quanity that you are interested in obtaining'
         proposed_product: 'The product that you have'
         proposed_product_quantity: 'The quanity that you are proposing'
         address: "The place where the exchange can take place"
     placeholders:
       product:
         name: 'Product name'
+      transaction:
+        address: 'Address of the transaction'
 
 
 # Files in the config/locales directory are used for internationalization

@@ -3,6 +3,14 @@ ar:
   pages:
     home:
       title_html: "Change your life: <strong>Exchange Items</strong>"
+  shared:
+    navbar:
+      profile: "Profile"
+      home: "Home"
+      sign_out: "Sign out"
+      transactions: "Transactions"
+      inventory: "My inventory"
+      products: "Products"
 
   activerecord:
     models:
@@ -106,6 +114,19 @@ ar:
         wanted_product_quantity: "How many?"
         proposed_product: "What can you exchange?"
         proposed_product_quantity: "How many?"
+        address: "Address for the exchange"
+    hints:
+      transaction:
+        wanted_product: 'The product that you are interested in getting'
+        wanted_product_quantity: 'The quanity that you are interested in obtaining'
+        proposed_product: 'The product that you have'
+        proposed_product_quantity: 'The quanity that you are proposing'
+        address: "The place where the exchange can take place"
+    placeholders:
+      product:
+        name: 'Product name'
+      transaction:
+        address: 'Address of the transaction'
 
 
 # Files in the config/locales directory are used for internationalization
