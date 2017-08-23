@@ -31,65 +31,65 @@ da:
   devise:
     confirmations:
       new:
-        resend_confirmation_instructions: Resend confirmation instructions
+        resend_confirmation_instructions: Send bekræftelsesinstruktionerne igen
     mailer:
       confirmation_instructions:
-        action: Action
-        greeting: Greeting
-        instruction: Instruction
+        action: Handling
+        greeting: Hilsen
+        instruction: Instruktion
       password_change:
-        greeting: Greeting
-        message: Message
+        greeting: Hilsen
+        message: Besked
       reset_password_instructions:
-        action: Action
-        greeting: Greeting
-        instruction: Instruction
-        instruction_2: Instruction 2
-        instruction_3: Instruction 3
+        action: Handling
+        greeting: Hilsen
+        instruction: Instruktion
+        instruction_2: Instruktion 2
+        instruction_3: Instruktion 3
       unlock_instructions:
-        action: Action
-        greeting: Greeting
-        instruction: Instruction
-        message: Message
+        action: Handling
+        greeting: Hilsen
+        instruction: Instruktion
+        message: Besked
     passwords:
       edit:
-        change_my_password: Change my password
-        change_your_password: Change your password
-        confirm_new_password: Confirm new password
-        new_password: New password
+        change_my_password: Skift min adgangskode
+        change_your_password: skift dit kodeord
+        confirm_new_password: Bekræft ny adgangskode
+        new_password: Nyt kodeord
       new:
-        forgot_your_password: Forgot your password
-        send_me_reset_password_instructions: Send me reset password instructions
+        forgot_your_password: Glemt din adgangskode
+        send_me_reset_password_instructions: Send mig nulstil adgangskode instruktioner
     registrations:
       edit:
-        are_you_sure: Are you sure
-        cancel_my_account: Cancel my account
-        currently_waiting_confirmation_for_email: Currently waiting confirmation for
-          email
-        leave_blank_if_you_don_t_want_to_change_it: Leave blank if you don t want
-          to change it
-        title: Title
-        unhappy: Unhappy
-        update: Update
-        we_need_your_current_password_to_confirm_your_changes: We need your current
-          password to confirm your changes
+        are_you_sure: Er du sikker
+        cancel_my_account: Annuller min konto
+        currently_waiting_confirmation_for_email: I øjeblikket venter bekræftelse
+          på e-mail
+        leave_blank_if_you_don_t_want_to_change_it: Lad være tom, hvis du ikke vil
+          ændre den
+        title: Titel
+        unhappy: Ulykkelig
+        update: Opdatering
+        we_need_your_current_password_to_confirm_your_changes: Vi har brug for din
+          nuværende adgangskode for at bekræfte dine ændringer
       new:
-        sign_up: Sign up
+        sign_up: Tilmelde
     sessions:
       new:
-        sign_in: Sign in
+        sign_in: Log ind
     shared:
       links:
-        back: Back
-        didn_t_receive_confirmation_instructions: Didn t receive confirmation instructions
-        didn_t_receive_unlock_instructions: Didn t receive unlock instructions
-        forgot_your_password: Forgot your password
-        sign_in: Sign in
-        sign_in_with_provider: Sign in with provider
-        sign_up: Sign up
+        back: Tilbage
+        didn_t_receive_confirmation_instructions: Modtog ikke bekræftelsesinstruktioner
+        didn_t_receive_unlock_instructions: Modtog ikke oplåsningsinstruktioner
+        forgot_your_password: Glemt din adgangskode
+        sign_in: Log ind
+        sign_in_with_provider: Log ind hos udbyderen
+        sign_up: Tilmelde
     unlocks:
       new:
-        resend_unlock_instructions: Resend unlock instructions
+        resend_unlock_instructions: Videresend låseinstruktionerne igen
   entries:
     edit:
       show: Vis lagerpost
@@ -130,11 +130,13 @@ da:
       title: Nyt produkt
   shared:
     navbar:
+      arabic: Arabisk
       danish: Danish
-      english: English
+      english: Engelsk
+      french: Fransk
       home: Hjem
       inventory: Mit lager
-      japanese: Japanese
+      japanese: Japansk
       products: Produkter
       profile: Profil
       sign_in: Sign in

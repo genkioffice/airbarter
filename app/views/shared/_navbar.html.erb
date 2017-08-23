@@ -36,6 +36,16 @@
                 <i class="fa fa-language"></i> <%= t(".danish", default: "Danish") %>
               <% end %>
             </li>
+            <li>
+              <%= link_to root_path(locale: "ar") do %>
+                <i class="fa fa-language"></i> <%= t(".arabic", default: "Arabic") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to root_path(locale: "fr") do %>
+                <i class="fa fa-language"></i> <%= t(".french", default: "French") %>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
@@ -80,6 +90,8 @@
         <li><%= link_to t(".english", default: "English"), root_path(locale: "en"), class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to t(".japanese", default: "Japanese"), root_path(locale: "ja"), class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to t(".danish", default: "Danish"), root_path(locale: "da"), class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".arabic", default: "Arabic"), root_path(locale: "da"), class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".french", default: "French"), root_path(locale: "da"), class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>

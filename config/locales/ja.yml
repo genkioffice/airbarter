@@ -3,188 +3,187 @@ ja:
   activerecord:
     attributes:
       entry:
-        product: Product
-        quantity: Quantity
-        user: User
+        product: 製品
+        quantity: 量
+        user: ユーザー
       product:
-        name: Name
+        name: 名
       transaction:
-        accepted_by_user: Accepted by User
-        address: Address
-        photos: Photos
-        proposed_by_user: Proposed by User
-        proposed_product: Proposed Product
-        proposed_product_quantity: Proposed Quantity
-        status: Status
-        wanted_product: Wanted Product
-        wanted_product_quantity: Wanted Quantity
+        accepted_by_user: ユーザーが受け入れる
+        address: 住所
+        photos: 写真
+        proposed_by_user: ユーザ提案者
+        proposed_product: 提案製品
+        proposed_product_quantity: 提案数量
+        status: 状態
+        wanted_product: 募集製品
+        wanted_product_quantity: 募集数量
     models:
       entry:
-        one: Entry
-        other: Entries
+        one: エントリ
+        other: エントリー
       product:
-        one: Product
-        other: Products
+        one: 製品
+        other: 製品
       transaction:
-        one: Transaction
-        other: Transactions
+        one: トランザクション
+        other: トランザクション
   devise:
     confirmations:
       new:
-        resend_confirmation_instructions: Resend confirmation instructions
+        resend_confirmation_instructions: 確認の指示を再送信
     mailer:
       confirmation_instructions:
-        action: Action
-        greeting: Greeting
-        instruction: Instruction
+        action: アクション
+        greeting: 挨拶
+        instruction: 命令
       password_change:
-        greeting: Greeting
-        message: Message
+        greeting: 挨拶
+        message: メッセージ
       reset_password_instructions:
-        action: Action
-        greeting: Greeting
-        instruction: Instruction
-        instruction_2: Instruction 2
-        instruction_3: Instruction 3
+        action: アクション
+        greeting: 挨拶
+        instruction: 命令
+        instruction_2: 指示2
+        instruction_3: 指示3
       unlock_instructions:
-        action: Action
-        greeting: Greeting
-        instruction: Instruction
-        message: Message
+        action: アクション
+        greeting: 挨拶
+        instruction: 命令
+        message: メッセージ
     passwords:
       edit:
-        change_my_password: Change my password
-        change_your_password: Change your password
-        confirm_new_password: Confirm new password
-        new_password: New password
+        change_my_password: パスワードを変更する
+        change_your_password: パスワードを変更してください
+        confirm_new_password: 新しいパスワードを確認
+        new_password: 新しいパスワード
       new:
-        forgot_your_password: Forgot your password
-        send_me_reset_password_instructions: Send me reset password instructions
+        forgot_your_password: パスワードをお忘れですか
+        send_me_reset_password_instructions: 私にリセットパスワードの指示を送ってください
     registrations:
       edit:
-        are_you_sure: Are you sure
-        cancel_my_account: Cancel my account
-        currently_waiting_confirmation_for_email: Currently waiting confirmation for
-          email
-        leave_blank_if_you_don_t_want_to_change_it: Leave blank if you don t want
-          to change it
-        title: Title
-        unhappy: Unhappy
-        update: Update
-        we_need_your_current_password_to_confirm_your_changes: We need your current
-          password to confirm your changes
+        are_you_sure: 本気ですか
+        cancel_my_account: アカウントをキャンセルする
+        currently_waiting_confirmation_for_email: 現在メールの確認を待っています
+        leave_blank_if_you_don_t_want_to_change_it: 変更したくない場合は空白のままにしてください
+        title: タイトル
+        unhappy: 不幸
+        update: 更新
+        we_need_your_current_password_to_confirm_your_changes: 変更を確認するには、現在のパスワードが必要です
       new:
-        sign_up: Sign up
+        sign_up: サインアップ
     sessions:
       new:
-        sign_in: Sign in
+        sign_in: サインイン
     shared:
       links:
-        back: Back
-        didn_t_receive_confirmation_instructions: Didn t receive confirmation instructions
-        didn_t_receive_unlock_instructions: Didn t receive unlock instructions
-        forgot_your_password: Forgot your password
-        sign_in: Sign in
-        sign_in_with_provider: Sign in with provider
-        sign_up: Sign up
+        back: バック
+        didn_t_receive_confirmation_instructions: 確認の指示を受け取りませんでした
+        didn_t_receive_unlock_instructions: ロック解除の指示を受け取りませんでした
+        forgot_your_password: パスワードをお忘れですか
+        sign_in: サインイン
+        sign_in_with_provider: プロバイダにサインインする
+        sign_up: サインアップ
     unlocks:
       new:
-        resend_unlock_instructions: Resend unlock instructions
+        resend_unlock_instructions: ロック解除の指示を再送する
   entries:
     edit:
-      show: Show Entry
-      title: Update Entry
+      show: エントリーを表示する
+      title: エントリを更新する
     index:
-      actions: Actions
-      show: Show
-      title: My Entries
-      title_other: Other People's Entries
+      actions: 行動
+      show: ショー
+      title: 私のエントリー
+      title_other: 他の人のエントリ
     new:
-      title: New Entry
+      title: 新規エントリー
     show:
-      delete_confirmation: Are you sure you want to delete the entry?
-      edit: Edit
-  hello: Hello world
+      delete_confirmation: 本当にエントリを削除してもよろしいですか？
+      edit: 編集
+  hello: こんにちは世界
   helpers:
     submit:
       entry:
-        create: Add Entry
-        destroy: Permanently Delete Entry
-        update: Save Changes
+        create: エントリを追加
+        destroy: エントリを永久に削除する
+        update: 変更内容を保存
       product:
-        create: Add Product
-        destroy: Permanently Delete Product
-        update: Save Changes
+        create: 製品を追加
+        destroy: 永久に製品を削除する
+        update: 変更内容を保存
       transaction:
-        create: Add Transaction
-        destroy: Permanently Delete Transaction
-        update: Save Changes
+        create: トランザクションの追加
+        destroy: トランザクションを永久に削除する
+        update: 変更内容を保存
   pages:
     home:
-      title_html: あなたの人生を変える：<strong>交換アイテム</strong>
+      title_html: あなたの人生を変える： <strong>交換アイテム</strong>
   products:
     edit:
-      show: Show Product
-      title: Update Product
+      show: 商品を表示する
+      title: 製品の更新
     new:
-      title: New Product
+      title: 新製品
   shared:
     navbar:
-      danish: Danish
-      english: English
-      home: Home
-      inventory: My inventory
-      japanese: Japanese
-      products: Products
-      profile: Profile
-      sign_in: Sign in
-      sign_out: Sign out
-      transactions: Transactions
+      arabic: アラビア語
+      danish: デンマーク語
+      english: 英語
+      french: フランス語
+      home: ホーム
+      inventory: 私の目録
+      japanese: 日本語
+      products: 製品
+      profile: プロフィール
+      sign_in: サインイン
+      sign_out: サインアウト
+      transactions: トランザクション
   simple_form:
     hints:
       transaction:
-        address: The place where the exchange can take place
-        proposed_product: The product that you have
-        proposed_product_quantity: The quanity that you are proposing
-        wanted_product: The product that you are interested in getting
-        wanted_product_quantity: The quanity that you are interested in obtaining
+        address: 交換ができる場所
+        proposed_product: あなたが持っている製品
+        proposed_product_quantity: あなたが提案している疑問
+        wanted_product: あなたが興味を持っている製品
+        wanted_product_quantity: あなたが得ることに興味があるquanity
     labels:
       transaction:
-        address: Address for the exchange
-        proposed_product: What can you exchange?
-        proposed_product_quantity: How many?
-        wanted_product: What do you want?
-        wanted_product_quantity: How many?
+        address: 交換のための住所
+        proposed_product: 何を交換できますか？
+        proposed_product_quantity: 幾つ？
+        wanted_product: なんでしょう？
+        wanted_product_quantity: 幾つ？
     placeholders:
       product:
-        name: Product name
+        name: 商品名
       transaction:
-        address: Address of the transaction
+        address: 取引の住所
   transactions:
     edit:
-      show: Show Transaction
-      title: Update Transaction
+      show: 取引を表示する
+      title: トランザクションの更新
     index:
-      accept: Accept
-      actions: Actions
-      edit: Edit
-      other: Not in inventory
-      propose_again: Propose Again
-      propose_new: Propose New Transaction
+      accept: 同意する
+      actions: 行動
+      edit: 編集
+      other: 在庫なし
+      propose_again: もう一度提案する
+      propose_new: 新しい取引を提案する
       title:
-        accepted: Accepted Transactions
-        proposed: Proposed Transactions
-        removed: Removed Transactions
+        accepted: 受け入れられたトランザクション
+        proposed: 提案された取引
+        removed: 削除されたトランザクション
     new:
-      title: New Transaction
+      title: 新規取引
     show:
-      accept: Accept
-      delete_confirmation: Are you sure you want to delete the transaction?
-      edit: Edit
-      propose_again: Propose Again
-      remove: Remove
+      accept: 同意する
+      delete_confirmation: トランザクションを削除してもよろしいですか？
+      edit: 編集
+      propose_again: もう一度提案する
+      remove: 削除する
       title:
-        accepted: Accepted Transaction
-        other: Transaction
-        proposed: Proposed Transaction
-        removed: Removed Transaction
+        accepted: 受け入れられた取引
+        other: トランザクション
+        proposed: 提案された取引
+        removed: 削除されたトランザクション
