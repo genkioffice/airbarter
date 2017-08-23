@@ -2,9 +2,30 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :wanted_product %>
+    <% if I18n.locale == :ja %>
+      <%= f.association :wanted_product, label_method: :name_ja %>
+    <% elsif I18n.locale == :da %>
+      <%= f.association :wanted_product, label_method: :name_da %>
+    <% elsif I18n.locale == :ar %>
+      <%= f.association :wanted_product, label_method: :name_ar %>
+    <% elsif I18n.locale == :fr %>
+      <%= f.association :wanted_product, label_method: :name_fr %>
+    <% else %>
+      <%= f.association :wanted_product %>
+    <% end %>
     <%= f.input :wanted_product_quantity, collection: (1..10) %>
-    <%= f.association :proposed_product %>
+    <% if I18n.locale == :ja %>
+      <%= f.association :proposed_product, label_method: :name_ja %>
+    <% elsif I18n.locale == :da %>
+      <%= f.association :proposed_product, label_method: :name_da %>
+    <% elsif I18n.locale == :ar %>
+      <%= f.association :proposed_product, label_method: :name_ar %>
+    <% elsif I18n.locale == :fr %>
+      <%= f.association :proposed_product, label_method: :name_fr %>
+    <% else %>
+      <%= f.association :proposed_product %>
+    <% end %>
+
     <%= f.input :proposed_product_quantity, collection: (1..10) %>
     <%= f.input :address %>
     <%= f.input :photos, as: :attachinary %>
