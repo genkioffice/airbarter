@@ -137,9 +137,9 @@ fr:
       home: Accueil
       inventory: Mon inventaire
       japanese: 日本語
-      products: Des produits
+      products: Produits
       profile: Profil
-      sign_in: se connecter
+      sign_in: Se connecter
       sign_out: Déconnexion
       transactions: Transactions
   simple_form:
