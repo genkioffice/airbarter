@@ -3,7 +3,17 @@
 
 
   <div class="form-inputs">
-    <%= f.association :product %>
+    <% if I18n.locale == :ja %>
+      <%= f.association :product, label_method: :name_ja %>
+    <% elsif I18n.locale == :da %>
+      <%= f.association :product, label_method: :name_da %>
+    <% elsif I18n.locale == :ar %>
+      <%= f.association :product, label_method: :name_ar %>
+    <% elsif I18n.locale == :fr %>
+      <%= f.association :product, label_method: :name_fr %>
+    <% else %>
+      <%= f.association :product %>
+    <% end %>
     <%= f.input :quantity, collection: (1..10) %>
   </div>
 

@@ -26,6 +26,9 @@ gem 'pundit'
 # for translating Authentication
 gem 'devise-i18n', '~> 1.2'
 
+# for Google Translate
+gem 'easy_translate'
+
 # for facebook login
 gem 'omniauth-facebook'
 gem 'geocoder'

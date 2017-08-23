@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.translate_name!
     authorize @product
 
     respond_to do |format|
@@ -72,6 +73,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name)
+      params.require(:product).permit(:name, :name_ja, :name_da, :name_ar, :name_fr)
     end
 end

@@ -7,7 +7,11 @@ da:
         quantity: Antal
         user: Bruger
       product:
-        name: Navn
+        name: Navn på Engelsk
+        name_ar: Arabisk
+        name_da: Dansk
+        name_fr: Fransk
+        name_ja: Japansk
       transaction:
         accepted_by_user: Accepteret af bruger
         address: Adresse
@@ -128,6 +132,9 @@ da:
       title: Opdater produkt
     new:
       title: Nyt produkt
+    show:
+      delete_confirmation: Er du sikker på, at du vil slette produktet?
+      edit: Ret
   shared:
     navbar:
       arabic: عربى

@@ -4,18 +4,29 @@ Entry.destroy_all
 Transaction.destroy_all
 
 product1 = Product.create!(name: "Adult Cows")
+product1.translate_name!
 product2 = Product.create!(name: "Young calfs")
+product2.translate_name!
 product3 = Product.create!(name: "Pigs")
+product3.translate_name!
 product4 = Product.create!(name: "Goats")
+product4.translate_name!
 product5 = Product.create!(name: "Sheep")
+product5.translate_name!
 product6 = Product.create!(name: "Hens")
+product6.translate_name!
 product7 = Product.create!(name: "Bushels")
-Product.create!(name: "Carrots")
-Product.create!(name: "Tomatoes")
-Product.create!(name: "Potatoes")
-Product.create!(name: "Beans")
-Product.create!(name: "Euros")
-Product.create!(name: "Bitcoin")
+product7.translate_name!
+product8 = Product.create!(name: "Carrots")
+product8.translate_name!
+product9 = Product.create!(name: "Tomatoes")
+product9.translate_name!
+product10 = Product.create!(name: "Potatoes")
+product10.translate_name!
+product11 = Product.create!(name: "Beans")
+product11.translate_name!
+product12 = Product.create!(name: "Euros")
+product12.translate_name!
 
 user1 = User.create!(email: "contact@gooddeal.com", password: "123456", first_name:"Abrar")
 user1 = User.create!(email: "contact@verygooddeal.com", password: "123456", first_name:"Shannon")

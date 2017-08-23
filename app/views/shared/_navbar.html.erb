@@ -22,27 +22,27 @@
         <a href="#" class="dropdown-toggle navbar-wagon-link" id="navbar-wagon-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-language" style="font-size: 24px"></i><span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to root_path(locale: "en") do %>
+              <%= link_to new_current_path("en", request.fullpath) do %>
                 <i class="fa fa-language"></i> <%= t(".english", default: "English") %>
               <% end %>
             </li>
             <li>
-              <%= link_to root_path(locale: "ja") do %>
+              <%= link_to new_current_path("ja", request.fullpath) do %>
                 <i class="fa fa-language"></i> <%= t(".japanese", default: "Japanese") %>
               <% end %>
             </li>
             <li>
-              <%= link_to root_path(locale: "da") do %>
+              <%= link_to new_current_path("da", request.fullpath) do %>
                 <i class="fa fa-language"></i> <%= t(".danish", default: "Danish") %>
               <% end %>
             </li>
             <li>
-              <%= link_to root_path(locale: "ar") do %>
+              <%= link_to new_current_path("ar", request.fullpath) do %>
                 <i class="fa fa-language"></i> <%= t(".arabic", default: "Arabic") %>
               <% end %>
             </li>
             <li>
-              <%= link_to root_path(locale: "fr") do %>
+              <%= link_to new_current_path("fr", request.fullpath) do %>
                 <i class="fa fa-language"></i> <%= t(".french", default: "French") %>
               <% end %>
             </li>
@@ -75,6 +75,39 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+
+        <a href="#" class="dropdown-toggle navbar-wagon-link" id="navbar-wagon-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-language" style="font-size: 24px"></i><span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to new_current_path("en", request.fullpath) do %>
+                <i class="fa fa-language"></i> <%= t(".english", default: "English") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_current_path("ja", request.fullpath) do %>
+                <i class="fa fa-language"></i> <%= t(".japanese", default: "Japanese") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_current_path("da", request.fullpath) do %>
+                <i class="fa fa-language"></i> <%= t(".danish", default: "Danish") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_current_path("ar", request.fullpath) do %>
+                <i class="fa fa-language"></i> <%= t(".arabic", default: "Arabic") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_current_path("fr", request.fullpath) do %>
+                <i class="fa fa-language"></i> <%= t(".french", default: "French") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
@@ -87,11 +120,11 @@
         <li><%= link_to t(".transactions", default: "Transactions"), transactions_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to t(".inventory", default: "My Inventory"), entries_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to t(".products", default: "Products"), products_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to t(".english", default: "English"), root_path(locale: "en"), class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to t(".japanese", default: "Japanese"), root_path(locale: "ja"), class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to t(".danish", default: "Danish"), root_path(locale: "da"), class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to t(".arabic", default: "Arabic"), root_path(locale: "ar"), class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to t(".french", default: "French"), root_path(locale: "fr"), class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".english", default: "English"), new_current_path("en", request.fullpath), class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".japanese", default: "Japanese"), new_current_path("ja", request.fullpath), class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".danish", default: "Danish"), new_current_path("da", request.fullpath), class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".arabic", default: "Arabic"), new_current_path("ar", request.fullpath), class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".french", default: "French"), new_current_path("fr", request.fullpath), class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
