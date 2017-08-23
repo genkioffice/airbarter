@@ -1,161 +1,190 @@
+---
 ar:
-  hello: "Hello world"
-  pages:
-    home:
-      title_html: "Change your life: <strong>Exchange Items</strong>"
-  shared:
-    navbar:
-      profile: "Profile"
-      home: "Home"
-      sign_out: "Sign out"
-      transactions: "Transactions"
-      inventory: "My inventory"
-      products: "Products"
-
   activerecord:
-    models:
-      product:
-        one: "Product"
-        other: "Products"
-      entry:
-        one: "Entry"
-        other: "Entries"
-      transaction:
-        one: "Transaction"
-        other: "Transactions"
     attributes:
-      product:
-        name: "Name"
       entry:
-        quantity: "Quantity"
-        product: "Product"
-        user: "User"
+        product: المنتج
+        quantity: كمية
+        user: المستعمل
+      product:
+        name: اسم
       transaction:
-        proposed_product: "Proposed Product"
-        proposed_product_quantity: "Proposed Quantity"
-        proposed_by_user: "Proposed by User"
-        wanted_product: "Wanted Product"
-        wanted_product_quantity: "Wanted Quantity"
-        accepted_by_user: "Accepted by User"
-        status: "Status"
-        address: "Address"
-        photos: "Photos"
-
-  products:
-    edit:
-      title: "Update Product"
-      show: "Show Product"
-    new:
-      title: "New Product"
-
+        accepted_by_user: مقبول من قبل المستخدم
+        address: عنوان
+        photos: الصور
+        proposed_by_user: المقترح من قبل المستخدم
+        proposed_product: المنتج المقترح
+        proposed_product_quantity: الكمية المقترحة
+        status: الحالة
+        wanted_product: مطلوب المنتج
+        wanted_product_quantity: الكمية المطلوبة
+    models:
+      entry:
+        one: دخول
+        other: مقالات
+      product:
+        one: المنتج
+        other: منتجات
+      transaction:
+        one: عملية تجارية
+        other: المعاملات
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: أعد إرسال تعليمات التأكيد
+    mailer:
+      confirmation_instructions:
+        action: عمل
+        greeting: تحية
+        instruction: تعليمات
+      password_change:
+        greeting: تحية
+        message: رسالة
+      reset_password_instructions:
+        action: عمل
+        greeting: تحية
+        instruction: تعليمات
+        instruction_2: التعليمات 2
+        instruction_3: التعليمات 3
+      unlock_instructions:
+        action: عمل
+        greeting: تحية
+        instruction: تعليمات
+        message: رسالة
+    passwords:
+      edit:
+        change_my_password: تغيير كلمة المرور الخاصة بي
+        change_your_password: غير كلمة المرور الخاصة بك
+        confirm_new_password: تأكيد كلمة المرور الجديدة
+        new_password: كلمة السر الجديدة
+      new:
+        forgot_your_password: نسيت رقمك السري
+        send_me_reset_password_instructions: أرسل لي تعليمات إعادة تعيين كلمة المرور
+    registrations:
+      edit:
+        are_you_sure: هل أنت واثق
+        cancel_my_account: إلغاء حسابي
+        currently_waiting_confirmation_for_email: تنتظر حاليا تأكيد البريد الإلكتروني
+        leave_blank_if_you_don_t_want_to_change_it: اتركه فارغا إذا كنت لا تريد تغييره
+        title: عنوان
+        unhappy: تعيس
+        update: تحديث
+        we_need_your_current_password_to_confirm_your_changes: نحتاج إلى كلمة المرور
+          الحالية لتأكيد التغييرات التي أجريتها
+      new:
+        sign_up: سجل
+    sessions:
+      new:
+        sign_in: تسجيل الدخول
+    shared:
+      links:
+        back: الى الخلف
+        didn_t_receive_confirmation_instructions: لم تتلقى تعليمات التأكيد
+        didn_t_receive_unlock_instructions: لم تحصل على تعليمات فتح
+        forgot_your_password: نسيت رقمك السري
+        sign_in: تسجيل الدخول
+        sign_in_with_provider: تسجيل الدخول مع مزود
+        sign_up: سجل
+    unlocks:
+      new:
+        resend_unlock_instructions: أعد إرسال إرشادات إلغاء القفل
   entries:
     edit:
-      title: "Update Entry"
-      show: "Show Entry"
-    new:
-      title: "New Entry"
-    show:
-      edit: "Edit"
-      delete_confirmation: "Are you sure you want to delete the entry?"
+      show: إظهار الدخول
+      title: تحديث الإدخال
     index:
-      title: "My Entries"
-      title_other: "Other People's Entries"
-      actions: "Actions"
-      show: "Show"
-
-  transactions:
-    edit:
-      title: "Update Transaction"
-      show: "Show Transaction"
+      actions: أفعال
+      show: تبين
+      title: مقالاتي
+      title_other: إدخالات الأشخاص الآخرين
     new:
-      title: "New Transaction"
+      title: دخول جديد
     show:
-      title:
-        proposed: "Proposed Transaction"
-        accepted: "Accepted Transaction"
-        removed: "Removed Transaction"
-        other: "Transaction"
-      accept: "Accept"
-      edit: "Edit"
-      remove: "Remove"
-      propose_again: "Propose Again"
-      delete_confirmation: "Are you sure you want to delete the transaction?"
-    index:
-      title:
-        proposed: "Proposed Transactions"
-        accepted: "Accepted Transactions"
-        removed: "Removed Transactions"
-      actions: "Actions"
-      accept: "Accept"
-      edit: "Edit"
-      other: "Not in inventory"
-      propose_again: "Propose Again"
-      propose_new: "Propose New Transaction"
-
+      delete_confirmation: هل تريد بالتأكيد حذف الإدخال؟
+      edit: تصحيح
+  hello: مرحبا بالعالم
   helpers:
     submit:
-      product:
-        create: "Add Product"
-        update: "Save Changes"
-        destroy: "Permanently Delete Product"
       entry:
-        create: "Add Entry"
-        update: "Save Changes"
-        destroy: "Permanently Delete Entry"
+        create: إضافة إدخال
+        destroy: حذف الإدخال نهائيا
+        update: حفظ التغييرات
+      product:
+        create: إضافة منتج
+        destroy: حذف المنتج نهائيا
+        update: حفظ التغييرات
       transaction:
-        create: "Add Transaction"
-        update: "Save Changes"
-        destroy: "Permanently Delete Transaction"
-
+        create: إضافة معاملة
+        destroy: حذف المعاملة نهائيا
+        update: حفظ التغييرات
+  pages:
+    home:
+      title_html: 'تغيير حياتك: <strong>عناصر الصرف</strong>'
+  products:
+    edit:
+      show: عرض المنتج
+      title: تحديث المنتج
+    new:
+      title: منتج جديد
+  shared:
+    navbar:
+      arabic: عربى
+      danish: Dansk
+      english: English
+      french: Français
+      home: الصفحة الرئيسية
+      inventory: بلدي المخزون
+      japanese: 日本語
+      products: منتجات
+      profile: الملف الشخصي
+      sign_in: تسجيل الدخول
+      sign_out: خروج
+      transactions: المعاملات
   simple_form:
-    labels:
-      transaction:
-        wanted_product: "What do you want?"
-        wanted_product_quantity: "How many?"
-        proposed_product: "What can you exchange?"
-        proposed_product_quantity: "How many?"
-        address: "Address for the exchange"
     hints:
       transaction:
-        wanted_product: 'The product that you are interested in getting'
-        wanted_product_quantity: 'The quanity that you are interested in obtaining'
-        proposed_product: 'The product that you have'
-        proposed_product_quantity: 'The quanity that you are proposing'
-        address: "The place where the exchange can take place"
+        address: المكان الذي يمكن أن يحدث التبادل
+        proposed_product: المنتج الذي لديك
+        proposed_product_quantity: كوانيتي أن كنت تقترح
+        wanted_product: المنتج الذي كنت مهتما في الحصول على
+        wanted_product_quantity: كوانيتي التي كنت ترغب في الحصول عليها
+    labels:
+      transaction:
+        address: عنوان للتبادل
+        proposed_product: ماذا يمكنك تبادل؟
+        proposed_product_quantity: كم العدد؟
+        wanted_product: ماذا تريد؟
+        wanted_product_quantity: كم العدد؟
     placeholders:
       product:
-        name: 'Product name'
+        name: اسم المنتج
       transaction:
-        address: 'Address of the transaction'
-
-
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+        address: عنوان المعاملة
+  transactions:
+    edit:
+      show: إظهار المعاملة
+      title: تحديث المعاملة
+    index:
+      accept: قبول
+      actions: أفعال
+      edit: تصحيح
+      other: ليس في المخزون
+      propose_again: اقترح مرة أخرى
+      propose_new: اقتراح معاملة جديدة
+      title:
+        accepted: المعاملات المقبولة
+        proposed: المعاملات المقترحة
+        removed: تمت إزالة المعاملات
+    new:
+      title: عملية جديدة
+    show:
+      accept: قبول
+      delete_confirmation: هل تريد بالتأكيد حذف المعاملة؟
+      edit: تصحيح
+      propose_again: اقترح مرة أخرى
+      remove: إزالة
+      title:
+        accepted: المعاملة المقبولة
+        other: عملية تجارية
+        proposed: الصفقة المقترحة
+        removed: تمت إزالة المعاملة

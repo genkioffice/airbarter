@@ -1,0 +1,192 @@
+---
+fr:
+  activerecord:
+    attributes:
+      entry:
+        product: Produit
+        quantity: Quantité
+        user: Utilisateur
+      product:
+        name: Nom
+      transaction:
+        accepted_by_user: Accepté par l'utilisateur
+        address: Adresse
+        photos: Photos
+        proposed_by_user: Proposé par l'utilisateur
+        proposed_product: Produit proposé
+        proposed_product_quantity: Quantité proposée
+        status: Statut
+        wanted_product: Produit recherché
+        wanted_product_quantity: Quantité recherchée
+    models:
+      entry:
+        one: Entrée
+        other: Entrées
+      product:
+        one: Produit
+        other: Produits
+      transaction:
+        one: Transaction
+        other: Transactions
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: Renvoyer les instructions de confirmation
+    mailer:
+      confirmation_instructions:
+        action: Action
+        greeting: Salutation
+        instruction: Instruction
+      password_change:
+        greeting: Salutation
+        message: Message
+      reset_password_instructions:
+        action: Action
+        greeting: Salutation
+        instruction: Instruction
+        instruction_2: Instruction 2
+        instruction_3: Instruction 3
+      unlock_instructions:
+        action: Action
+        greeting: Salutation
+        instruction: Instruction
+        message: Message
+    passwords:
+      edit:
+        change_my_password: Changer mon mot de passe
+        change_your_password: changez votre mot de passe
+        confirm_new_password: Confirmer le nouveau mot de passe
+        new_password: Nouveau mot de passe
+      new:
+        forgot_your_password: Mot de passe oublié
+        send_me_reset_password_instructions: Envoyez-moi des instructions de réinitialisation
+    registrations:
+      edit:
+        are_you_sure: Êtes-vous sûr
+        cancel_my_account: Annuler mon compte
+        currently_waiting_confirmation_for_email: En attente de confirmation pour
+          le courrier électronique
+        leave_blank_if_you_don_t_want_to_change_it: Laissez vide si vous ne voulez
+          pas le changer
+        title: Titre
+        unhappy: Malheureux
+        update: Mettre à jour
+        we_need_your_current_password_to_confirm_your_changes: Nous avons besoin de
+          votre mot de passe actuel pour confirmer vos changements
+      new:
+        sign_up: S'inscrire
+    sessions:
+      new:
+        sign_in: Se connecter
+    shared:
+      links:
+        back: Arrière
+        didn_t_receive_confirmation_instructions: N'a pas reçu d'instructions de confirmation
+        didn_t_receive_unlock_instructions: Je n'ai pas reçu d'instructions de déverrouillage
+        forgot_your_password: Mot de passe oublié
+        sign_in: Se connecter
+        sign_in_with_provider: Connectez-vous avec le fournisseur
+        sign_up: S'inscrire
+    unlocks:
+      new:
+        resend_unlock_instructions: Renvoyer les instructions de déverrouillage
+  entries:
+    edit:
+      show: Afficher l'entrée
+      title: Mise à jour de l'entrée
+    index:
+      actions: Actions
+      show: Afficher
+      title: Mes entrées
+      title_other: Autres entrées de personnes
+    new:
+      title: Nouvelle entrée
+    show:
+      delete_confirmation: Êtes-vous sûr de vouloir supprimer l'entrée?
+      edit: Modifier
+  hello: Bonjour le monde
+  helpers:
+    submit:
+      entry:
+        create: Ajouter une entrée
+        destroy: Supprimer définitivement l'entrée
+        update: Sauvegarder les modifications
+      product:
+        create: Ajouter un produit
+        destroy: Supprimer définitivement le produit
+        update: Sauvegarder les modifications
+      transaction:
+        create: Ajouter une transaction
+        destroy: Supprimer définitivement la transaction
+        update: Sauvegarder les modifications
+  pages:
+    home:
+      title_html: 'Changez votre vie : <strong>Échangez des objets</strong>'
+  products:
+    edit:
+      show: Afficher le produit
+      title: Mettre à jour le produit
+    new:
+      title: Nouveau produit
+  shared:
+    navbar:
+      arabic: عربى
+      danish: Dansk
+      english: English
+      french: Français
+      home: Accueil
+      inventory: Mon inventaire
+      japanese: 日本語
+      products: Produits
+      profile: Profil
+      sign_in: Se connecter
+      sign_out: Déconnexion
+      transactions: Transactions
+  simple_form:
+    hints:
+      transaction:
+        address: L'endroit où l'échange peut avoir lieu
+        proposed_product: Le produit que vous avez
+        proposed_product_quantity: La quantaine que vous proposez
+        wanted_product: Le produit que vous souhaitez obtenir
+        wanted_product_quantity: La quantaine que vous souhaitez obtenir
+    labels:
+      transaction:
+        address: Adresse pour l'échange
+        proposed_product: Que pouvez-vous échanger?
+        proposed_product_quantity: Combien?
+        wanted_product: Qu'est-ce que tu veux?
+        wanted_product_quantity: Combien?
+    placeholders:
+      product:
+        name: Nom du produit
+      transaction:
+        address: Adresse de la transaction
+  transactions:
+    edit:
+      show: Afficher la transaction
+      title: Mettre à jour la transaction
+    index:
+      accept: Acceptez
+      actions: Actions
+      edit: Modifier
+      other: Pas en inventaire
+      propose_again: Proposer de nouveau
+      propose_new: Proposer une nouvelle transaction
+      title:
+        accepted: Transactions acceptées
+        proposed: Transactions proposées
+        removed: Transactions supprimées
+    new:
+      title: Nouvelle transaction
+    show:
+      accept: Acceptez
+      delete_confirmation: Êtes-vous sûr de vouloir supprimer la transaction?
+      edit: Modifier
+      propose_again: Proposer de nouveau
+      remove: Retirer
+      title:
+        accepted: Transaction acceptée
+        other: Transaction
+        proposed: Transaction proposée
+        removed: Transaction supprimée
