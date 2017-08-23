@@ -130,13 +130,13 @@ da:
       title: Nyt produkt
   shared:
     navbar:
-      arabic: Arabisk
-      danish: Danish
-      english: Engelsk
-      french: Fransk
+      arabic: عربى
+      danish: Dansk
+      english: English
+      french: Français
       home: Hjem
       inventory: Mit lager
-      japanese: Japansk
+      japanese: 日本語
       products: Produkter
       profile: Profil
       sign_in: Sign in

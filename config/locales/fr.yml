@@ -130,13 +130,13 @@ fr:
       title: Nouveau produit
   shared:
     navbar:
-      arabic: Arabe
-      danish: Danois
-      english: Anglais
+      arabic: عربى
+      danish: Dansk
+      english: English
       french: Français
       home: Accueil
       inventory: Mon inventaire
-      japanese: Japonais
+      japanese: 日本語
       products: Des produits
       profile: Profil
       sign_in: se connecter

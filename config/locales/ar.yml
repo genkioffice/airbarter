@@ -129,12 +129,12 @@ ar:
   shared:
     navbar:
       arabic: عربى
-      danish: دانماركي
-      english: الإنجليزية
-      french: الفرنسية
+      danish: Dansk
+      english: English
+      french: Français
       home: الصفحة الرئيسية
       inventory: بلدي المخزون
-      japanese: اليابانية
+      japanese: 日本語
       products: منتجات
       profile: الملف الشخصي
       sign_in: تسجيل الدخول
