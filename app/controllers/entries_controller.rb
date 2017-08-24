@@ -34,7 +34,7 @@ class EntriesController < ApplicationController
 
     if @entry.save
       respond_to do |format|
-        format.html { redirect_to entry_path(@entry), notice: 'Entry was successfully created.' }
+        format.html { redirect_to entry_path(@entry), notice: t('.notice') }
         format.js
       end
     else
@@ -51,7 +51,7 @@ class EntriesController < ApplicationController
   # PATCH/PUT /entries/1.json
   def update
     if @entry.update(entry_params)
-      redirect_to entries_path , notice: 'entry was successfully updated.'
+      redirect_to entries_path , notice:  t('.notice')
     else
       render :edit
     end
@@ -63,7 +63,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
     respond_to do |format|
-      format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
+      format.html { redirect_to entries_url, notice: t('.notice') }
       format.json { head :no_content }
     end
   end
