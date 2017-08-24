@@ -5,7 +5,7 @@
       "<%= j render 'index-element-table', entry: @entry %>"
   )
 
-  $('#new_entry').html("<%= j render 'entries/form' %>")
+  $('#new_entry').html("<%= j render 'entries/form', remote:true %>")
 
 <% end %>
 

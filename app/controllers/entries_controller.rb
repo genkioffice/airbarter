@@ -35,13 +35,11 @@ class EntriesController < ApplicationController
     if @entry.save
       respond_to do |format|
         format.html { redirect_to entry_path(@entry), notice: 'Entry was successfully created.' }
-        #format.json { render :show, status: :created, location: @entry }
         format.js
       end
     else
       respond_to do |format|
         format.html { render :new }
-        #format.json { render json: @entry.errors, status: :unprocessable_entity }
         format.js
       end
     end
@@ -52,17 +50,11 @@ class EntriesController < ApplicationController
   # PATCH/PUT /entries/1
   # PATCH/PUT /entries/1.json
   def update
-   respond_to do |format|
-      if @entry.update(entry_params)
-        byebug
-        format.html { redirect_to entries_path , notice: 'entry was successfully updated.' }
-        format.json { render :show, status: :ok, location: @entry }
-      else
-        format.html { render :edit }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+    if @entry.update(entry_params)
+      redirect_to entries_path , notice: 'entry was successfully updated.'
+    else
+      render :edit
     end
-
   end
 
 

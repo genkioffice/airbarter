@@ -1,6 +1,6 @@
 <h1><%= t('.title') %></h1>
 
-<%= render 'form', entry: @entry %>
+<%= render 'form', entry: @entry, remote: false %>
 
 <br>
 <%= link_to t('activerecord.models.entry.other'), entries_path, class: "btn btn-success" %>

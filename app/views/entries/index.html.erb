@@ -18,7 +18,7 @@
 </table>
 
 <% if policy(Entry).new? %>
-  <%= render 'form', entry: @entry %>
+  <%= render 'form', entry: @entry, remote: true %>
 <% end %>
 
 <br>
