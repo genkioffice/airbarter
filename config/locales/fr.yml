@@ -95,6 +95,10 @@ fr:
       new:
         resend_unlock_instructions: Renvoyer les instructions de déverrouillage
   entries:
+    create:
+      notice: L'entrée a été ajoutée avec succès.
+    destroy:
+      notice: L'entrée a été détruite avec succès.
     edit:
       show: Afficher l'entrée
       title: Mise à jour de l'entrée
@@ -108,6 +112,8 @@ fr:
     show:
       delete_confirmation: Êtes-vous sûr de vouloir supprimer l'entrée?
       edit: Modifier
+    update:
+      notice: L'entrée a été mise à jour avec succès.
   hello: Bonjour le monde
   helpers:
     submit:
@@ -127,6 +133,10 @@ fr:
     home:
       title_html: 'Changez votre vie : <strong>Échangez des objets</strong>'
   products:
+    create:
+      notice: Le produit a été ajouté avec succès.
+    destroy:
+      notice: Le produit a été détruit avec succès.
     edit:
       show: Afficher le produit
       title: Mettre à jour le produit
@@ -135,6 +145,8 @@ fr:
     show:
       delete_confirmation: Êtes-vous sûr de vouloir supprimer le produit?
       edit: Modifier
+    update:
+      notice: Le produit a été mis à jour avec succès.
   shared:
     navbar:
       arabic: عربى
@@ -170,6 +182,10 @@ fr:
       transaction:
         address: Adresse de la transaction
   transactions:
+    create:
+      notice: La transaction a été créée avec succès.
+    destroy:
+      notice: La transaction a été détruite avec succès.
     edit:
       show: Afficher la transaction
       title: Mettre à jour la transaction
@@ -190,6 +206,8 @@ fr:
       accept: Acceptez
       delete_confirmation: Êtes-vous sûr de vouloir supprimer la transaction?
       edit: Modifier
+      insufficient_info: 'Information: Le produit recherché n''est pas dans votre
+        inventaire actuel ou en quantité suffisante'
       propose_again: Proposer de nouveau
       remove: Retirer
       title:
@@ -197,3 +215,5 @@ fr:
         other: Transaction
         proposed: Transaction proposée
         removed: Transaction supprimée
+    update:
+      notice: La transaction a été mise à jour avec succès.
