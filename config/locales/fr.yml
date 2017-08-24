@@ -7,7 +7,11 @@ fr:
         quantity: Quantité
         user: Utilisateur
       product:
-        name: Nom
+        name: Nom en anglais
+        name_ar: Arabe
+        name_da: Danois
+        name_fr: Français
+        name_ja: Japonais
       transaction:
         accepted_by_user: Accepté par l'utilisateur
         address: Adresse
@@ -128,6 +132,9 @@ fr:
       title: Mettre à jour le produit
     new:
       title: Nouveau produit
+    show:
+      delete_confirmation: Êtes-vous sûr de vouloir supprimer le produit?
+      edit: Modifier
   shared:
     navbar:
       arabic: عربى

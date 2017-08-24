@@ -1,4 +1,3 @@
-
 <h3><%= t('.title') %></h3>
 
 <table class="table table-striped">
@@ -36,6 +35,7 @@
 
   <tbody>
     <% @other_entries.each do |entry| %>
+
       <tr>
         <% if entry.user.first_name %>
           <td><%= entry.user.first_name %> <%= entry.user.last_name %></td>

@@ -16,14 +16,14 @@
     <% @proposed_transactions.each do |transaction| %>
       <tr>
         <td align="right"><%= transaction.proposed_product_quantity %></td>
-        <td><%= link_to transaction.proposed_product.name, transaction %></td>
+        <td><%= link_to transaction.proposed_product.translated_name, transaction %></td>
         <% if transaction.proposed_by_user.first_name %>
           <td><%= link_to transaction.proposed_by_user.first_name, user_show_path(transaction.proposed_by_user) %> <%= transaction.proposed_by_user.last_name %></td>
         <% else %>
           <td><%= transaction.proposed_by_user.email %></td>
         <% end %>
         <td align="right"><%= transaction.wanted_product_quantity %></td>
-        <td><%= transaction.wanted_product.name %></td>
+        <td><%= transaction.wanted_product.translated_name %></td>
 
         <% if policy(transaction).accept? %>
           <% if @entries.select{ |e| e.product == transaction.wanted_product } != [] && transaction.wanted_product_quantity <= @entries.select{ |e| e.product == transaction.wanted_product }.first.quantity %>
@@ -59,7 +59,7 @@
     <% @accepted_transactions.each do |transaction| %>
       <tr>
         <td style="text-align:right"><%= transaction.proposed_product_quantity %></td>
-        <td><%= link_to transaction.proposed_product.name, transaction %></td>
+        <td><%= link_to transaction.proposed_product.translated_name, transaction %></td>
         <% if transaction.proposed_by_user.first_name %>
           <td>
           <%= link_to transaction.proposed_by_user.first_name, user_show_path(transaction.proposed_by_user) %> <%= transaction.proposed_by_user.last_name %></td>
@@ -67,7 +67,7 @@
           <td><%= transaction.proposed_by_user.email %></td>
         <% end %>
         <td style="text-align:right"><%= transaction.wanted_product_quantity %></td>
-        <td><%= transaction.wanted_product.name %></td>
+        <td><%= transaction.wanted_product.translated_name %></td>
         <% if transaction.accepted_by_user.first_name %>
           <td><%= transaction.accepted_by_user.first_name %> <%= transaction.accepted_by_user.last_name %></td>
         <% else %>
@@ -96,14 +96,14 @@
     <% @removed_transactions.each do |transaction| %>
       <tr>
         <td style="text-align:right"><%= transaction.proposed_product_quantity %></td>
-        <td><%= link_to transaction.proposed_product.name, transaction %></td>
+        <td><%= link_to transaction.proposed_product.translated_name, transaction %></td>
         <% if transaction.proposed_by_user.first_name %>
           <td><%= transaction.proposed_by_user.first_name %> <%= transaction.proposed_by_user.last_name %></td>
         <% else %>
           <td><%= transaction.proposed_by_user.email %></td>
         <% end %>
         <td style="text-align:right"><%= transaction.wanted_product_quantity %></td>
-        <td><%= transaction.wanted_product.name %></td>
+        <td><%= transaction.wanted_product.translated_name %></td>
         <% if transaction.accepted_by_user %>
           <td><%= transaction.accepted_by_user.email %></td>
         <% else %>

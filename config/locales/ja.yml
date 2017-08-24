@@ -7,7 +7,11 @@ ja:
         quantity: 量
         user: ユーザー
       product:
-        name: 名
+        name: 名前は英語で
+        name_ar: アラビア語
+        name_da: デンマーク語
+        name_fr: フランス語
+        name_ja: 日本語
       transaction:
         accepted_by_user: ユーザーが受け入れる
         address: 住所
@@ -125,6 +129,9 @@ ja:
       title: 製品の更新
     new:
       title: 新製品
+    show:
+      delete_confirmation: 製品を削除してもよろしいですか？
+      edit: 編集
   shared:
     navbar:
       arabic: عربى
@@ -144,9 +151,9 @@ ja:
       transaction:
         address: 交換ができる場所
         proposed_product: あなたが持っている製品
-        proposed_product_quantity: あなたが提案している疑問
+        proposed_product_quantity: あなたが提案している量
         wanted_product: あなたが興味を持っている製品
-        wanted_product_quantity: あなたが得ることに興味があるquanity
+        wanted_product_quantity: あなたが得ることに興味がある量
     labels:
       transaction:
         address: 交換のための住所
