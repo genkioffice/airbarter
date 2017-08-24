@@ -93,6 +93,10 @@ ar:
       new:
         resend_unlock_instructions: أعد إرسال إرشادات إلغاء القفل
   entries:
+    create:
+      notice: تمت إضافة الإدخال بنجاح.
+    destroy:
+      notice: تم تدمير الدخول بنجاح.
     edit:
       show: إظهار الدخول
       title: تحديث الإدخال
@@ -106,6 +110,8 @@ ar:
     show:
       delete_confirmation: هل تريد بالتأكيد حذف الإدخال؟
       edit: تصحيح
+    update:
+      notice: تم تحديث الإدخال بنجاح.
   hello: مرحبا بالعالم
   helpers:
     submit:
@@ -125,6 +131,10 @@ ar:
     home:
       title_html: 'تغيير حياتك: <strong>عناصر الصرف</strong>'
   products:
+    create:
+      notice: تمت إضافة المنتج بنجاح.
+    destroy:
+      notice: تم تدمير المنتج بنجاح.
     edit:
       show: عرض المنتج
       title: تحديث المنتج
@@ -133,6 +143,8 @@ ar:
     show:
       delete_confirmation: هل تريد بالتأكيد حذف المنتج؟
       edit: تصحيح
+    update:
+      notice: تم تحديث المنتج بنجاح.
   shared:
     navbar:
       arabic: عربى
@@ -168,6 +180,10 @@ ar:
       transaction:
         address: عنوان المعاملة
   transactions:
+    create:
+      notice: تم إنشاء المعاملة بنجاح.
+    destroy:
+      notice: تم تدمير الصفقة بنجاح.
     edit:
       show: إظهار المعاملة
       title: تحديث المعاملة
@@ -188,6 +204,8 @@ ar:
       accept: قبول
       delete_confirmation: هل تريد بالتأكيد حذف المعاملة؟
       edit: تصحيح
+      insufficient_info: 'المعلومات: المنتج المطلوب ليس في المخزون الحالي الخاص بك
+        أو بكمية كافية'
       propose_again: اقترح مرة أخرى
       remove: إزالة
       title:
@@ -195,3 +213,5 @@ ar:
         other: عملية تجارية
         proposed: الصفقة المقترحة
         removed: تمت إزالة المعاملة
+    update:
+      notice: تم تحديث المعاملة بنجاح.

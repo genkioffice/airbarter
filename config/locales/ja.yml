@@ -92,6 +92,10 @@ ja:
       new:
         resend_unlock_instructions: ロック解除の指示を再送する
   entries:
+    create:
+      notice: エントリが正常に追加されました。
+    destroy:
+      notice: エントリは正常に破棄されました。
     edit:
       show: エントリーを表示する
       title: エントリを更新する
@@ -105,6 +109,8 @@ ja:
     show:
       delete_confirmation: 本当にエントリを削除してもよろしいですか？
       edit: 編集
+    update:
+      notice: エントリは正常に更新されました。
   hello: こんにちは世界
   helpers:
     submit:
@@ -124,6 +130,10 @@ ja:
     home:
       title_html: あなたの人生を変える： <strong>交換アイテム</strong>
   products:
+    create:
+      notice: 製品が正常に追加されました。
+    destroy:
+      notice: 製品は正常に破壊されました。
     edit:
       show: 商品を表示する
       title: 製品の更新
@@ -132,6 +142,8 @@ ja:
     show:
       delete_confirmation: 製品を削除してもよろしいですか？
       edit: 編集
+    update:
+      notice: 製品が正常に更新されました。
   shared:
     navbar:
       arabic: عربى
@@ -167,6 +179,10 @@ ja:
       transaction:
         address: 取引の住所
   transactions:
+    create:
+      notice: トランザクションは正常に作成されました。
+    destroy:
+      notice: トランザクションは正常に破棄されました。
     edit:
       show: 取引を表示する
       title: トランザクションの更新
@@ -187,6 +203,7 @@ ja:
       accept: 同意する
       delete_confirmation: トランザクションを削除してもよろしいですか？
       edit: 編集
+      insufficient_info: 情報：希望する商品があなたの現在の在庫や十分な量ではありません
       propose_again: もう一度提案する
       remove: 削除する
       title:
@@ -194,3 +211,5 @@ ja:
         other: トランザクション
         proposed: 提案された取引
         removed: 削除されたトランザクション
+    update:
+      notice: トランザクションは正常に更新されました。

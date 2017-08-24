@@ -95,6 +95,10 @@ en:
       new:
         resend_unlock_instructions: Resend unlock instructions
   entries:
+    create:
+      notice: Entry was successfully added.
+    destroy:
+      notice: Entry was successfully destroyed.
     edit:
       show: Show Entry
       title: Update Entry
@@ -108,6 +112,8 @@ en:
     show:
       delete_confirmation: Are you sure you want to delete the entry?
       edit: Edit
+    update:
+      notice: Entry was successfully updated.
   hello: Hello world
   helpers:
     submit:
@@ -127,6 +133,10 @@ en:
     home:
       title_html: 'Change your life: <strong>Exchange Items</strong>'
   products:
+    create:
+      notice: Product was successfully added.
+    destroy:
+      notice: Product was successfully destroyed.
     edit:
       show: Show Product
       title: Update Product
@@ -135,6 +145,8 @@ en:
     show:
       delete_confirmation: Are you sure you want to delete the product?
       edit: Edit
+    update:
+      notice: Product was successfully updated.
   shared:
     navbar:
       arabic: عربى
@@ -170,6 +182,10 @@ en:
       transaction:
         address: Address of the transaction
   transactions:
+    create:
+      notice: Transaction was successfully created.
+    destroy:
+      notice: Transaction was successfully destroyed.
     edit:
       show: Show Transaction
       title: Update Transaction
@@ -190,6 +206,8 @@ en:
       accept: Accept
       delete_confirmation: Are you sure you want to delete the transaction?
       edit: Edit
+      insufficient_info: 'Information: The wanted product is not in your current inventory
+        or in sufficient quantity'
       propose_again: Propose Again
       remove: Remove
       title:
@@ -197,3 +215,5 @@ en:
         other: Transaction
         proposed: Proposed Transaction
         removed: Removed Transaction
+    update:
+      notice: Transaction was successfully updated.

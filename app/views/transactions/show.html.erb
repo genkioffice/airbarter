@@ -52,7 +52,7 @@
   <% if @entries.select{ |e| e.product == @transaction.wanted_product } != [] && @transaction.wanted_product_quantity <= @entries.select{ |e| e.product == @transaction.wanted_product }.first.quantity %>
     <%= link_to t('.accept'), accept_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
   <% else %>
-    Information: The wanted product is not in your current inventory or in sufficient quantity
+    <%= t('.insufficient_info') %>
   <% end %>
 <% elsif policy(@transaction).edit? %>
   <%= link_to t('.edit'), edit_transaction_path(@transaction), class: "btn btn-primary" %>
