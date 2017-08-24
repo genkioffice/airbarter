@@ -18,7 +18,7 @@
         <td align="right"><%= transaction.proposed_product_quantity %></td>
         <td><%= link_to transaction.proposed_product.translated_name, transaction %></td>
         <% if transaction.proposed_by_user.first_name %>
-          <td><%= transaction.proposed_by_user.first_name %> <%= transaction.proposed_by_user.last_name %></td>
+          <td><%= link_to transaction.proposed_by_user.first_name, user_show_path(transaction.proposed_by_user) %> <%= transaction.proposed_by_user.last_name %></td>
         <% else %>
           <td><%= transaction.proposed_by_user.email %></td>
         <% end %>
@@ -61,7 +61,8 @@
         <td style="text-align:right"><%= transaction.proposed_product_quantity %></td>
         <td><%= link_to transaction.proposed_product.translated_name, transaction %></td>
         <% if transaction.proposed_by_user.first_name %>
-          <td><%= transaction.proposed_by_user.first_name %> <%= transaction.proposed_by_user.last_name %></td>
+          <td>
+          <%= link_to transaction.proposed_by_user.first_name, user_show_path(transaction.proposed_by_user) %> <%= transaction.proposed_by_user.last_name %></td>
         <% else %>
           <td><%= transaction.proposed_by_user.email %></td>
         <% end %>

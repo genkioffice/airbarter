@@ -1,24 +1,38 @@
-<h3>My Entries</h3>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Quantity</th>
-      <th>Product</th>
+<div class="row">
+  <div class="user-avatar">
+    <div class="col-xs-4">
+      <div class="user-info">
+        <%= cl_image_tag @user.facebook_picture_url %>
+        <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+        <p><%= @user.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <h4>My Entries</h4>
 
-    </tr>
-  </thead>
-
-  <tbody>
-
-      <% @user.entries.each do |entry| %>
+    <table class="table table-bordered">
+      <thead>
         <tr>
-          <td><%= entry.product.name %></td>
-          <td><%= entry.quantity %></td>
+          <th>Quantity</th>
+          <th>Product</th>
+
         </tr>
-      <% end %>
+      </thead>
 
-  </tbody>
-</table>
+      <tbody>
 
-<%= link_to 'New Entry', new_entry_path, class: "btn btn-success" %>
+          <% @user.entries.each do |entry| %>
+            <tr>
+              <td><%= entry.product.name %></td>
+              <td><%= entry.quantity %></td>
+            </tr>
+          <% end %>
+
+      </tbody>
+    </table>
+
+    <%= link_to 'New Entry', new_entry_path, class: "btn btn-success" %>
+  </div>
+</div>

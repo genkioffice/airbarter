@@ -6,7 +6,8 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @user = current_user
+    # we'll define this page as profile page
+    @user = User.find(params[:id])
   end
 
 end

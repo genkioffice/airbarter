@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
     devise_for :users, skip: :omniauth_callbacks
 
-    get 'user',   to: 'pages#profile'
+    get 'user/:id',   to: 'pages#profile' ,as: 'user_show'
   end
 
   # this is to handle facebook login without language
@@ -22,7 +22,6 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   # to avoide user from showing the profile page.
-  # get 'user',   to: 'pages#profile'
   # resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
