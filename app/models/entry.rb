@@ -2,6 +2,7 @@ class Entry < ApplicationRecord
   belongs_to :user
   belongs_to :product
   validates :quantity, :numericality => {:greater_than => 0}, presence: true
+  has_attachment :photo
 
   def self.remove_from_inventory(user, product, quantity)
     entry = self.where(user_id: user.id).where(product_id: product.id).first

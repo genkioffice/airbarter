@@ -24,3 +24,6 @@
 <% if policy(@entry).destroy? %>
   <%= link_to t('helpers.submit.entry.destroy'), @entry, method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
 <% end %>
+<% if @entry.photo? %>
+  <%= cl_image_tag(@entry.photo.path, {size: '100x50'}) %>
+<% end %>

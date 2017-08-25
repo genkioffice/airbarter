@@ -15,6 +15,7 @@
       <%= f.association :product %>
     <% end %>
     <%= f.input :quantity, collection: (1..10) %>
+    <%= f.input :photo, as: :attachinary %>
   </div>
 
   <div class="form-actions">

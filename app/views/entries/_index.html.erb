@@ -1,0 +1,9 @@
+<div class="content">
+  <div class="cards-container">
+    <div class="row">
+      <% @entries.each do |entry| %>
+        <%= render 'shared/entries-card', entry: entry %>
+      <% end %>
+    </div>
+  </div>
+</div>

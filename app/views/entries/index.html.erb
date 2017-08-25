@@ -1,5 +1,17 @@
 <h3><%= t('.title') %></h3>
 
+<div class="content">
+  <div class="cards-container">
+    <div class="row">
+      <%= render 'shared/entries-card', entries: @my_entries %>
+    </div>
+  </div>
+  <div id="map", style="overflow: hidden;">
+
+  </div>
+</div>
+
+
 <table class="table table-striped">
   <thead>
     <tr>

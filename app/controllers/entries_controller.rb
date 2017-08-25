@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
-
+  layout "layouts/landing", only:[:index]
   # GET /entries
   # GET /entries.json
   def index
@@ -77,6 +77,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:quantity, :user_id, :product_id)
+      params.require(:entry).permit(:quantity, :user_id, :product_id, :photo)
     end
 end
