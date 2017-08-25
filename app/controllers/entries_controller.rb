@@ -7,6 +7,7 @@ class EntriesController < ApplicationController
     @entries = policy_scope(Entry)
     @my_entries = @entries.select{ |entry|  entry.user_id == current_user.id  }
     @other_entries = @entries.select{ |entry|  entry.user_id != current_user.id  }
+    @entry = Entry.new
   end
 
   # GET /entries/1
@@ -23,8 +24,6 @@ class EntriesController < ApplicationController
   end
 
   # GET /entries/1/edit
-  def edit
-  end
 
   # POST /entries
   # POST /entries.json
@@ -33,32 +32,31 @@ class EntriesController < ApplicationController
     @entry.user = current_user
     authorize @entry
 
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to entries_path, notice: t('.notice') }
-        format.json { render :show, status: :created, location: @entry }
+    if @entry.save
+      respond_to do |format|
+        format.html { redirect_to entry_path(@entry), notice: t('.notice') }
         format.js
-      else
+      end
+    else
+      respond_to do |format|
         format.html { render :new }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
         format.js
       end
     end
   end
 
+  def edit
+  end
   # PATCH/PUT /entries/1
   # PATCH/PUT /entries/1.json
   def update
-    respond_to do |format|
-      if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: t('.notice') }
-        format.json { render :show, status: :ok, location: @entry }
-      else
-        format.html { render :edit }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+    if @entry.update(entry_params)
+      redirect_to entries_path , notice:  t('.notice')
+    else
+      render :edit
     end
   end
+
 
   # DELETE /entries/1
   # DELETE /entries/1.json

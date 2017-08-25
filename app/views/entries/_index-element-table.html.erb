@@ -1,0 +1,8 @@
+<tr>
+  <td style="text-align:right"><%= entry.quantity %></td>
+  <td><%= entry.product.name %></td>
+  <% if policy(entry).show? %>
+    <td style="text-align:center"><%= link_to t('.show'), entry, class: "btn btn-primary" %></td>
+  <% end %>
+</tr>
+
