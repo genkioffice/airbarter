@@ -104,6 +104,7 @@ fr:
       title: Mise à jour de l'entrée
     index:
       actions: Actions
+      propose_new_transaction: Proposer une nouvelle transaction
       show: Afficher
       title: Mes entrées
       title_other: Autres entrées de personnes
@@ -154,7 +155,7 @@ fr:
       english: English
       french: Français
       home: Accueil
-      inventory: Mon inventaire
+      inventory: Mon tableau de bord
       japanese: 日本語
       products: Produits
       profile: Profil

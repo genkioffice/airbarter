@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   has_many :wanted_transactions, class_name: 'Transaction', foreign_key: 'wanted_product_id', dependent: :destroy
   has_many :wanted_by_users, class_name: 'User', foreign_key: 'wanted_by_user_id', through: :wanted_transactions
 
+  has_attachment :photo
   accepts_nested_attributes_for :entries
   accepts_nested_attributes_for :users
   validates :name, presence: true

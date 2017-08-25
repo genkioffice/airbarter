@@ -1,6 +1,9 @@
 <div class="col-xs-12 col-sm-6 col-md-4">
   <div class="thumbnail">
     <%= link_to transaction_path(transaction) do %>
+      <% transaction.proposed_product.photo %>
+        <%= cl_image_tag(p.path, {size: '100x50'}) %>
+      <% end %>
       <% transaction.photos.each do |p| %>
         <%= cl_image_tag(p.path, {size: '100x50'}) %>
       <% end %>

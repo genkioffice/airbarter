@@ -1,24 +1,31 @@
-<%= simple_form_for(@entry, remote: remote) do |f| %>
+<%= simple_form_for(@entry, remote: remote, method: :post) do |f| %>
   <%= f.error_notification %>
 
-
-  <div class="form-inputs">
+  <tr>
+  <!-- <div class="form-inputs"> -->
+    <td>
+    <%= f.input :quantity, collection: (1..10), label: false %>
+  <!-- </div> -->
+    </td>
+    <td>
     <% if I18n.locale == :ja %>
-      <%= f.association :product, label_method: :name_ja %>
+      <%= f.association :product, label_method: :name_ja, label: false %>
     <% elsif I18n.locale == :da %>
-      <%= f.association :product, label_method: :name_da %>
+      <%= f.association :product, label_method: :name_da, label: false %>
     <% elsif I18n.locale == :ar %>
-      <%= f.association :product, label_method: :name_ar %>
+      <%= f.association :product, label_method: :name_ar, label: false %>
     <% elsif I18n.locale == :fr %>
-      <%= f.association :product, label_method: :name_fr %>
+      <%= f.association :product, label_method: :name_fr, label: false %>
     <% else %>
-      <%= f.association :product %>
+      <%= f.association :product, label: false %>
     <% end %>
-    <%= f.input :quantity, collection: (1..10) %>
-  </div>
-
-  <div class="form-actions">
+    </td>
+    <td style="text-align:center">
+  <!-- <div class="form-actions"> -->
     <%= f.button :submit, class: "btn btn-primary" %>
-  </div>
+  <!-- </div> -->
+    </td>
+
+  </tr>
 
 <% end %>

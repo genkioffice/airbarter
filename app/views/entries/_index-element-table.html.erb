@@ -1,8 +1,11 @@
 <tr>
   <td style="text-align:right"><%= entry.quantity %></td>
-  <td><%= entry.product.name %></td>
+  <td><%= entry.product.translated_name %></td>
   <% if policy(entry).show? %>
-    <td style="text-align:center"><%= link_to t('.show'), entry, class: "btn btn-primary" %></td>
+    <td style="text-align:center">
+      <%= link_to t('entries.index.show'), entry, class: "btn btn-primary" %>
+      <%= link_to t('entries.index.propose_new_transaction'), new_transaction_path, class: "btn btn-success" %>
+    </td>
   <% end %>
 </tr>
 

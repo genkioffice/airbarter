@@ -104,6 +104,7 @@ en:
       title: Update Entry
     index:
       actions: Actions
+      propose_new_transaction: Propose New Transaction
       show: Show
       title: My Entries
       title_other: Other People's Entries
@@ -154,7 +155,7 @@ en:
       english: English
       french: Français
       home: Home
-      inventory: My inventory
+      inventory: My Dashboard
       japanese: 日本語
       products: Products
       profile: Profile
