@@ -1,57 +1,50 @@
-<div class="modify-for-footer">
-  <h3><%= t('.title') %></h3>
+<h3><%= t('.title') %></h3>
 
-  <table class="table table-striped">
-    <thead>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th style="text-align:right"><%= t('activerecord.attributes.entry.quantity') %></th>
+      <th><%= t('activerecord.attributes.entry.product') %></th>
+      <th colspan="3" style="text-align:center"><%= t('.actions') %></th>
+    </tr>
+  </thead>
+
+  <tbody id="appended_table">
+    <% @my_entries.each do |entry| %>
+      <%= render 'index-element-table', entry: entry %>
+    <% end %>
+  </tbody>
+</table>
+
+<% if policy(Entry).new? %>
+  <%= render 'form', entry: @entry, remote: true %>
+<% end %>
+
+<br>
+
+<h3><%= t('.title_other') %></h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.entry.user') %></th>
+      <th style="text-align:right"><%= t('activerecord.attributes.entry.quantity') %></th>
+      <th><%= t('activerecord.attributes.entry.product') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @other_entries.each do |entry| %>
+
       <tr>
-        <th style="text-align:right"><%= t('activerecord.attributes.entry.quantity') %></th>
-        <th><%= t('activerecord.attributes.entry.product') %></th>
-        <th colspan="3" style="text-align:center"><%= t('.actions') %></th>
+        <% if entry.user.first_name %>
+          <td><%= entry.user.first_name %> <%= entry.user.last_name %></td>
+        <% else %>
+          <td><%= entry.user.email %></td>
+        <% end %>
+        <td style="text-align:right"><%= entry.quantity %></td>
+        <td><%= entry.product.name %></td>
       </tr>
-    </thead>
-
-    <tbody>
-      <% @my_entries.each do |entry| %>
-        <tr>
-          <td style="text-align:right"><%= entry.quantity %></td>
-          <td><%= entry.product.translated_name %></td>
-          <% if policy(entry).show? %>
-            <td style="text-align:center"><%= link_to t('.show'), entry, class: "btn btn-primary" %></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <% if policy(Entry).new? %>
-    <%= link_to t('helpers.submit.entry.create'), new_entry_path, class: "btn btn-success" %>
-  <% end %>
-
-  <br>
-
-  <h3><%= t('.title_other') %></h3>
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><%= t('activerecord.attributes.entry.user') %></th>
-        <th style="text-align:right"><%= t('activerecord.attributes.entry.quantity') %></th>
-        <th><%= t('activerecord.attributes.entry.product') %></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @other_entries.each do |entry| %>
-        <tr>
-          <% if entry.user.first_name %>
-            <td><%= entry.user.first_name %> <%= entry.user.last_name %></td>
-          <% else %>
-            <td><%= entry.user.email %></td>
-          <% end %>
-          <td style="text-align:right"><%= entry.quantity %></td>
-          <td><%= entry.product.translated_name %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+</table>

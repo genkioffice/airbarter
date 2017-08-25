@@ -13,10 +13,10 @@ ja:
         name_fr: フランス語
         name_ja: 日本語
       transaction:
-        accepted_by_user: ユーザーが受け入れる
+        accepted_by_user: 受取する人
         address: 住所
         photos: 写真
-        proposed_by_user: ユーザ提案者
+        proposed_by_user: 提案した人
         proposed_product: 提案製品
         proposed_product_quantity: 提案数量
         status: 状態
@@ -190,7 +190,7 @@ ja:
       accept: 同意する
       actions: 行動
       edit: 編集
-      other: 在庫なし
+      other: その他
       propose_again: もう一度提案する
       propose_new: 新しい取引を提案する
       title:
