@@ -14,11 +14,14 @@
       <%= render 'index-element-table', entry: entry %>
     <% end %>
   </tbody>
-</table>
+  <tbody>
 
-<% if policy(Entry).new? %>
-  <%= render 'form', entry: @entry, remote: true %>
-<% end %>
+    <% if policy(Entry).new? %>
+      <%= render 'form', entry: @entry, remote: true %>
+    <% end %>
+
+  </tbody>
+</table>
 
 <br>
 
@@ -43,7 +46,7 @@
           <td><%= entry.user.email %></td>
         <% end %>
         <td style="text-align:right"><%= entry.quantity %></td>
-        <td><%= entry.product.name %></td>
+        <td><%= entry.product.translated_name %></td>
       </tr>
     <% end %>
   </tbody>

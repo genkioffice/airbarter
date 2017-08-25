@@ -101,6 +101,7 @@ ja:
       title: エントリを更新する
     index:
       actions: 行動
+      propose_new_transaction: 新しい取引を提案する
       show: ショー
       title: 私のエントリー
       title_other: 他の人のエントリ
@@ -151,7 +152,7 @@ ja:
       english: English
       french: Français
       home: ホーム
-      inventory: 私の目録
+      inventory: 私のダッシュボード
       japanese: 日本語
       products: 製品
       profile: プロフィール
