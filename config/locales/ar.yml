@@ -31,7 +31,6 @@ ar:
         other: منتجات
       transaction:
         one: عملية تجارية
-        other: المعاملات
   devise:
     confirmations:
       new:
@@ -102,6 +101,7 @@ ar:
       title: تحديث الإدخال
     index:
       actions: أفعال
+      propose_new_transaction: اقتراح معاملة جديدة
       show: تبين
       title: مقالاتي
       title_other: إدخالات الأشخاص الآخرين
@@ -152,7 +152,7 @@ ar:
       english: English
       french: Français
       home: الصفحة الرئيسية
-      inventory: بلدي المخزون
+      inventory: لوحة التحكم
       japanese: 日本語
       products: منتجات
       profile: الملف الشخصي

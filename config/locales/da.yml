@@ -104,6 +104,7 @@ da:
       title: Opdater lagerpost
     index:
       actions: Funktioner
+      propose_new_transaction: Foreslå Ny Transaktion
       show: Vis
       title: Mine lagerposter
       title_other: De andres lagerposter
@@ -154,7 +155,7 @@ da:
       english: English
       french: Français
       home: Hjem
-      inventory: Mit lager
+      inventory: Mit Dashboard
       japanese: 日本語
       products: Produkter
       profile: Profil
