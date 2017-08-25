@@ -31,6 +31,7 @@ ar:
         other: منتجات
       transaction:
         one: عملية تجارية
+        other: المعاملات
   devise:
     confirmations:
       new:
