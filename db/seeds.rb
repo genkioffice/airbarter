@@ -3,6 +3,7 @@ User.destroy_all
 Entry.destroy_all
 Transaction.destroy_all
 
+# I couldn't seeded about translation. Let me ask tomorrow.
 product1 = Product.create!(name: "Adult Cows")
 product1.translate_name!
 product2 = Product.create!(name: "Young calfs")
@@ -28,12 +29,12 @@ product11.translate_name!
 product12 = Product.create!(name: "Euros")
 product12.translate_name!
 
-user1 = User.create!(email: "contact@gooddeal.com", password: "123456", first_name:"Abrar")
-user1 = User.create!(email: "contact@verygooddeal.com", password: "123456", first_name:"Shannon")
-user2 = User.create!(email: "barter@exchange.com", password: "123456", first_name:"Amira")
-user3 = User.create!(email: "finnpedersenkazes@gmail.com", password: "123456", first_name:"Finn")
-user4 = User.create!(email: "mohamad4alzobi@gmail.com", password: "123456", first_name:"Mohamed")
-user5 = User.create!(email: "genki.takahashi.contact@gmail.com", password: "123456", first_name:"Genki")
+user1 = User.create!(email: "contact@gooddeal.com", password: "123456", first_name:"Abrar", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
+user1 = User.create!(email: "contact@verygooddeal.com", password: "123456", first_name:"Shannon", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
+user2 = User.create!(email: "barter@exchange.com", password: "123456", first_name:"Amira", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
+user3 = User.create!(email: "finnpedersenkazes@gmail.com", password: "123456", first_name:"Finn", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
+user4 = User.create!(email: "mohamad4alzobi@gmail.com", password: "123456", first_name:"Mohamed", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
+user5 = User.create!(email: "genki.takahashi.contact@gmail.com", password: "123456", first_name:"Genki", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
 
 Entry.create!(
   quantity: 10,
