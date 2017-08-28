@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def home
     # @user = current_user
     # @logined_transactions
+
     @unlogined_transactions = Transaction.where(status: "proposed")
   end
 

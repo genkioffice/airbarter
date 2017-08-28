@@ -1,18 +1,12 @@
 
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "AirbarterLogo.png" %>
-  <% end %>
-
-  <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to t(".transactions", default: "Transactions"), transactions_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".inventory", default: "My Dashboard"), entries_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Moved into dropdown menu -->
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -47,10 +41,10 @@
           </ul>
         </div>
       </div>
-      <div class="navbar-wagon-item">
+      <div  class="navbar-wagon-item">
         <div class="dropdown">
-          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% avatar_url = "AirbarterLogo.png" %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", size: "50x50"%>
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
@@ -70,6 +64,12 @@
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %>
+            </li>
+            <li>
+              <%= link_to t(".transactions", default: "Transactions"), transactions_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            </li>
+            <li>
+              <%= link_to t(".inventory", default: "My Dashboard"), entries_path, class: "navbar-wagon-item navbar-wagon-link" %>
             </li>
           </ul>
         </div>

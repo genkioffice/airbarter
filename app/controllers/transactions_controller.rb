@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: [:show, :edit, :update, :destroy, :change_status, :accept]
-
+  layout 'layouts/landing', only: [:index]
   # GET /transactions
   # GET /transactions.json
   def index
@@ -115,6 +115,6 @@ class TransactionsController < ApplicationController
     def transaction_params
       params.require(:transaction).permit(:proposed_product_id, :proposed_product_quantity,
         :proposed_by_user_id, :wanted_product_id, :wanted_product_quantity, :accepted_by_user_id,
-        :status, :address, :longitude, :latitude, photos: [])
+        :status, :address, :longitude, :latitude, :description, photos: [])
     end
 end

@@ -6,28 +6,40 @@ Transaction.destroy_all
 # I couldn't seeded about translation. Let me ask tomorrow.
 product1 = Product.create!(name: "Adult Cows")
 product1.translate_name!
+product1.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product2 = Product.create!(name: "Young calfs")
 product2.translate_name!
+product2.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product3 = Product.create!(name: "Pigs")
 product3.translate_name!
+product3.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product4 = Product.create!(name: "Goats")
 product4.translate_name!
+product4.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product5 = Product.create!(name: "Sheep")
 product5.translate_name!
+product5.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product6 = Product.create!(name: "Hens")
 product6.translate_name!
+product6.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product7 = Product.create!(name: "Bushels")
 product7.translate_name!
+product7.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product8 = Product.create!(name: "Carrots")
 product8.translate_name!
+product8.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product9 = Product.create!(name: "Tomatoes")
 product9.translate_name!
+product9.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product10 = Product.create!(name: "Potatoes")
 product10.translate_name!
+product10.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product11 = Product.create!(name: "Beans")
 product11.translate_name!
+product11.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 product12 = Product.create!(name: "Euros")
 product12.translate_name!
+product12.photo_url = "http://res.cloudinary.com/df4gltzir/image/upload/v1503820728/desert2_orertv.jpg"
 
 user1 = User.create!(email: "contact@gooddeal.com", password: "123456", first_name:"Abrar", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
 user1 = User.create!(email: "contact@verygooddeal.com", password: "123456", first_name:"Shannon", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")

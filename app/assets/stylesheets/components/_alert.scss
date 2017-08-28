@@ -6,10 +6,11 @@
   margin: 0;
   text-align: center;
   color: white;
+  z-index: 11;
 }
 .alert-info {
-  background: $green;
+  background: $brand-success;
 }
 .alert-warning {
-  background: $red;
+  background: #c05746;
 }

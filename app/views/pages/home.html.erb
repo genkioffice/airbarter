@@ -1,10 +1,11 @@
 <div class="banner">
-  <h2><%= t('.title_html') %></h2>
+
 </div>
 <div class="container">
-  <div class="row">
-    <% @unlogined_transactions.each do |transaction| %>
-      <%= render 'transactions/transaction', transaction: transaction %>
+  <div class="links" style="display: inline-block;">
+  <% if  %>
+    <%= link_to "Transactions", transactions_path %>
+    <!-- <%= link_to "My Invetory" %> -->
   <% end %>
   </div>
 </div>

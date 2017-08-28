@@ -1,0 +1,19 @@
+<% transactions.each do |t| %>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= link_to transaction_path(t) do %>
+        <% if t.photos? %>
+          <% t.photos.each do |p| %>
+            <%= cl_image_tag(p.path, {size: '100x50'}) %>
+          <% end %>
+        <% end %>
+      <div class="col-xs-12">
+        <%= image_tag(t.proposed_by_user.facebook_picture_url, {size: '50x50'}) %>
+      </div>
+      <div class="caption">
+        <h3><%= t.wanted_product.name %></h3>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
