@@ -30,9 +30,10 @@ class TransactionsController < ApplicationController
   # GET /transactions/new
   def new
     @transaction = Transaction.new
-    @transaction.proposed_by_user = params[:proposed_by_user_id] if params[:proposed_by_user_id]
-    @transaction.proposed_product = params[:proposed_product_id] if params[:proposed_product_id]
-    @transaction.wanted_product = params[:wanted_product_id] if params[:wanted_product_id]
+    @transaction.proposed_product = Product.find(params[:proposed_product_id].to_i) if params[:proposed_product_id]
+    @transaction.proposed_product_quantity = params[:proposed_product_quantity] if params[:proposed_product_quantity]
+    @transaction.wanted_product = Product.find(params[:wanted_product_id].to_i) if params[:wanted_product_id]
+    @transaction.address = current_user.address
     authorize @transaction
   end
 
