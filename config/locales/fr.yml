@@ -15,6 +15,7 @@ fr:
       transaction:
         accepted_by_user: Accepté par l'utilisateur
         address: Adresse
+        description: Description
         photos: Photos
         proposed_by_user: Proposé par l'utilisateur
         proposed_product: Produit proposé

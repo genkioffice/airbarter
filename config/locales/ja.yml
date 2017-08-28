@@ -15,6 +15,7 @@ ja:
       transaction:
         accepted_by_user: 受取する人
         address: 住所
+        description: 説明
         photos: 写真
         proposed_by_user: 提案した人
         proposed_product: 提案製品
