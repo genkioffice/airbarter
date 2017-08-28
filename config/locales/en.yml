@@ -15,6 +15,7 @@ en:
       transaction:
         accepted_by_user: Accepted by User
         address: Address
+        description: Description
         photos: Photos
         proposed_by_user: Proposed by User
         proposed_product: Proposed Product
@@ -132,7 +133,7 @@ en:
         update: Save Changes
   pages:
     home:
-      title_html: '<strong>Exchange Purse for Camel</strong>'
+      title_html: "<strong>Exchange Purse for Camel</strong>"
   products:
     create:
       notice: Product was successfully added.

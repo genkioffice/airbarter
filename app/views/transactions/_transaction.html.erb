@@ -23,8 +23,8 @@
                   </div>
                 </div>
                 <!-- this is thubnail image -->
-                <% if t.proposed_product.photo? %>
-                  <%= cl_image_tag(t.proposed_product.photo.path, size: '400x140', crop: :fill) %>
+                <% if t.photos? %>
+                  <%= cl_image_tag(t.photos.first.path, size: '400x140', crop: :fill) %>
                 <% end %>
                 <!-- this is primary info for a card -->
                 <div class="caption col-xs-12" style="display: inline-flex">
