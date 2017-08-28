@@ -3,6 +3,7 @@ User.destroy_all
 Entry.destroy_all
 Transaction.destroy_all
 
+
 translate_names = false
 
 product1 = Product.create!(name: "Blu-ray Film")
@@ -29,6 +30,7 @@ user2 = User.create!(email: "sarah@gmail.com", password: "123456", first_name: "
 user3 = User.create!(email: "finn@gmail.com", password: "123456", first_name: "Finn", address: "Avenida de Berna 20, Lisbon, Portugal")
 user4 = User.create!(email: "genki@gmail.com", password: "123456", first_name: "Genki")
 user5 = User.create!(email: "shannon@gmail.com", password: "123456", first_name: "Shannon")
+
 
 Entry.create!(
   quantity: 10,

@@ -132,7 +132,7 @@ en:
         update: Save Changes
   pages:
     home:
-      title_html: 'Change your life: <strong>Exchange Items</strong>'
+      title_html: '<strong>Exchange Purse for Camel</strong>'
   products:
     create:
       notice: Product was successfully added.
