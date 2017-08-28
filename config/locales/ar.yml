@@ -15,6 +15,7 @@ ar:
       transaction:
         accepted_by_user: مقبول من قبل المستخدم
         address: عنوان
+        description: وصف
         photos: الصور
         proposed_by_user: المقترح من قبل المستخدم
         proposed_product: المنتج المقترح
