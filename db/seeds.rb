@@ -3,38 +3,33 @@ User.destroy_all
 Entry.destroy_all
 Transaction.destroy_all
 
-# I couldn't seeded about translation. Let me ask tomorrow.
-product1 = Product.create!(name: "Adult Cows")
-product1.translate_name!
-product2 = Product.create!(name: "Young calfs")
-product2.translate_name!
-product3 = Product.create!(name: "Pigs")
-product3.translate_name!
-product4 = Product.create!(name: "Goats")
-product4.translate_name!
-product5 = Product.create!(name: "Sheep")
-product5.translate_name!
-product6 = Product.create!(name: "Hens")
-product6.translate_name!
-product7 = Product.create!(name: "Bushels")
-product7.translate_name!
-product8 = Product.create!(name: "Carrots")
-product8.translate_name!
-product9 = Product.create!(name: "Tomatoes")
-product9.translate_name!
-product10 = Product.create!(name: "Potatoes")
-product10.translate_name!
-product11 = Product.create!(name: "Beans")
-product11.translate_name!
-product12 = Product.create!(name: "Euros")
-product12.translate_name!
 
-user1 = User.create!(email: "contact@gooddeal.com", password: "123456", first_name:"Abrar", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
-user1 = User.create!(email: "contact@verygooddeal.com", password: "123456", first_name:"Shannon", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
-user2 = User.create!(email: "barter@exchange.com", password: "123456", first_name:"Amira", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
-user3 = User.create!(email: "finnpedersenkazes@gmail.com", password: "123456", first_name:"Finn", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
-user4 = User.create!(email: "mohamad4alzobi@gmail.com", password: "123456", first_name:"Mohamed", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
-user5 = User.create!(email: "genki.takahashi.contact@gmail.com", password: "123456", first_name:"Genki", facebook_picture_url: "https://images-na.ssl-images-amazon.com/images/I/610C68KnLjL._SY355_.jpg")
+translate_names = false
+
+product1 = Product.create!(name: "Blu-ray Film")
+product1.translate_name! if translate_names
+product2 = Product.create!(name: "DVD Film")
+product2.translate_name! if translate_names
+product3 = Product.create!(name: "Computer Accessory")
+product3.translate_name! if translate_names
+product4 = Product.create!(name: "Hour of walking the dog")
+product4.translate_name! if translate_names
+product5 = Product.create!(name: "Hour of garden work")
+product5.translate_name! if translate_names
+product6 = Product.create!(name: "Dinner meal")
+product6.translate_name! if translate_names
+product7 = Product.create!(name: "Cup coffee")
+product7.translate_name! if translate_names
+product8 = Product.create!(name: "Walk in the park")
+product8.translate_name! if translate_names
+product9 = Product.create!(name: "Lunch meal")
+product9.translate_name! if translate_names
+
+user1 = User.create!(email: "carlos@gmail.com", password: "123456", first_name: "Carlos", address: "Beta-i, Lisbon, Portugal")
+user2 = User.create!(email: "sarah@gmail.com", password: "123456", first_name: "Sarah")
+user3 = User.create!(email: "finn@gmail.com", password: "123456", first_name: "Finn", address: "Avenida de Berna 20, Lisbon, Portugal")
+user4 = User.create!(email: "genki@gmail.com", password: "123456", first_name: "Genki")
+user5 = User.create!(email: "shannon@gmail.com", password: "123456", first_name: "Shannon")
 
 Entry.create!(
   quantity: 10,
@@ -55,13 +50,13 @@ Entry.create!(
   )
 
 Entry.create!(
-  quantity: 10,
+  quantity: 2,
   user: user2,
   product: product1
   )
 
 Entry.create!(
-  quantity: 10,
+  quantity: 4,
   user: user2,
   product: product2
   )
@@ -72,8 +67,15 @@ Entry.create!(
   product: product6
   )
 
+Entry.create!(
+  quantity: 7,
+  user: user3,
+  product: product1
+  )
+
+
 Transaction.create!(
-  address: "Lisbon",
+  address: "Beta-i, Lisbon, Portugal",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
@@ -83,9 +85,9 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address:"Japan",
+  address: "Beta-i, Lisbon, Portugal",
   proposed_product: product5,
-  proposed_product_quantity: 8,
+  proposed_product_quantity: 2,
   proposed_by_user: user1,
   wanted_product:product1,
   wanted_product_quantity: 1,
@@ -93,9 +95,9 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address:"Kyoto",
+  address: "Beta-i, Lisbon, Portugal",
   proposed_product: product5,
-  proposed_product_quantity: 2,
+  proposed_product_quantity: 1,
   proposed_by_user: user1,
   wanted_product:product2,
   wanted_product_quantity: 1,
@@ -103,7 +105,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address:"Osaka",
+  address: "Beta-i, Lisbon, Portugal",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
@@ -113,77 +115,110 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address:"Okinawa",
+  address: "Beta-i, Lisbon, Portugal",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
   wanted_product:product6,
-  wanted_product_quantity: 6,
+  wanted_product_quantity: 1,
   status: 0
   )
 
 Transaction.create!(
-  address:"North Korea",
+  address: "Beta-i, Lisbon, Portugal",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
   wanted_product:product6,
-  wanted_product_quantity: 6,
+  wanted_product_quantity: 1,
   status: 1,
   accepted_by_user: user2
   )
 
 Transaction.create!(
-  address:"North Korea",
+  address: "Beta-i, Lisbon, Portugal",
   proposed_product: product5,
   proposed_product_quantity: 1,
   proposed_by_user: user1,
   wanted_product:product6,
-  wanted_product_quantity: 6,
-  status: 1,
-  accepted_by_user: user2
-  )
-Transaction.create!(
-  address:"North Korea",
-  proposed_product: product5,
-  proposed_product_quantity: 1,
-  proposed_by_user: user1,
-  wanted_product:product6,
-  wanted_product_quantity: 6,
-  status: 1,
-  accepted_by_user: user2
-  )
-Transaction.create!(
-  address:"North Korea",
-  proposed_product: product5,
-  proposed_product_quantity: 1,
-  proposed_by_user: user1,
-  wanted_product:product6,
-  wanted_product_quantity: 6,
-  status: 1,
-  accepted_by_user: user2
-  )
-Transaction.create!(
-  address:"North Korea",
-  proposed_product: product5,
-  proposed_product_quantity: 1,
-  proposed_by_user: user1,
-  wanted_product:product6,
-  wanted_product_quantity: 6,
-  status: 1,
-  accepted_by_user: user2
-  )
-Transaction.create!(
-  address:"North Korea",
-  proposed_product: product5,
-  proposed_product_quantity: 1,
-  proposed_by_user: user1,
-  wanted_product:product6,
-  wanted_product_quantity: 6,
+  wanted_product_quantity: 1,
   status: 1,
   accepted_by_user: user2
   )
 
+Transaction.create!(
+  address: "Beta-i, Lisbon, Portugal",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 1,
+  status: 1,
+  accepted_by_user: user2
+  )
+
+Transaction.create!(
+  address: "Beta-i, Lisbon, Portugal",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 1,
+  status: 1,
+  accepted_by_user: user2
+  )
+
+Transaction.create!(
+  address: "Beta-i, Lisbon, Portugal",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 1,
+  status: 1,
+  accepted_by_user: user2
+  )
+
+Transaction.create!(
+  address: "Beta-i, Lisbon, Portugal",
+  proposed_product: product5,
+  proposed_product_quantity: 1,
+  proposed_by_user: user1,
+  wanted_product:product6,
+  wanted_product_quantity: 1,
+  status: 1,
+  accepted_by_user: user2
+  )
+
+Transaction.create!(
+  address: "Beta-i, Lisbon, Portugal",
+  proposed_product: product6,
+  proposed_product_quantity: 1,
+  proposed_by_user: user2,
+  wanted_product:product4,
+  wanted_product_quantity: 1,
+  status: 0
+  )
+
+Transaction.create!(
+  address: "Beta-i, Lisbon, Portugal",
+  proposed_product: product6,
+  proposed_product_quantity: 1,
+  proposed_by_user: user2,
+  wanted_product:product4,
+  wanted_product_quantity: 1,
+  status: 0
+  )
+
+Transaction.create!(
+  address: "Beta-i, Lisbon, Portugal",
+  proposed_product: product6,
+  proposed_product_quantity: 1,
+  proposed_by_user: user2,
+  wanted_product:product4,
+  wanted_product_quantity: 1,
+  status: 0
+  )
 
 
 

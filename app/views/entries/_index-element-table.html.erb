@@ -4,7 +4,10 @@
   <% if policy(entry).show? %>
     <td style="text-align:center">
       <%= link_to t('entries.index.show'), entry, class: "btn btn-primary" %>
-      <%= link_to t('entries.index.propose_new_transaction'), new_transaction_path, class: "btn btn-success" %>
+      <%= link_to t('entries.index.propose_new_transaction'),
+        new_transaction_path(proposed_product_id: entry.product.id, proposed_product_quantity: entry.quantity),
+        class: "btn btn-success"
+      %>
     </td>
   <% end %>
 </tr>
