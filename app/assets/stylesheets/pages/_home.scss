@@ -21,9 +21,10 @@ body{
 }
 
 .banner {
-  color: black;
+  color: white;
+  text-align: center;
   height: 100vh;
-  background-position: center center;
+  background-position: center;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
