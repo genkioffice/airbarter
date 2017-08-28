@@ -22,6 +22,7 @@ en:
         status: Status
         wanted_product: Wanted Product
         wanted_product_quantity: Wanted Quantity
+        descriptino: Description
     models:
       entry:
         one: Entry

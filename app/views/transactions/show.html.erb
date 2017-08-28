@@ -1,5 +1,5 @@
-<div class="container">
-  <div id="transaction-description">
+<div class="transaction-wrapper">
+  <div class="transaction-description">
     <% if @transaction.status == "proposed" %>
       <h1><%= t('.title.proposed') %></h1>
     <% elsif @transaction.status == "accepted" %>
@@ -38,6 +38,11 @@
     <p>
       <strong><%= t('activerecord.attributes.transaction.wanted_product_quantity') %>:</strong>
       <%= @transaction.wanted_product_quantity %>
+    </p>
+
+    <p>
+      <strong><%= t('activerecord.attributes.transaction.description') %>:</strong>
+      <%= @transaction.description %>
     </p>
 
     <% if @transaction.status == "accepted" %>
@@ -79,23 +84,21 @@
     <% end %>
   </div>
 
-  <p></p>
+  <div id="map-transaction" class="transaction-map"></div>
 
-  <div id="transaction-photos">
-    <% @transaction.photos.each do |photo| %>
-      <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fit %>
-    <% end %>
-  </div>
-  <p></p>
+  <% @transaction.photos.each_with_index do |photo,index| %>
+    <div id="transaction-photo-<%= index %>" class="col-xs-12 col-sm-6">
+      <%= cl_image_tag photo.path, height: 350, crop: :fill %>
+    </div>
+  <% end %>
 
-  <div id="map"></div>
 </div>
 
 <% content_for :after_js do %>
   <script type="text/javascript">
     $(document).on('ready', function() {
       var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
-      handler.buildMap({ internal: { id: 'map' } }, function(){
+      handler.buildMap({ internal: { id: 'map-transaction' } }, function(){
         markers = handler.addMarkers([
           {
             "lat": <%= @transaction.latitude %>,
