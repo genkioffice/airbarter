@@ -1,93 +1,95 @@
-<div>
-<% if @transaction.status == "proposed" %>
-  <h1><%= t('.title.proposed') %></h1>
-<% elsif @transaction.status == "accepted" %>
-  <h1><%= t('.title.accepted') %></h1>
-<% elsif @transaction.status == "removed" %>
-  <h1><%= t('.title.removed') %></h1>
-<% else %>
-  <h1><%= t('.title.other') %></h1>
-<% end %>
+<div class="container">
+  <div id="transaction-description">
+    <% if @transaction.status == "proposed" %>
+      <h1><%= t('.title.proposed') %></h1>
+    <% elsif @transaction.status == "accepted" %>
+      <h1><%= t('.title.accepted') %></h1>
+    <% elsif @transaction.status == "removed" %>
+      <h1><%= t('.title.removed') %></h1>
+    <% else %>
+      <h1><%= t('.title.other') %></h1>
+    <% end %>
 
-<p>
-  <strong><%= t('activerecord.attributes.transaction.proposed_product') %>:</strong>
-  <%= @transaction.proposed_product.translated_name %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.transaction.proposed_product') %>:</strong>
+      <%= @transaction.proposed_product.translated_name %>
+    </p>
 
-<p>
-  <strong><%= t('activerecord.attributes.transaction.proposed_product_quantity') %>:</strong>
-  <%= @transaction.proposed_product_quantity %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.transaction.proposed_product_quantity') %>:</strong>
+      <%= @transaction.proposed_product_quantity %>
+    </p>
 
-<p>
-  <strong><%= t('activerecord.attributes.transaction.proposed_by_user') %>:</strong>
-  <%= @transaction.proposed_by_user.email %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.transaction.proposed_by_user') %>:</strong>
+      <%= @transaction.proposed_by_user.email %>
+    </p>
 
-<p>
-  <strong><%= t('activerecord.attributes.transaction.address') %>:</strong>
-  <%= @transaction.address %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.transaction.address') %>:</strong>
+      <%= @transaction.address %>
+    </p>
 
-<p>
-  <strong><%= t('activerecord.attributes.transaction.wanted_product') %>:</strong>
-  <%= @transaction.wanted_product.translated_name %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.transaction.wanted_product') %>:</strong>
+      <%= @transaction.wanted_product.translated_name %>
+    </p>
 
-<p>
-  <strong><%= t('activerecord.attributes.transaction.wanted_product_quantity') %>:</strong>
-  <%= @transaction.wanted_product_quantity %>
-</p>
+    <p>
+      <strong><%= t('activerecord.attributes.transaction.wanted_product_quantity') %>:</strong>
+      <%= @transaction.wanted_product_quantity %>
+    </p>
 
-<% if @transaction.status == "accepted" %>
-  <p>
-    <strong><%= t('activerecord.attributes.transaction.accepted_by_user') %>:</strong>
-    <%= @transaction.accepted_by_user.email %>
-  </p>
-<% end %>
+    <% if @transaction.status == "accepted" %>
+      <p>
+        <strong><%= t('activerecord.attributes.transaction.accepted_by_user') %>:</strong>
+        <%= @transaction.accepted_by_user.email %>
+      </p>
+    <% end %>
 
-<%= link_to t('activerecord.models.transaction.other'), transactions_path, class: "btn btn-success" %>
+    <%= link_to t('activerecord.models.transaction.other'), transactions_path, class: "btn btn-success" %>
 
-<% if policy(@transaction).accept? && @transaction.status == "proposed" %>
-  <% if @entries.select{ |e| e.product == @transaction.wanted_product } != [] && @transaction.wanted_product_quantity <= @entries.select{ |e| e.product == @transaction.wanted_product }.first.quantity %>
-    <%= link_to t('.accept'), accept_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
-  <% else %>
-    <%= t('.insufficient_info') %>
-  <% end %>
-<% elsif policy(@transaction).edit? %>
-  <%= link_to t('.edit'), edit_transaction_path(@transaction), class: "btn btn-primary" %>
-<% end %>
+    <% if policy(@transaction).accept? && @transaction.status == "proposed" %>
+      <% if @entries.select{ |e| e.product == @transaction.wanted_product } != [] && @transaction.wanted_product_quantity <= @entries.select{ |e| e.product == @transaction.wanted_product }.first.quantity %>
+        <%= link_to t('.accept'), accept_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
+      <% else %>
+        <%= t('.insufficient_info') %>
+      <% end %>
+    <% elsif policy(@transaction).edit? %>
+      <%= link_to t('.edit'), edit_transaction_path(@transaction), class: "btn btn-primary" %>
+    <% end %>
 
 
-<% if policy(@transaction).change_status? %>
-  <% if @transaction.status != "removed" %>
-    <%= link_to t('.remove'), change_status_transaction_path(@transaction, status: :removed), method: :patch, class: "btn btn-warning" %>
-  <% end %>
-<% end %>
+    <% if policy(@transaction).change_status? %>
+      <% if @transaction.status != "removed" %>
+        <%= link_to t('.remove'), change_status_transaction_path(@transaction, status: :removed), method: :patch, class: "btn btn-warning" %>
+      <% end %>
+    <% end %>
 
-<% if policy(@transaction).change_status? %>
-  <% if @transaction.status == "removed" %>
-    <%= link_to t('.propose_again'), change_status_transaction_path(@transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
-  <% end %>
-<% end %>
+    <% if policy(@transaction).change_status? %>
+      <% if @transaction.status == "removed" %>
+        <%= link_to t('.propose_again'), change_status_transaction_path(@transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
 
-<% if policy(@transaction).destroy? %>
-  <% if @transaction.status == "removed" %>
-    <%= link_to t('helpers.submit.transaction.destroy'), @transaction, method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
-  <% end %>
-<% end %>
+    <% if policy(@transaction).destroy? %>
+      <% if @transaction.status == "removed" %>
+        <%= link_to t('helpers.submit.transaction.destroy'), @transaction, method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <p></p>
+
+  <div id="transaction-photos">
+    <% @transaction.photos.each do |photo| %>
+      <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fit %>
+    <% end %>
+  </div>
+  <p></p>
+
+  <div id="map"></div>
 </div>
-
-<p></p>
-
-<div>
-  <% @transaction.photos.each do |photo| %>
-    <%= cl_image_tag photo.path, width: 600, height: 400, crop: :fit %>
-  <% end %>
-</div>
-<p></p>
-
-<div id="map"></div>
 
 <% content_for :after_js do %>
   <script type="text/javascript">

@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-template-columns: 400px 1fr 1fr;
+  grid-template-rows: 50% 50%;
+}
+
+#transaction-description {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+#map {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+#transaction-photos {
+  grid-column: 1;
+  grid-row: 2 / span 3;
+}
+

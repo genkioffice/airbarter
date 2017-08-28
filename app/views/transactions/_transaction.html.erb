@@ -7,7 +7,9 @@
                 <div style="padding-top: 9px">
                   <div class="col-xs-12" style="margin-bottom: 9px" >
                     <div class="col-xs-3">
-                      <%= image_tag(t.proposed_by_user.facebook_picture_url, class: "avatar-large") %>
+                      <% if t.proposed_by_user.facebook_picture_url %>
+                        <%= image_tag(t.proposed_by_user.facebook_picture_url, class: "avatar-large") %>
+                      <% end %>
                     </div>
                     <div class="col-xs-9">
                       <div class="article-info">
