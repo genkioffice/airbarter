@@ -28,10 +28,10 @@ body{
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
 
-  background-image: linear-gradient(-225deg, rgba(0,101,180,0.6) 0%, rgba(32,40,41,0.3) 1%) ,url("http://res.cloudinary.com/df4gltzir/image/upload/v1503073730/money-coins_kiseua.jpg")
+  background-image: url("http://res.cloudinary.com/df4gltzir/image/upload/v1503850015/camels-modified2_auby2k.jpg")
 }
 .banner h1 {
   font-size: 50px;

@@ -3,7 +3,6 @@ User.destroy_all
 Entry.destroy_all
 Transaction.destroy_all
 
-
 translate_names = false
 
 product1 = Product.create!(name: "Blu-ray Film")

@@ -1,6 +1,53 @@
-<br>
-<div id="map" style="width: 100%; height: 600px;"></div>
-<h3><%= t('.title.proposed') %></h3>
+<div class="content">
+  <!-- content has a set of cards and map -->
+  <div class="row" style="width: 60vw">
+    <div class="col-xs-12">
+      <!-- This is tab section -->
+      <ul class="nav nav-tabs">
+        <br>
+        <li class="nav-item">
+          <a href="#transactions" class="nav-link active" role="tab" data-toggle="tab">All</a>
+        </li>
+        <li class="nav-item">
+          <a href="#proposed_transactions" class="nav-link" role="tab" data-toggle="tab">Proposed</a>
+        </li>
+        <li class="nav-item">
+          <a href="#accepted_transactions" class="nav-link" role="tab" data-toggle="tab">Accepted</a>
+        </li>
+        <li class="nav-item">
+          <a href="#removed_transactions" class="nav-link" role="tab" data-toggle="tab">Removed</a>
+        </li>
+      </ul>
+    </div>
+    <!-- this is tab contents section -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active" id="transactions">
+      <br>
+        <div class="cards-holder">
+            <%= render 'transaction', transactions:@transactions %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="proposed_transactions">
+        <div class="cards-holder">
+            <%= render 'transaction', transactions:@proposed_transactions %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="accepted_transactions">
+        <div class="cards-holder">
+            <%= render 'transaction', transactions:@accepted_transactions %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="removed_transactions">
+        <div class="cards-holder">
+            <%= render 'transaction', transactions:@removed_transactions %>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- render map -->
+  <div id="map" style="position: relative; width: 40vw"></div>
+</div>
+<!-- <h3><%= t('.title.proposed') %></h3>
 
 <table class="table table-striped">
   <thead>
@@ -137,3 +184,4 @@
     });
   <% end %>
 <% end %>
+ -->
