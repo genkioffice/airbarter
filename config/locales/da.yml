@@ -15,6 +15,7 @@ da:
       transaction:
         accepted_by_user: Accepteret af bruger
         address: Adresse
+        description: Beskrivelse
         photos: Billeder
         proposed_by_user: Foreslået af bruger
         proposed_product: Foreslået produkt
