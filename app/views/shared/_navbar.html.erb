@@ -54,7 +54,10 @@
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to t(".products", default: "Products"), products_path, class: "navbar-wagon-item navbar-wagon-link" %>
+              <%= link_to products_path do %>
+                <i class="fa fa-book"></i> <%= t(".products", default: "Products")  %>
+              <% end %>
+
             </li>
             <li>
               <%= link_to edit_user_registration_path do %>
