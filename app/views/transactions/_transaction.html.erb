@@ -7,7 +7,12 @@
                 <div style="padding-top: 9px">
                   <div class="col-xs-12" style="margin-bottom: 9px" >
                     <div class="col-xs-3">
+                    <% if t.proposed_by_user.facebook_picture_url %>
                       <%= image_tag(t.proposed_by_user.facebook_picture_url, class: "avatar-large") %>
+                    <% else %>
+                      <% avatar_url = "AirbarterLogo.png" %>
+                      <%= image_tag avatar_url, size: "50x50" %>
+                    <% end %>
                     </div>
                     <div class="col-xs-9">
                       <div class="article-info">

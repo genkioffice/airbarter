@@ -15,6 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   def edit
     super
+    byebug
     @user = current_user
   end
 
@@ -22,7 +23,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     super
     @user = current_user
-    @user = User.update(user_params)
+byebug
+    if @user = User.update(user_params)
+      redirect_to edit_user_registeration_path
+    else
+      render :edit
+    end
   end
 
   # DELETE /resource
@@ -48,7 +54,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :address, :facebook_picture_url, :first_name, :last_name, :photo])
+
   end
 
   def user_params
