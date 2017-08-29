@@ -10,14 +10,6 @@ class TransactionsController < ApplicationController
     @removed_transactions = policy_scope(Transaction).where(status: 2).order(id: :desc)
 
     @entries = current_user.entries
-
-    @transactions_on_map = Transaction.where.not(latitude: nil, longitude: nil)
-
-    @hash = Gmaps4rails.build_markers(@transactions_on_map) do |transaction, marker|
-      marker.lat transaction.latitude
-      marker.lng transaction.longitude
-      marker.infowindow render_to_string(partial: "/transactions/map_box", locals: { transaction: transaction })
-    end
   end
 
   # GET /transactions/1
@@ -104,6 +96,8 @@ class TransactionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
