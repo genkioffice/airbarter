@@ -17,5 +17,9 @@ class Transaction < ApplicationRecord
     self.save
   end
 
+  def to_marker
+    {'lat' => latitude, 'lng' => longitude}
+  end
+
   enum status: [:proposed, :accepted, :removed]
 end
