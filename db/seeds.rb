@@ -1,5 +1,3 @@
-require 'byebug'
-
 Product.destroy_all
 User.destroy_all
 Entry.destroy_all
