@@ -1,9 +1,16 @@
-<h3><%= t('.title') %></h3>
 <!--   <% @my_entries.each do |entry| %>
     <%= render 'shared/circle', entry:entry %>
   <% end %>
  -->
-<table class="table table-striped">
+<!-- this is cards layout -->
+<div class="my-entries-cards col-xs-12">
+  <h3><%= t('.title') %></h3>
+  <% @my_entries.each do |entry| %>
+    <%= render 'card', entry:entry %>
+  <% end %>
+</div>
+<!-- this line below is previous -->
+<table class="table" style="background-color: #BCAC9B">
   <thead>
     <tr>
       <th style="text-align:right"><%= t('activerecord.attributes.entry.quantity') %></th>

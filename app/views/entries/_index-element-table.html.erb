@@ -8,7 +8,27 @@
         new_transaction_path(proposed_product_id: entry.product.id, proposed_product_quantity: entry.quantity),
         class: "btn btn-success"
       %>
+      <%= link_to t('entries.index.delete'), entry, method: :delete, class: "btn btn-danger" %>
+      <button type="button" data-toggle="modal" data-target="propose-transaction">
+        <li>
+          <i class="fa fa-exchange"></i>
+        </li>
+      </button>
     </td>
   <% end %>
 </tr>
 
+<div class="modal fade" id="propose-transaction" tabindex="-1" role="dialog" aria-labelledby="Label_this">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="Label_this">this is labeled</h4>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

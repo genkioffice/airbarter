@@ -1,6 +1,12 @@
 
-<div class="navbar-wagon">
+<div class="navbar-wagon <%= "bg-black" if controller_name == "transactions" && action_name == "index" %>">
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <div class="navbar-wagon-item">
+      <%= simple_form_for "", url: transactions_path, method: "get" do |f| %>
+        <span><i class="fa fa-search"></i></span>
+        <%= f.input :search, label: false, placeholder: "Search transactions" %>
+      <% end %>
+    </div>
 
     <% if user_signed_in? %>
 
@@ -11,7 +17,7 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
 
-        <a href="#" class="dropdown-toggle navbar-wagon-link" id="navbar-wagon-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-language" style="font-size: 24px"></i><span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle navbar-wagon-link" id="navbar-wagon-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-language" style="font-size: 24px; border-top: 10px;"></i><span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to new_current_path("en", request.fullpath) do %>
@@ -44,7 +50,7 @@
       <div  class="navbar-wagon-item">
         <div class="dropdown">
           <% avatar_url = "AirbarterLogo.png" %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", size: "50x50"%>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown", size: "50x50", style: "filter: invert(100%)" %>
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
@@ -85,7 +91,7 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
 
-        <a href="#" class="dropdown-toggle navbar-wagon-link" id="navbar-wagon-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-language" style="font-size: 24px"></i><span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle navbar-wagon-link" id="navbar-wagon-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-language" style="font-size: 24px; border-top: 10px;"></i><span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to new_current_path("en", request.fullpath) do %>
