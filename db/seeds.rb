@@ -147,7 +147,8 @@ Transaction.create!(
   wanted_product:product6,
   wanted_product_quantity: 1,
   status: 1,
-  accepted_by_user: user2
+  accepted_by_user: user2,
+  description: "Who in their right mind would want to be an artist today? Tortured, struggling – these are words often used to describe the artist.Elizabeth Gilbert, author of the famed novel Eat, Pray Love, challenges this portrayal of the artist in her talk."
   )
 
 Transaction.create!(
@@ -158,7 +159,8 @@ Transaction.create!(
   wanted_product:product6,
   wanted_product_quantity: 1,
   status: 1,
-  accepted_by_user: user2
+  accepted_by_user: user2,
+  description: "Who in their right mind would want to be an artist today? Tortured, struggling – these are words often used to describe the artist.Elizabeth Gilbert, author of the famed novel Eat, Pray Love, challenges this portrayal of the artist in her talk."
   )
 
 Transaction.create!(
@@ -169,7 +171,8 @@ Transaction.create!(
   wanted_product:product6,
   wanted_product_quantity: 1,
   status: 1,
-  accepted_by_user: user2
+  accepted_by_user: user2,
+  description: "Who in their right mind would want to be an artist today? Tortured, struggling – these are words often used to describe the artist.Elizabeth Gilbert, author of the famed novel Eat, Pray Love, challenges this portrayal of the artist in her talk."
   )
 
 Transaction.create!(
@@ -180,7 +183,8 @@ Transaction.create!(
   wanted_product:product6,
   wanted_product_quantity: 1,
   status: 1,
-  accepted_by_user: user2
+  accepted_by_user: user2,
+  description: "Who in their right mind would want to be an artist today? Tortured, struggling – these are words often used to describe the artist.Elizabeth Gilbert, author of the famed novel Eat, Pray Love, challenges this portrayal of the artist in her talk."
   )
 
 Transaction.create!(
@@ -191,7 +195,8 @@ Transaction.create!(
   wanted_product:product6,
   wanted_product_quantity: 1,
   status: 1,
-  accepted_by_user: user2
+  accepted_by_user: user2,
+  description: "Who in their right mind would want to be an artist today? Tortured, struggling – these are words often used to describe the artist.Elizabeth Gilbert, author of the famed novel Eat, Pray Love, challenges this portrayal of the artist in her talk."
   )
 
 Transaction.create!(
@@ -202,7 +207,8 @@ Transaction.create!(
   wanted_product:product6,
   wanted_product_quantity: 1,
   status: 1,
-  accepted_by_user: user2
+  accepted_by_user: user2,
+  description: "Who in their right mind would want to be an artist today? Tortured, struggling – these are words often used to describe the artist.Elizabeth Gilbert, author of the famed novel Eat, Pray Love, challenges this portrayal of the artist in her talk."
   )
 
 Transaction.create!(

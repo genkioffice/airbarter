@@ -30,10 +30,12 @@
                 <% end %>
                 <!-- this is primary info for a card -->
                 <div class="caption col-xs-12" style="display: inline-flex">
-                  <div class="caption-title" style="font-size: 25px"><%= t.wanted_product_quantity %> <%= t.wanted_product.name %></div>
+                  <div class="caption-title" style="font-size: 25px"><%= t.proposed_product_quantity %> <%= t.proposed_product.name %></div>
                 </div>
                 <!-- this is sub continent for a card -->
                 <div class="card-description col-xs-12" style="color: grey; font-size: 14px">
+
+                <p>In exchange for : <strong><%= t.wanted_product_quantity %> <%= t.wanted_product.translated_name %></strong></p>
                   <p><%= t.description %></p>
                 </div>
               <% end %>
