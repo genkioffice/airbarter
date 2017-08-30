@@ -3,11 +3,10 @@
   border-radius: 50%;
 }
 .my-entries-cards{
-  background-color: #4f485c;
-  height:40vh;
+  height:65vh;
 }
 .my-entries-cards > h3{
-  color: white;
+  // color: white;
 }
 .entry-one-card{
   margin-bottom: 30px;
@@ -19,4 +18,15 @@
 }
 .appended_table > tr{
   border: none;
+}
+.plus-button{
+  background-color:$beige !important;
+  border: 0px;
+  font-size: 36px !important;
+  &:hover{
+    background-color:$beige !important;
+    border: 0px;
+    font-size: 33px !important;
+  }
+
 }

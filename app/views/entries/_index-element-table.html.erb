@@ -1,23 +1,36 @@
-<tr>
+<tr style="border-top:0px">
   <td style="text-align:right"><%= entry.quantity %></td>
   <td><%= entry.product.translated_name %></td>
   <% if policy(entry).show? %>
-    <td style="text-align:center">
-      <%= link_to t('entries.index.show'), entry, class: "btn btn-primary" %>
-      <%= link_to t('entries.index.propose_new_transaction'),
-        new_transaction_path(proposed_product_id: entry.product.id, proposed_product_quantity: entry.quantity),
-        class: "btn btn-success"
-      %>
-      <%= link_to t('entries.index.delete'), entry, method: :delete, class: "btn btn-danger" %>
-      <button type="button" data-toggle="modal" data-target="propose-transaction">
-        <li>
-          <i class="fa fa-exchange"></i>
-        </li>
-      </button>
+    <td style="text-align:center;justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    font-size: 22px;">
+      <!-- this is rendered in dashboard of table -->
+      <!-- show button -->
+      <!-- change directly access to edit page -->
+      <%= link_to edit_entry_path(entry) do %>
+        <i class="fa fa-pencil-square-o"></i>
+      <% end %>
+      <!-- create transaction button -->
+      <%= link_to new_transaction_path(proposed_product_id: entry.product.id, proposed_product_quantity: entry.quantity) do %>
+        <i class="fa fa-exchange" ></i>
+      <% end %>
+      <!-- delete entry button -->
+      <%= link_to entry, method: :delete do %>
+        <i class="fa fa-trash-o"></i>
+      <% end %>
     </td>
   <% end %>
 </tr>
 
+<!-- try to make modal if you have time! -->
+<!-- <button type="button" data-toggle="modal" data-target="propose-transaction">
+  <li>
+    <i class="fa fa-exchange"></i>
+  </li>
+</button> -->
+<!--
 <div class="modal fade" id="propose-transaction" tabindex="-1" role="dialog" aria-labelledby="Label_this">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -32,3 +45,4 @@
     </div>
   </div>
 </div>
+ -->
