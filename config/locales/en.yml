@@ -23,6 +23,12 @@ en:
         status: Status
         wanted_product: Wanted Product
         wanted_product_quantity: Wanted Quantity
+      user:
+        address: Address
+        description: Description
+        email: Email
+        first_name: First name
+        last_name: Last name
     models:
       entry:
         one: Entry
@@ -33,6 +39,9 @@ en:
       transaction:
         one: Transaction
         other: Transactions
+      user:
+        one: User
+        other: Users
   devise:
     confirmations:
       new:
@@ -73,7 +82,7 @@ en:
           email
         leave_blank_if_you_don_t_want_to_change_it: Leave blank if you don t want
           to change it
-        title: Title
+        title: User Profile
         unhappy: Unhappy
         update: Update
         we_need_your_current_password_to_confirm_your_changes: We need your current

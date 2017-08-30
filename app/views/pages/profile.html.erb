@@ -3,36 +3,34 @@
   <div class="user-avatar">
     <div class="col-xs-4">
       <div class="user-info">
-        <%= cl_image_tag @user.facebook_picture_url %>
+        <%= cl_image_tag @user.facebook_picture_url, width: 400, crop: :fill %>
         <h3><%= @user.first_name %> <%= @user.last_name %></h3>
         <p><%= @user.description %></p>
+        <p><%= @user.address %></p>
+        <p><%= @user.email %></p>
       </div>
     </div>
   </div>
   <div class="col-xs-12">
-    <h4>My Entries</h4>
+    <h4><%= t('activerecord.models.entry.other') %></h4>
 
-    <table class="table table-bordered">
+    <table class="table table-striped">
       <thead>
         <tr>
-          <th>Quantity</th>
-          <th>Product</th>
-
+          <th><%= t('activerecord.attributes.entry.product') %></th>
+          <th style="text-align:right"><%= t('activerecord.attributes.entry.quantity') %></th>
         </tr>
       </thead>
 
       <tbody>
-
-          <% @user.entries.each do |entry| %>
-            <tr>
-              <td><%= entry.product.name %></td>
-              <td><%= entry.quantity %></td>
-            </tr>
-          <% end %>
-
+        <% @user.entries.each do |entry| %>
+          <tr>
+            <td><%= entry.product.translated_name %></td>
+            <td style="text-align:right"><%= entry.quantity %></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
 
-    <%= link_to 'New Entry', new_entry_path, class: "btn btn-success" %>
   </div>
 </div>

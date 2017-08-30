@@ -23,6 +23,12 @@ ar:
         status: الحالة
         wanted_product: مطلوب المنتج
         wanted_product_quantity: الكمية المطلوبة
+      user:
+        address: عنوان
+        description: وصف
+        email: البريد الإلكتروني
+        first_name: الاسم الاول
+        last_name: الكنية
     models:
       entry:
         one: دخول
@@ -33,6 +39,9 @@ ar:
       transaction:
         one: عملية تجارية
         other: المعاملات
+      user:
+        one: المستعمل
+        other: المستخدمين
   devise:
     confirmations:
       new:
@@ -71,7 +80,7 @@ ar:
         cancel_my_account: إلغاء حسابي
         currently_waiting_confirmation_for_email: تنتظر حاليا تأكيد البريد الإلكتروني
         leave_blank_if_you_don_t_want_to_change_it: اتركه فارغا إذا كنت لا تريد تغييره
-        title: عنوان
+        title: ملف تعريفي للمستخدم
         unhappy: تعيس
         update: تحديث
         we_need_your_current_password_to_confirm_your_changes: نحتاج إلى كلمة المرور

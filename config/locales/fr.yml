@@ -23,6 +23,12 @@ fr:
         status: Statut
         wanted_product: Produit recherché
         wanted_product_quantity: Quantité recherchée
+      user:
+        address: Adresse
+        description: La description
+        email: Email
+        first_name: Prénom
+        last_name: Nom de famille
     models:
       entry:
         one: Entrée
@@ -33,6 +39,9 @@ fr:
       transaction:
         one: Transaction
         other: Transactions
+      user:
+        one: Utilisateur
+        other: Utilisateurs
   devise:
     confirmations:
       new:
@@ -73,7 +82,7 @@ fr:
           le courrier électronique
         leave_blank_if_you_don_t_want_to_change_it: Laissez vide si vous ne voulez
           pas le changer
-        title: Titre
+        title: Profil de l'utilisateur
         unhappy: Malheureux
         update: Mettre à jour
         we_need_your_current_password_to_confirm_your_changes: Nous avons besoin de
