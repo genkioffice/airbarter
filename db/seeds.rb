@@ -94,7 +94,7 @@ user_carlos = User.create!(email: "carlos@gmail.com", password: "123456", first_
 user_sarah = User.create!(email: "sarah@gmail.com", password: "123456", first_name: "Sarah", address: "Praça Marechal Humberto Delgado, 1549-004 Lisboa, Portugal")
 user_finn = User.create!(email: "finn@gmail.com", password: "123456", first_name: "Finn", address: "Avenida de Berna 20, Lisbon, Portugal")
 user_genki = User.create!(email: "genki@gmail.com", password: "123456", first_name: "Genki", address: "Av. Brasília 352, 1350 Lisboa, Portugal")
-user_astrid = User.create!(email: "astrid@gmail.com", password: "123456", first_name: "Astrid", address: "Praça do Duque de Saldanha, 4, 1050-094 Lisboa, Portugal")
+user_astrid = User.create!(email: "astrid@gmail.com", password: "123456", first_name: "Astrid", address: "Praça do Duque de Saldanha 4, 1050-094 Lisboa, Portugal")
 user_claire = User.create!(email: "claire@gmail.com", password: "123456", first_name: "Claire", address: "Parque Eduardo VII, 1070-051 Lisboa, Portugal")
 
 user_carlos_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,h_3000,w_3000/v1504014055/IMG_6396_luylah.jpg" # Carlos
@@ -118,6 +118,28 @@ user_genki.save!
 user_astrid.save!
 user_claire.save!
 
+address01 = "221, Alameda dos Oceanos, 1990 Lisboa, Portugal"
+address02 = "Praça Cidade Salazar 174, 1800-093 Lisboa, Portugal"
+address03 = "Av. Alm. Gago Coutinho 72, 1950-380 Lisboa, Portugal"
+address04 = "12o A 087, Campo Grande 35, 1700 Lisboa, Portugal"
+address05 = "Estrada Da Serafina, 1070-057 Lisbon, Portugal"
+address06 = ""
+address07 = ""
+address08 = ""
+address09 = ""
+address10 = ""
+address11 = ""
+address12 = ""
+address13 = ""
+address14 = ""
+address15 = ""
+address16 = ""
+address17 = ""
+address18 = ""
+address19 = ""
+address20 = ""
+
+
 transaction1 = Transaction.create!(
   address: user_genki.address,
   proposed_product: meal,
@@ -131,7 +153,7 @@ transaction1 = Transaction.create!(
   )
 
 Transaction.create!(
-  address: user_carlos.address,
+  address: address01, # user_carlos.address,
   proposed_product: dvd_film,
   proposed_product_quantity: 3,
   proposed_by_user: user_carlos,
@@ -144,7 +166,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address: user_sarah.address,
+  address: address02, # user_sarah.address,
   proposed_product: babysitting,
   proposed_product_quantity: 20,
   proposed_by_user: user_sarah,
@@ -170,7 +192,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address: user_carlos.address,
+  address: address03, # user_carlos.address,
   proposed_product: teaching_programming,
   proposed_product_quantity: 1,
   proposed_by_user: user_carlos,
@@ -225,7 +247,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address: user_carlos.address,
+  address: address04, # user_carlos.address,
   proposed_product: teaching_math,
   proposed_product_quantity: 1,
   proposed_by_user: user_carlos,
@@ -239,7 +261,7 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address: user_carlos.address,
+  address: address05, # user_carlos.address,
   proposed_product: bluray_film,
   proposed_product_quantity: 1,
   proposed_by_user: user_carlos,

@@ -10,6 +10,35 @@ class TransactionsController < ApplicationController
     @removed_transactions = policy_scope(Transaction).where(status: 2).order(id: :desc)
 
     @entries = current_user.entries
+
+    @transactions_on_map = Transaction.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@transactions_on_map) do |transaction, marker|
+      marker.lat transaction.latitude
+      marker.lng transaction.longitude
+      position = 36
+      if transaction.status == "proposed"
+        marker.picture({
+          "url": "http://res.cloudinary.com/dwag6dz8c/image/upload/c_scale,w_36/v1504115223/AirbarterLogo_t9ou5v.png",
+          "width":  position,
+          "height": position
+        })
+      elsif transaction.status == "accepted"
+        marker.picture({
+          "url": "http://res.cloudinary.com/dwag6dz8c/image/upload/c_scale,w_36/v1504110112/free-map-marker-icon-dark_aizsw1.png",
+          "width":  position,
+          "height": position
+        })
+      else
+        marker.picture({
+          "url": "http://res.cloudinary.com/dwag6dz8c/image/upload/c_scale,w_36/v1504110112/free-map-marker-icon-red_dsp909.png",
+          "width":  position,
+          "height": position
+        })
+      end
+      marker.infowindow render_to_string(partial: "/transactions/map_box", locals: { transaction: transaction })
+    end
+
   end
 
   # GET /transactions/1
