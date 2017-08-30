@@ -89,6 +89,9 @@ walking_the_dog.translate_name! if translate_names
 garden_work.translate_name! if translate_names
 teaching_english.translate_name! if translate_names
 teaching_math.translate_name! if translate_names
+teaching_programming.translate_name! if translate_names
+babysitting.translate_name! if translate_names
+computer_help.translate_name! if translate_names
 
 user_carlos = User.create!(email: "carlos@gmail.com", password: "123456", first_name: "Carlos", address: "Av. Casal Ribeiro 28, 1000-092 Lisboa, Portugal")
 user_sarah = User.create!(email: "sarah@gmail.com", password: "123456", first_name: "Sarah", address: "Praça Marechal Humberto Delgado, 1549-004 Lisboa, Portugal")
