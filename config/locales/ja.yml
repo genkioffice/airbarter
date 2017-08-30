@@ -23,6 +23,12 @@ ja:
         status: 状態
         wanted_product: 募集製品
         wanted_product_quantity: 募集数量
+      user:
+        address: 住所
+        description: 説明
+        email: Eメール
+        first_name: ファーストネーム
+        last_name: 苗字
     models:
       entry:
         one: エントリ
@@ -33,6 +39,9 @@ ja:
       transaction:
         one: トランザクション
         other: トランザクション
+      user:
+        one: ユーザー
+        other: ユーザー
   devise:
     confirmations:
       new:
@@ -71,7 +80,7 @@ ja:
         cancel_my_account: アカウントをキャンセルする
         currently_waiting_confirmation_for_email: 現在メールの確認を待っています
         leave_blank_if_you_don_t_want_to_change_it: 変更したくない場合は空白のままにしてください
-        title: タイトル
+        title: ユーザープロファイル
         unhappy: 不幸
         update: 更新
         we_need_your_current_password_to_confirm_your_changes: 変更を確認するには、現在のパスワードが必要です
