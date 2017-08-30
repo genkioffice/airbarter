@@ -1,9 +1,16 @@
-<h3><%= t('.title') %></h3>
 <!--   <% @my_entries.each do |entry| %>
     <%= render 'shared/circle', entry:entry %>
   <% end %>
  -->
-<table class="table table-striped">
+<!-- this is cards layout -->
+<div class="my-entries-cards col-xs-12">
+  <h3><%= t('.title') %></h3>
+  <% @my_entries.each do |entry| %>
+    <%= render 'card', entry:entry %>
+  <% end %>
+</div>
+<!-- this line below is previous -->
+<table class="table" style="background-color: #F4F4F4/*; margin-bottom:0px !important*/;">
   <thead>
     <tr>
       <th style="text-align:right"><%= t('activerecord.attributes.entry.quantity') %></th>
@@ -26,31 +33,14 @@
   </tbody>
 </table>
 
-<br>
-
-<h3><%= t('.title_other') %></h3>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= t('activerecord.attributes.entry.user') %></th>
-      <th style="text-align:right"><%= t('activerecord.attributes.entry.quantity') %></th>
-      <th><%= t('activerecord.attributes.entry.product') %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @other_entries.each do |entry| %>
-
-      <tr>
-        <% if entry.user.first_name %>
-          <td><%= entry.user.first_name %> <%= entry.user.last_name %></td>
-        <% else %>
-          <td><%= entry.user.email %></td>
-        <% end %>
-        <td style="text-align:right"><%= entry.quantity %></td>
-        <td><%= entry.product.translated_name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function(){
+      $('.card').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+    });
+  <% end %>
+<% end %>

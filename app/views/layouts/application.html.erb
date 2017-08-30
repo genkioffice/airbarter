@@ -7,7 +7,11 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <!-- to get google's kinda font awesome -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- to call slick javascript -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css"/>
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -25,5 +29,6 @@
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %> <!-- Append this after the main `javascript_include_tag`. -->
     <%= yield(:after_js) %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>
   </body>
 </html>

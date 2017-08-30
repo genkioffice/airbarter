@@ -1,0 +1,11 @@
+<%= link_to entry_path(entry) do %>
+  <div class="col-xs-4 col-sm-2">
+    <div class="card col-xs-12" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+     url('<%= cl_image_path entry.product.photo.path, crop: :fill %>'); height: 30vh; background-position: center; background-size: cover; border-radius: 4%">
+        <!-- this is primary info for a card -->
+      <div class="caption col-xs-12" style="display: inline-flex">
+        <div class="caption-title" style="font-size: 25px;color: white"><%= entry.quantity %> <%= entry.product.name %></div>
+      </div>
+    </div>
+</div>
+<% end %>
