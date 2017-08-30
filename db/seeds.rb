@@ -79,7 +79,7 @@ teaching_programming.save!
 babysitting.save!
 computer_help.save!
 
-translate_names = false
+translate_names = true
 bluray_film.translate_name! if translate_names
 dvd_film.translate_name! if translate_names
 computer.translate_name! if translate_names
@@ -110,6 +110,13 @@ user_finn.facebook_picture_url = user_finn_photo_url
 user_genki.facebook_picture_url = user_genki_photo_url
 user_astrid.facebook_picture_url = user_astrid_photo_url
 user_claire.facebook_picture_url = user_claire_photo_url
+
+user_carlos.description = "I am a busy teacher and my dog really like to go to the park."
+user_sarah.description = "I have a lot of experience with looking after kids in all ages. I can also cook a meal for the kids."
+user_finn.description = "I am a 52 year old dane living in France. I am a junior Ruby on Rails programmer."
+user_genki.description = "I am Japanese student in Lisbon. I have studied in Belgium."
+user_astrid.description = "I am an older lady with a lot of experience with cooking. I am learning to use the computer."
+user_claire.description = "I grew up in the UK and is quite good with grammar and spelling. I am offering English classes."
 
 user_carlos.save!
 user_sarah.save!

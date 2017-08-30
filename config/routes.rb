@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     # Finn: I added this code back in
     devise_for :users, skip: :omniauth_callbacks
 
-    get 'user/:id',   to: 'pages#profile' ,as: 'user_show'
+    get 'users/:id',   to: 'pages#profile' ,as: 'user_show'
   end
 
   # this is to handle facebook login without language
