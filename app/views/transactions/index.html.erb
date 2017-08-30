@@ -48,31 +48,20 @@
   <div id="map" style="position: relative; width: 40vw"></div>
 </div>
 
-<% content_for :after_js do %>
-  <script type="text/javascript">
-    $(document).on('ready', function() {
-      var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
-      handler.buildMap({ internal: { id: 'map' } }, function(){
-        markers = handler.addMarkers(
-          <%= raw @transactions.map(&:to_marker).to_json %>
-          // {
-          //   "lat": <%= @transactions.first.latitude %>,
-          //   "lng": <%= @transactions.first.longitude %>,
-          //   // "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
-          // }
-        );
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
-
-        handler.getMap().setZoom(15);
-
-        // if (markers.length == 0) {
-        //   handler.getMap().setZoom(2);
-        // } else if (markers.length == 1) {
-        //   handler.getMap().setZoom(15);
-        // }
-
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
       });
-    })
-  </script>
+    });
+  <% end %>
 <% end %>
