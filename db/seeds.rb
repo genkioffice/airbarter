@@ -6,8 +6,8 @@ Transaction.destroy_all
 bluray_film = Product.create!(name: "Blu-ray Film")
 dvd_film = Product.create!(name: "DVD Film")
 computer = Product.create!(name: "Computer")
-meal = Product.create!(name: "a meal")
-cup_of_coffee = Product.create!(name: "a cup coffee")
+meal = Product.create!(name: "meal")
+cup_of_coffee = Product.create!(name: "cup coffee")
 walking_the_dog = Product.create!(name: "hour of walking the dog")
 garden_work = Product.create!(name: "hour of garden work")
 teaching_english = Product.create!(name: "hour of teaching English")
@@ -43,12 +43,13 @@ walking_dog2_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504
 walking_dog3_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504004769/walk_dog_2_jkzg8h.jpg"
 
 old_woman_with_computer1_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504024508/older-woman-using-laptop_d7y8nf.jpg"
-old_woman_with_computer2_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,g_face,h_500,w_500,x_0/v1504024508/older-woman-using-laptop_d7y8nf.jpg"
 
 laptop_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504025104/used_laptop_cayla7.jpg"
 teacher_programming_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504025342/instructor-with-student_cd9rdq.jpg"
 baby_sitting1 = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504025342/babysitter_i29tu7.jpg"
 baby_sitting2 = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504025343/babysitter2_abqpkj.jpg"
+
+young_woman_with_dog = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504089289/young-woman-dog_u5ezb9.jpg"
 
 person_placeholder = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504013004/person-placeholder-1_jbjbde.jpg"
 
@@ -94,22 +95,28 @@ user_sarah = User.create!(email: "sarah@gmail.com", password: "123456", first_na
 user_finn = User.create!(email: "finn@gmail.com", password: "123456", first_name: "Finn", address: "Avenida de Berna 20, Lisbon, Portugal")
 user_genki = User.create!(email: "genki@gmail.com", password: "123456", first_name: "Genki", address: "Av. Brasília 352, 1350 Lisboa, Portugal")
 user_astrid = User.create!(email: "astrid@gmail.com", password: "123456", first_name: "Astrid", address: "Praça do Duque de Saldanha, 4, 1050-094 Lisboa, Portugal")
+user_claire = User.create!(email: "claire@gmail.com", password: "123456", first_name: "Claire", address: "Parque Eduardo VII, 1070-051 Lisboa, Portugal")
 
 user_carlos_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,h_3000,w_3000/v1504014055/IMG_6396_luylah.jpg" # Carlos
 user_sarah_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504013385/sarah_yx5v2j.jpg" # Sarah
 user_finn_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,h_500,w_500/v1504013786/IMG_6356_v5b6ne.jpg" # Finn
 user_genki_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,h_500,w_500/v1504013776/IMG_6346_kqhsfb.jpg" # Genki
-user_astrid_photo_url = old_woman_with_computer2_photo_url # Old woman
+user_astrid_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,g_face,h_500,w_500,x_0/v1504024508/older-woman-using-laptop_d7y8nf.jpg" # Old woman
+user_claire_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,g_face,h_700,w_700,x_0/v1504089289/young-woman-dog_u5ezb9.jpg"
+
 user_carlos.facebook_picture_url = user_carlos_photo_url
 user_sarah.facebook_picture_url = user_sarah_photo_url
 user_finn.facebook_picture_url = user_finn_photo_url
 user_genki.facebook_picture_url = user_genki_photo_url
 user_astrid.facebook_picture_url = user_astrid_photo_url
+user_claire.facebook_picture_url = user_claire_photo_url
+
 user_carlos.save!
 user_sarah.save!
 user_finn.save!
 user_genki.save!
 user_astrid.save!
+user_claire.save!
 
 transaction1 = Transaction.create!(
   address: user_genki.address,
@@ -120,7 +127,7 @@ transaction1 = Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [meal1_photo_url],
-  description: "In exchange for the Matrix movies, I am proposing a delicious Sushi meal"
+  description: "In exchange for the Matrix movies, I am proposing a delicious Sushi meal. "
   )
 
 Transaction.create!(
@@ -132,7 +139,8 @@ Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [dvds_photo_url],
-  description: "I would like to exchage my DVD collection to BluRay. I give 3 DVDs for 1 BluRay movie"
+  description: "I would like to exchage my DVD collection to BluRay. I give 3 DVDs for 1 BluRay movie. " +
+              "I many different genres, but I like action movies, romantic movies and movies about football."
   )
 
 Transaction.create!(
@@ -144,7 +152,8 @@ Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [baby_sitting2],
-  description: "I am proposing 20 hours of babysitting in exchange for a used laptop. I need it for my school."
+  description: "I am proposing 20 hours of babysitting in exchange for a used laptop. I need it for my school. " +
+              "I have a lot of experience with looking after kids in all ages. I can also cook a meal for the kids."
   )
 
 Transaction.create!(
@@ -156,7 +165,8 @@ Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [meal2_photo_url],
-  description: "I will cook you a meal, exchange for teaching me how to use the computer."
+  description: "I will cook you a meal, exchange for teaching me how to use the computer. " +
+              "I am an older lady with a lot of experience with cooking. I need to use Skype so I can call my grand-children."
   )
 
 Transaction.create!(
@@ -168,33 +178,36 @@ Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [teacher_programming_photo_url],
-  description: "I can teach a hour of programming, if you will walk the dog for an hour. "
+  description: "I can teach a hour of programming, if you will walk the dog for an hour. " +
+              "I am a busy teacher and my dog really like to go to the park."
   )
 
 Transaction.create!(
-  address: user_carlos.address,
+  address: user_claire.address,
   proposed_product: walking_the_dog,
   proposed_product_quantity: 1,
-  proposed_by_user: user_carlos,
+  proposed_by_user: user_claire,
   wanted_product:walking_the_dog,
   wanted_product_quantity: 1,
   status: 1,
   accepted_by_user: user_sarah,
   photo_urls: [walking_dog3_photo_url],
-  description: "Let us optimize our time. I propose to walk your dog today, if you will walk my dog tomorrow"
+  description: "Let us optimize our time. I propose to walk your dog today, if you will walk my dog tomorrow. " +
+              "My dog is really nice and will not give you any trouble. "
   )
 
 Transaction.create!(
-  address: user_carlos.address,
+  address: user_claire.address,
   proposed_product: teaching_english,
   proposed_product_quantity: 1,
-  proposed_by_user: user_carlos,
+  proposed_by_user: user_claire,
   wanted_product:garden_work,
   wanted_product_quantity: 1,
   status: 1,
   accepted_by_user: user_sarah,
   photo_urls: [teacher_eng_photo_url],
-  description: "I need help to mow the lawn, because I have a problem with my back. In exchange I can help with your homework."
+  description: "I need help to mow the lawn, because I have a problem with my back. In exchange I can help with your homework. " +
+              "I grew up in the UK and is quite good with grammar and spelling."
   )
 
 Transaction.create!(
@@ -207,7 +220,8 @@ Transaction.create!(
   status: 1,
   accepted_by_user: user_sarah,
   photo_urls: [teacher_eng_photo_url],
-  description: "I will give you English classes, if you will walk my dog."
+  description: "I will give you English classes, if you will walk my dog." +
+              "I am a busy teacher and my dog really like to go to the park."
   )
 
 Transaction.create!(
@@ -220,7 +234,8 @@ Transaction.create!(
   status: 1,
   accepted_by_user: user_sarah,
   photo_urls: [teacher_math_photo_url],
-  description: "I will give you Math classes, if you will walk my dog."
+  description: "I will give you Math classes, if you will walk my dog." +
+              "I am a busy teacher and my dog really like to go to the park."
   )
 
 Transaction.create!(
@@ -233,7 +248,7 @@ Transaction.create!(
   status: 1,
   accepted_by_user: user_sarah,
   photo_urls: [bluray2_photo_url],
-  description: "Let us exchange movies. Maybe I have a movie that you have not seen yet."
+  description: "Let us exchange movies. Maybe I have a movie that you have not seen yet. "
   )
 
 Transaction.create!(
@@ -246,7 +261,8 @@ Transaction.create!(
   status: 1,
   accepted_by_user: user_sarah,
   photo_urls: [teacher_eng_photo_url],
-  description: "I will give you English classes, if you will walk my dog."
+  description: "I will give you English classes, if you will walk my dog." +
+              "I am a busy teacher and my dog really like to go to the park."
   )
 
 Transaction.create!(
@@ -258,7 +274,9 @@ Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [baby_sitting2],
-  description: "I can look after the kids for two hours, in exchange for dinner with you. "
+  description: "I can look after the kids for two hours, in exchange for dinner with you. "  +
+              "I have a lot of experience with looking after kids in all ages. I can also cook a meal for the kids."
+
   )
 
 Transaction.create!(
@@ -270,7 +288,8 @@ Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [meal3_photo_url],
-  description: "I can cook a meal for us today, then you can cook tomorrow."
+  description: "I can cook a meal for us today, then you can cook tomorrow." +
+              "I  like to cook health meals with vegetables and meat."
   )
 
 Transaction.create!(
@@ -282,7 +301,8 @@ Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [bluray1_photo_url],
-  description: "I have the Star Wars movie, I will exchange it for a nice meal with desert."
+  description: "I have the Star Wars movie, I will exchange it for a nice meal with desert." +
+              "It is a great movie, but I have seen it too many times. "
   )
 
 Transaction.create!(
@@ -294,7 +314,8 @@ Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [garden3_photo_url],
-  description: "I can help with mowing the lawn and other garden work. I need help with my English homework."
+  description: "I can help with mowing the lawn and other garden work. I need help with my English homework." +
+              "I have experience from helping my dad. "
   )
 
 Transaction.create!(
@@ -306,7 +327,8 @@ Transaction.create!(
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [teacher_programming_photo_url],
-  description: "I can teach you basic computer skills. I need help with my English homework."
+  description: "I can teach you basic computer skills. I need help with my English homework." +
+              "I am quite good with computers and can help you set it. I am not an expert. "
   )
 
 
@@ -386,5 +408,17 @@ Entry.create!(
   quantity: 10,
   user: user_astrid,
   product: meal
+  )
+
+Entry.create!(
+  quantity: 10,
+  user: user_claire,
+  product: teaching_english
+  )
+
+Entry.create!(
+  quantity: 10,
+  user: user_claire,
+  product: walking_the_dog
   )
 
