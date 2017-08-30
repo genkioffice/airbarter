@@ -12,20 +12,28 @@ Rails.application.routes.draw do
     resources :products #, only:[:index, :new, :create, :show]
     root to: 'pages#home'
 
+    # Finn: I added this code back in
+    devise_for :users, skip: :omniauth_callbacks
 
-    get 'user/:id',   to: 'pages#profile' ,as: 'user_show'
+    get 'users/:id',   to: 'pages#profile' ,as: 'user_show'
   end
 
   # this is to handle facebook login without language
-  devise_for :users,
-    controllers: {
-      omniauth_callbacks: 'users/omniauth_callbacks',
-      confirmations: 'users/confirmations',
-      passwords: 'users/passwords',
-      sessions: 'users/sessions',
-      unlocks: 'users/unlocks',
-      registrations: "users/registrations"
-    }
+
+  # Finn: I added this code back in. See above.
+  devise_for :users, only: :omniauth_callbacks,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  # Finn: I removed this code.
+  # devise_for :users,
+  #   controllers: {
+  #     omniauth_callbacks: 'users/omniauth_callbacks',
+  #     confirmations: 'users/confirmations',
+  #     passwords: 'users/passwords',
+  #     sessions: 'users/sessions',
+  #     unlocks: 'users/unlocks',
+  #     registrations: "users/registrations"
+  #   }
 
   # to avoide user from showing the profile page.
   # resources :users

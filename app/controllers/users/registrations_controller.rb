@@ -144,7 +144,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def user_params
-    params.require(:user).permit(:email, :address, :facebook_picture_url, :first_name, :last_name, :photo, :password, :password_confirmation, :current_password)
+    params.require(:user).permit(:email, :address, :facebook_picture_url, :first_name, :last_name, :photo, :password, :password_confirmation, :current_password, :description)
   end
 
   def translation_scope

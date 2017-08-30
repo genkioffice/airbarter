@@ -23,6 +23,12 @@ da:
         status: Status
         wanted_product: Ønsket produkt
         wanted_product_quantity: Ønsket antal
+      user:
+        address: Adresse
+        description: Beskrivelse
+        email: E-mail
+        first_name: Fornavn
+        last_name: Efternavn
     models:
       entry:
         one: Lagerpost
@@ -33,6 +39,9 @@ da:
       transaction:
         one: Transaktion
         other: Transaktioner
+      user:
+        one: Bruger
+        other: Brugere
   devise:
     confirmations:
       new:
@@ -73,7 +82,7 @@ da:
           på e-mail
         leave_blank_if_you_don_t_want_to_change_it: Lad være tom, hvis du ikke vil
           ændre den
-        title: Titel
+        title: Brugerprofil
         unhappy: Ulykkelig
         update: Opdatering
         we_need_your_current_password_to_confirm_your_changes: Vi har brug for din
