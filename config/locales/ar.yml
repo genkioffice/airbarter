@@ -12,6 +12,7 @@ ar:
         name_da: دانماركي
         name_fr: الفرنسية
         name_ja: اليابانية
+        photo: صورة فوتوغرافية
       transaction:
         accepted_by_user: مقبول من قبل المستخدم
         address: عنوان

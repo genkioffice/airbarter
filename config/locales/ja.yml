@@ -12,6 +12,7 @@ ja:
         name_da: デンマーク語
         name_fr: フランス語
         name_ja: 日本語
+        photo: 写真
       transaction:
         accepted_by_user: 受取する人
         address: 住所
