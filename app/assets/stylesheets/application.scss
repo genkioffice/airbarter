@@ -16,6 +16,8 @@
 @import "transactions/index";
 @import "transactions/show";
 @import "entries/index";
+// to override bootstrap assets
+@import "layouts/bootstrap-overrides";
 
 // to render icons from google
 @import "config/google-icons";
