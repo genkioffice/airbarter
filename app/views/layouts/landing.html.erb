@@ -7,21 +7,16 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <!-- to get google's kinda font awesome -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- to call slick javascript -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="http://res.cloudinary.com/dwag6dz8c/image/upload/c_scale,w_16/v1504115223/AirbarterLogo_t9ou5v.png">
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= yield :banner %>
-    <!-- <div id="wrap"> -->
+
 
     <%= yield %>
 
-    <!-- </div> -->
     <!-- to add contact page, it's better to add link to the bottom -->
     <%# render 'shared/footer' %>
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
@@ -30,6 +25,5 @@
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %> <!-- Append this after the main `javascript_include_tag`. -->
     <%= yield(:after_js) %>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>
   </body>
 </html>
