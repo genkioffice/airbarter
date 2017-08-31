@@ -3,7 +3,7 @@
   <div class="col-xs-3 radius-card profile-space" style="height:50vh;background-color: white">
     <%= render 'profile', user:current_user %>
   </div>
-  <div class="my-entries-cards col-xs-8"  style="height:80vh;margin-bottom: 15vh ;padding-left: 5vw;background-color: white; border-radius: 4%;box-shadow: 2px 2px 6px #bfbfbf;">
+  <div class="my-entries-cards col-xs-8"  style="height:80vh;margin-bottom: 15vh;margin-top: 3vh;padding-left: 5vw;background-color: white; border-radius: 4%;box-shadow: 2px 2px 6px #bfbfbf;">
     <div class="cards-container col-xs-12">
       <h3><%= t('.title') %></h3>
       <% @my_entries.each do |entry| %>

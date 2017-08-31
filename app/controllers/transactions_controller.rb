@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: [:show, :edit, :update, :destroy, :change_status, :accept]
-  layout 'layouts/landing', only: [:index, :show]
+
   # GET /transactions
   # GET /transactions.json
   def index
