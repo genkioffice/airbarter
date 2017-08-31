@@ -1,3 +1,15 @@
+<% content_for(:title) do %>
+    <% if @transaction.status == "proposed" %>
+      <%= t('.title.proposed') %>
+    <% elsif @transaction.status == "accepted" %>
+      <%= t('.title.accepted') %>
+    <% elsif @transaction.status == "removed" %>
+      <%= t('.title.removed') %>
+    <% else %>
+      <%= t('.title.other') %>
+    <% end %>
+<% end %>
+
 <div class="transaction-wrapper">
   <div class="transaction-description">
     <% if @transaction.status == "proposed" %>
