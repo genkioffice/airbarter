@@ -207,8 +207,14 @@ ar:
       other: ليس في المخزون
       propose_again: اقترح مرة أخرى
       propose_new: اقتراح معاملة جديدة
+      tab:
+        accepted: قبلت
+        all: كل الحركات المالية
+        proposed: المقترح
+        removed: إزالة
       title:
         accepted: المعاملات المقبولة
+        all: كل الحركات المالية
         proposed: المعاملات المقترحة
         removed: تمت إزالة المعاملات
     new:

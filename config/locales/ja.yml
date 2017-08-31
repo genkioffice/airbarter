@@ -206,8 +206,14 @@ ja:
       other: その他
       propose_again: もう一度提案する
       propose_new: 新しい取引を提案する
+      tab:
+        accepted: 受け入れられた
+        all: 全取引
+        proposed: 提案された
+        removed: 削除された
       title:
         accepted: 受け入れられたトランザクション
+        all: 全取引
         proposed: 提案された取引
         removed: 削除されたトランザクション
     new:
