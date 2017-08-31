@@ -1,4 +1,5 @@
 <% content_for(:title, t('.title')) %>
+<div class="container">
 <h1><%= t('.title') %></h1>
 
 <%= render 'form', transaction: @transaction %>
@@ -7,4 +8,5 @@
 <div>
   <%= link_to t('.show'), @transaction, class: "btn btn-primary" %>
   <%= link_to t('activerecord.models.transaction.other'), transactions_path, class: "btn btn-success" %>
+</div>
 </div>

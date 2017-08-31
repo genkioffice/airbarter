@@ -205,6 +205,7 @@ en:
       accept: Accept
       actions: Actions
       edit: Edit
+      in_exchange_for: In exchange for
       other: Not in inventory
       propose_again: Propose Again
       propose_new: Propose New Transaction
