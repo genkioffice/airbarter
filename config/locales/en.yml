@@ -225,6 +225,8 @@ en:
         removed: Removed Transactions
     map:
       proposes: Proposes
+      in_exchange_for: In exchange for
+      accepted_by: Accepted by
     new:
       title: New Transaction
     show:

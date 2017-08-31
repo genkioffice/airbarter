@@ -4,20 +4,20 @@
   <tr>
   <!-- <div class="form-inputs"> -->
     <td>
-    <%= f.input :quantity, prompt: "3", collection: (1..10), label: false %>
+    <%= f.input :quantity, selected: 1, collection: (1..10), label: false %>
   <!-- </div> -->
     </td>
     <td>
     <% if I18n.locale == :ja %>
-      <%= f.association :product, prompt: "cup coffee", label_method: :name_ja, label: false %>
+      <%= f.association :product, selected: 0, label_method: :name_ja, label: false %>
     <% elsif I18n.locale == :da %>
-      <%= f.association :product, prompt: "cup coffee", label_method: :name_da, label: false %>
+      <%= f.association :product, selected: 0, label_method: :name_da, label: false %>
     <% elsif I18n.locale == :ar %>
-      <%= f.association :product, prompt: "cup coffee", label_method: :name_ar, label: false %>
+      <%= f.association :product, selected: 0, label_method: :name_ar, label: false %>
     <% elsif I18n.locale == :fr %>
-      <%= f.association :product, prompt: "cup coffee", label_method: :name_fr, label: false %>
+      <%= f.association :product, selected: 0, label_method: :name_fr, label: false %>
     <% else %>
-      <%= f.association :product, prompt: "cup coffee", label: false %>
+      <%= f.association :product, selected: 0, label: false %>
     <% end %>
     </td>
     <td style="text-align:center; align-items: center">

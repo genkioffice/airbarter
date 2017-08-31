@@ -32,44 +32,27 @@
         <h1><%= t('.title.other') %></h1>
       <% end %>
       <p>
-        <strong><%= t('activerecord.attributes.transaction.proposed_product') %>:</strong>
-        <%= @transaction.proposed_product.translated_name %>
-      </p>
-
-      <p>
-        <strong><%= t('activerecord.attributes.transaction.proposed_product_quantity') %>:</strong>
+        <strong><%= t('transactions.map.proposes') %>:</strong>
         <%= @transaction.proposed_product_quantity %>
+        <%= @transaction.proposed_product.translated_name %>
+        <strong><%= t('transactions.map.in_exchange_for') %>:</strong>
+        <%= @transaction.wanted_product_quantity %>
+        <%= @transaction.wanted_product.translated_name %>
       </p>
-
       <p>
-        <strong><%= t('activerecord.attributes.transaction.proposed_by_user') %>:</strong>
-        <%= @transaction.proposed_by_user.email %>
-      </p>
-
-      <p>
+        <strong><%= t('activerecord.attributes.transaction.description') %>:</strong>
+        <%= @transaction.translated_description %>
+        <br>
         <strong><%= t('activerecord.attributes.transaction.address') %>:</strong>
         <%= @transaction.address %>
       </p>
 
-      <p>
-        <strong><%= t('activerecord.attributes.transaction.wanted_product') %>:</strong>
-        <%= @transaction.wanted_product.translated_name %>
-      </p>
-
-      <p>
-        <strong><%= t('activerecord.attributes.transaction.wanted_product_quantity') %>:</strong>
-        <%= @transaction.wanted_product_quantity %>
-      </p>
-
-      <p>
-        <strong><%= t('activerecord.attributes.transaction.description') %>:</strong>
-        <%= @transaction.translated_description %>
-      </p>
 
       <% if @transaction.status == "accepted" %>
         <p>
-          <strong><%= t('activerecord.attributes.transaction.accepted_by_user') %>:</strong>
-          <%= @transaction.accepted_by_user.email %>
+          <strong><%= t('transactions.map.accepted_by') %>:</strong>
+          <%= @transaction.accepted_by_user.first_name %> <%= @transaction.accepted_by_user.last_name %>
+          (<%= @transaction.accepted_by_user.email %>)
         </p>
       <% end %>
 

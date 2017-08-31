@@ -14,16 +14,8 @@
   <div class="col-xs-12" style="color: grey">
     <i class="fa fa-asterisk col-xs-1" style="font-size: 25px"></i>
     <% if user.description %>
-      <p>   <%= user.translated_description %></p>
-    <% else %>
-      <!-- this is for development -->
-      <p class="col-xs-10">
-        Published on 6 Jun 2015
-        Get an amazing website now! Contact Us -
-        http://www.thewebsitebaba.com
-        An award winning digital agency.
-        Get great deals and custom packages suiting your requirements.
-      </p>
+      <p><%= user.translated_description %></p>
+      <p><%= user.email %></p>
     <% end %>
   </div>
 </div>
