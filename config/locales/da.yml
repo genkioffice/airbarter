@@ -213,8 +213,8 @@ da:
       tab:
         accepted: Accepteret
         all: Alle transaktioner
-        proposed: Foreslog
-        removed: fjernet
+        proposed: Foreslået
+        removed: Fjernet
       title:
         accepted: Accepteret transaktioner
         all: Alle transaktioner
