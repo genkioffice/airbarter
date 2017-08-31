@@ -3,9 +3,10 @@
 <div class="modify-for-footer">
   <h1><%= t('activerecord.models.product.other') %></h1>
 
-    <table class="table table-striped">
+    <table class="table">
       <thead>
         <tr>
+          <th><%= t('activerecord.attributes.product.photo') %></th>
           <th><%= t('activerecord.attributes.product.name') %></th>
           <th><%= t('activerecord.attributes.product.name_ja') %></th>
           <th><%= t('activerecord.attributes.product.name_da') %></th>
@@ -17,8 +18,15 @@
       <tbody>
         <% @products.each do |product| %>
           <tr>
+            <td>
+              <% if product.photo %>
+                <%= cl_image_tag product.photo.path, height: 50, crop: :fill %>
+              <% end %>
+            </td>
             <% if policy(product).show? %>
               <td style="text-align:center"><%= link_to product.name, product_path(product.id) %></td>
+            <% else %>
+              <td style="text-align:center"><%= product.name %></td>
             <% end %>
             <td><%= product.name_ja %></td>
             <td><%= product.name_da %></td>

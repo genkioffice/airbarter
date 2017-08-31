@@ -12,6 +12,7 @@ da:
         name_da: Dansk
         name_fr: Fransk
         name_ja: Japansk
+        photo: Foto
       transaction:
         accepted_by_user: Accepteret af bruger
         address: Adresse
