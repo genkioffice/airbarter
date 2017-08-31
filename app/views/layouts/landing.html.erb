@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>AirBarter</title>
+    <title><%= yield(:title).blank? ? 'AirBarter' : yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="http://res.cloudinary.com/dwag6dz8c/image/upload/c_scale,w_16/v1504115223/AirbarterLogo_t9ou5v.png">
   </head>
   <body>
     <%= render 'shared/navbar' %>
