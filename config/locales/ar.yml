@@ -40,6 +40,10 @@ ar:
       transaction:
         one: عملية تجارية
         other: المعاملات
+        status:
+          accepted: قبلت
+          proposed: المقترح
+          removed: إزالة
       user:
         one: المستعمل
         other: المستخدمين
@@ -217,6 +221,8 @@ ar:
         all: كل الحركات المالية
         proposed: المعاملات المقترحة
         removed: تمت إزالة المعاملات
+    map:
+      proposes: يقترح
     new:
       title: عملية جديدة
     show:
