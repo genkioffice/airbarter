@@ -1,3 +1,4 @@
+<div class="container">
 <% content_for(:title, t('activerecord.models.product.other')) %>
 <div class="modify-for-footer">
   <h1><%= t('activerecord.models.product.other') %></h1>
@@ -17,7 +18,7 @@
         <% @products.each do |product| %>
           <tr>
             <% if policy(product).show? %>
-              <td style="text-align:center"><%= link_to product.name, product %></td>
+              <td style="text-align:center"><%= link_to product.name, product_path(product.id) %></td>
             <% end %>
             <td><%= product.name_ja %></td>
             <td><%= product.name_da %></td>
@@ -33,4 +34,5 @@
   <% end %>
   <br>
   </div>
+</div>
 </div>

@@ -1,4 +1,5 @@
 <% content_for(:title, t('.title')) %>
+<div class="container">
 <h1><%= t('.title') %></h1>
 
 <%= render 'form', entry: @entry %>
@@ -9,3 +10,4 @@
 <% if policy(Product).new? %>
   <%= link_to 'New Product', new_product_path, class: "btn btn-success" %>
 <% end %>
+</div>

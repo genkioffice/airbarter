@@ -1,4 +1,5 @@
 <% content_for(:title, t('activerecord.models.product.one')) %>
+<div class="container">
 <h1><%= t('activerecord.models.product.one') %></h1>
 <p>
   <strong><%= t('activerecord.attributes.product.name') %>:</strong>
@@ -20,6 +21,12 @@
   <strong><%= t('activerecord.attributes.product.name_fr') %>:</strong>
   <%= @product.name_fr %>
 </p>
+  <% if @product.photo %>
+    <%= cl_image_tag @product.photo.path, height: 400, crop: :fill %>
+  <% end %>
+<p>
+
+</p>
 
 <%= link_to t('activerecord.models.product.other'), products_path, class: "btn btn-success" %>
 
@@ -30,3 +37,4 @@
 <% if policy(@product).destroy? %>
   <%= link_to t('helpers.submit.product.destroy'), @product, method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
 <% end %>
+</div>

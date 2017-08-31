@@ -1,9 +1,10 @@
 <% content_for(:title, t('activerecord.models.entry.one')) %>
+<div class="container">
 <h1><%= t('activerecord.models.entry.one') %></h1>
 <p>
   <strong><%= t('activerecord.attributes.entry.user') %>:</strong>
   <%= @entry.user.email %> <br>
-  <%= @entry.user.first_name %> <%= @entry.user.last_name %>
+  <%= link_to @entry.user.first_name, user_show_path(@entry.user.id) %> <%= @entry.user.last_name %>
 </p>
 
 <p>
@@ -13,7 +14,7 @@
 
 <p>
   <strong><%= t('activerecord.attributes.entry.product') %>:</strong>
-  <%= @entry.product.translated_name %>
+  <%= link_to @entry.product.translated_name, product_path(@entry.product.id) %>
 </p>
 
 <%= link_to t('activerecord.models.entry.other'), entries_path, class: "btn btn-success" %>
@@ -25,3 +26,4 @@
 <% if policy(@entry).destroy? %>
   <%= link_to t('helpers.submit.entry.destroy'), @entry, method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
 <% end %>
+</div>
