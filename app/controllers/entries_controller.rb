@@ -8,9 +8,10 @@ class EntriesController < ApplicationController
     @my_entries = @entries.select{ |entry|  entry.user_id == current_user.id  }
     @other_entries = @entries.select{ |entry|  entry.user_id != current_user.id  }
     @entry = Entry.new
+    @user = current_user
     # this is for users accepted transactions card
     @accepted_transactions = policy_scope(Transaction).where(status: 1).order(id: :desc).paginate(page: params[:page], per_page: 4)
-    @proposed_transactions = policy_scope(Transaction).where(status: 0).order(:proposed_by_user_id).paginate(page: params[:page], per_page:4)
+    @proposed_transactions = policy_scope(Transaction).where(status: 0).where(proposed_by_user_id: @user.id).paginate(page: params[:page], per_page:4)
   end
 
   # GET /entries/1

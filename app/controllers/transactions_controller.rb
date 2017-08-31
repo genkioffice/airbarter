@@ -46,6 +46,7 @@ class TransactionsController < ApplicationController
   def show
     @transaction_coordinates = { lat: @transaction.latitude, lng: @transaction.longitude }
     @entries = current_user.entries
+    @proposed_by_user = @transaction.proposed_by_user
   end
 
   # GET /transactions/new

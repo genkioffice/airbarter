@@ -11,6 +11,11 @@
 <% end %>
 
 <div class="container">
+<div class="wrapper-top">
+  <div class="col-xs-3 profile-space" style="height:85vh;background-color: white; border: 1px solid rgba(0,0,0,.1)!important;">
+    <%= render 'entries/profile', user: @proposed_by_user%>
+  </div>
+</div>
 <div class="transaction-wrapper">
   <div class="transaction-description">
     <% if @transaction.status == "proposed" %>
