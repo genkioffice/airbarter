@@ -40,6 +40,10 @@ da:
       transaction:
         one: Transaktion
         other: Transaktioner
+        status:
+          accepted: Accepteret
+          proposed: Foreslog
+          removed: fjernet
       user:
         one: Bruger
         other: Brugere
@@ -220,6 +224,8 @@ da:
         all: Alle transaktioner
         proposed: Foreslået transaktioner
         removed: Fjernet transaktioner
+    map:
+      proposes: foreslår
     new:
       title: Ny transaktion
     show:

@@ -1,8 +1,8 @@
-<strong><%= link_to 'Transaction', transaction %></strong>
+<strong><%= link_to t('activerecord.models.transaction.one'), transaction %></strong>
 <p>
-  Proposes: <%= transaction.proposed_product_quantity %> <%= transaction.proposed_product.name %>
+  Proposes: <%= transaction.proposed_product_quantity %> <%= transaction.proposed_product.translated_name %>
 <br>
-  in exchange for: <%= transaction.wanted_product_quantity %> <%= transaction.wanted_product.name %>
+  <%= t('transactions.index.in_exchange_for') %>: <%= transaction.wanted_product_quantity %> <%= transaction.wanted_product.translated_name %>
 <br>
-  Status: <%= transaction.status %>
+  <%= t('activerecords.attributes.transactions.status') %>: <%= transaction.status %>
 </p>

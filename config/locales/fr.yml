@@ -40,6 +40,10 @@ fr:
       transaction:
         one: Transaction
         other: Transactions
+        status:
+          accepted: Accepté
+          proposed: Proposé
+          removed: Supprimé
       user:
         one: Utilisateur
         other: Utilisateurs
@@ -219,6 +223,8 @@ fr:
         all: toutes transactions
         proposed: Transactions proposées
         removed: Transactions supprimées
+    map:
+      proposes: Propose
     new:
       title: Nouvelle transaction
     show:
