@@ -11,127 +11,126 @@
 <% end %>
 
 <div class="container">
-<div class="transaction-wrapper">
-  <div class="transaction-description">
-    <% if @transaction.status == "proposed" %>
-      <h1><%= t('.title.proposed') %></h1>
-    <% elsif @transaction.status == "accepted" %>
-      <h1><%= t('.title.accepted') %></h1>
-    <% elsif @transaction.status == "removed" %>
-      <h1><%= t('.title.removed') %></h1>
-    <% else %>
-      <h1><%= t('.title.other') %></h1>
-    <% end %>
-
-    <p>
-      <strong><%= t('activerecord.attributes.transaction.proposed_product') %>:</strong>
-      <%= @transaction.proposed_product.translated_name %>
-    </p>
-
-    <p>
-      <strong><%= t('activerecord.attributes.transaction.proposed_product_quantity') %>:</strong>
-      <%= @transaction.proposed_product_quantity %>
-    </p>
-
-    <p>
-      <strong><%= t('activerecord.attributes.transaction.proposed_by_user') %>:</strong>
-      <%= @transaction.proposed_by_user.email %>
-    </p>
-
-    <p>
-      <strong><%= t('activerecord.attributes.transaction.address') %>:</strong>
-      <%= @transaction.address %>
-    </p>
-
-    <p>
-      <strong><%= t('activerecord.attributes.transaction.wanted_product') %>:</strong>
-      <%= @transaction.wanted_product.translated_name %>
-    </p>
-
-    <p>
-      <strong><%= t('activerecord.attributes.transaction.wanted_product_quantity') %>:</strong>
-      <%= @transaction.wanted_product_quantity %>
-    </p>
-
-    <p>
-      <strong><%= t('activerecord.attributes.transaction.description') %>:</strong>
-      <%= @transaction.translated_description %>
-    </p>
-
-    <% if @transaction.status == "accepted" %>
-      <p>
-        <strong><%= t('activerecord.attributes.transaction.accepted_by_user') %>:</strong>
-        <%= @transaction.accepted_by_user.email %>
-      </p>
-    <% end %>
-
-    <%= link_to t('activerecord.models.transaction.other'), transactions_path, class: "btn btn-success" %>
-
-    <% if policy(@transaction).accept? && @transaction.status == "proposed" %>
-      <% if @entries.select{ |e| e.product == @transaction.wanted_product } != [] && @transaction.wanted_product_quantity <= @entries.select{ |e| e.product == @transaction.wanted_product }.first.quantity %>
-        <%= link_to t('.accept'), accept_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
-      <% else %>
-        <%= t('.insufficient_info') %>
-      <% end %>
-    <% elsif policy(@transaction).edit? %>
-      <%= link_to t('.edit'), edit_transaction_path(@transaction), class: "btn btn-primary" %>
-    <% end %>
-
-
-    <% if policy(@transaction).change_status? %>
-      <% if @transaction.status != "removed" %>
-        <%= link_to t('.remove'), change_status_transaction_path(@transaction, status: :removed), method: :patch, class: "btn btn-warning" %>
-      <% end %>
-    <% end %>
-
-    <% if policy(@transaction).change_status? %>
-      <% if @transaction.status == "removed" %>
-        <%= link_to t('.propose_again'), change_status_transaction_path(@transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
-      <% end %>
-    <% end %>
-
-    <% if policy(@transaction).destroy? %>
-      <% if @transaction.status == "removed" %>
-        <%= link_to t('helpers.submit.transaction.destroy'), @transaction, method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
-      <% end %>
-    <% end %>
+  <div class="wrapper-top">
+    <div class="col-xs-3 profile-space" style="height:85vh;background-color: white; border: 1px solid rgba(0,0,0,.1)!important;">
+      <%= render 'entries/profile', user: @proposed_by_user%>
+    </div>
   </div>
 
-  <div id="map-transaction" class="transaction-map"></div>
+  <div class="transaction-wrapper">
+    <div id="map-transaction" class="transaction-map"></div>
+    <!-- translation -->
+    <div class="col-xs-7 transaction-description">
 
-  <% @transaction.photos.each_with_index do |photo,index| %>
-    <div id="transaction-photo-<%= index %>" class="col-xs-12 col-sm-6">
-      <%= cl_image_tag photo.path, height: 350, crop: :fill %>
+      <% if @transaction.status == "proposed" %>
+        <h1><%= t('.title.proposed') %></h1>
+      <% elsif @transaction.status == "accepted" %>
+        <h1><%= t('.title.accepted') %></h1>
+      <% elsif @transaction.status == "removed" %>
+        <h1><%= t('.title.removed') %></h1>
+      <% else %>
+        <h1><%= t('.title.other') %></h1>
+      <% end %>
+      <p>
+        <strong><%= t('activerecord.attributes.transaction.proposed_product') %>:</strong>
+        <%= @transaction.proposed_product.translated_name %>
+      </p>
+
+      <p>
+        <strong><%= t('activerecord.attributes.transaction.proposed_product_quantity') %>:</strong>
+        <%= @transaction.proposed_product_quantity %>
+      </p>
+
+      <p>
+        <strong><%= t('activerecord.attributes.transaction.proposed_by_user') %>:</strong>
+        <%= @transaction.proposed_by_user.email %>
+      </p>
+
+      <p>
+        <strong><%= t('activerecord.attributes.transaction.address') %>:</strong>
+        <%= @transaction.address %>
+      </p>
+
+      <p>
+        <strong><%= t('activerecord.attributes.transaction.wanted_product') %>:</strong>
+        <%= @transaction.wanted_product.translated_name %>
+      </p>
+
+      <p>
+        <strong><%= t('activerecord.attributes.transaction.wanted_product_quantity') %>:</strong>
+        <%= @transaction.wanted_product_quantity %>
+      </p>
+
+      <p>
+        <strong><%= t('activerecord.attributes.transaction.description') %>:</strong>
+        <%= @transaction.translated_description %>
+      </p>
+
+      <% if @transaction.status == "accepted" %>
+        <p>
+          <strong><%= t('activerecord.attributes.transaction.accepted_by_user') %>:</strong>
+          <%= @transaction.accepted_by_user.email %>
+        </p>
+      <% end %>
+
+      <%= link_to t('activerecord.models.transaction.other'), transactions_path, class: "btn btn-success" %>
+
+      <% if policy(@transaction).accept? && @transaction.status == "proposed" %>
+        <% if @entries.select{ |e| e.product == @transaction.wanted_product } != [] && @transaction.wanted_product_quantity <= @entries.select{ |e| e.product == @transaction.wanted_product }.first.quantity %>
+          <%= link_to t('.accept'), accept_transaction_path(@transaction, status: :accepted), method: :patch, class: "btn btn-primary" %>
+        <% else %>
+          <%= t('.insufficient_info') %>
+        <% end %>
+      <% elsif policy(@transaction).edit? %>
+        <%= link_to t('.edit'), edit_transaction_path(@transaction), class: "btn btn-primary" %>
+      <% end %>
+
+
+      <% if policy(@transaction).change_status? %>
+        <% if @transaction.status != "removed" %>
+          <%= link_to t('.remove'), change_status_transaction_path(@transaction, status: :removed), method: :patch, class: "btn btn-warning" %>
+        <% end %>
+      <% end %>
+
+      <% if policy(@transaction).change_status? %>
+        <% if @transaction.status == "removed" %>
+          <%= link_to t('.propose_again'), change_status_transaction_path(@transaction, status: :proposed), method: :patch, class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+
+      <% if policy(@transaction).destroy? %>
+        <% if @transaction.status == "removed" %>
+          <%= link_to t('helpers.submit.transaction.destroy'), @transaction, method: :delete, data: { confirm: t('.delete_confirmation') }, class: "btn btn-danger" %>
+        <% end %>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 
-</div>
+  <% content_for :after_js do %>
+    <script type="text/javascript">
+      $(document).on('ready', function() {
+        var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
+        handler.buildMap({ internal: { id: 'map-transaction' } }, function(){
+          markers = handler.addMarkers([
+            {
+              "lat": <%= @transaction.latitude %>,
+              "lng": <%= @transaction.longitude %>,
+              // "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
+            }
+          ]);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
 
-<% content_for :after_js do %>
-  <script type="text/javascript">
-    $(document).on('ready', function() {
-      var handler = Gmaps.build('Google', { markers: { clusterer: undefined }});
-      handler.buildMap({ internal: { id: 'map-transaction' } }, function(){
-        markers = handler.addMarkers([
-          {
-            "lat": <%= @transaction.latitude %>,
-            "lng": <%= @transaction.longitude %>,
-            // "infowindow": "<h1>Aix - Marseille</h1><p><img src='https://d1gofzrmx0fcbg.cloudfront.net/production/cities/city_pictures/000/000/008/thumbnail/marseille.jpg?1445520529' height='200'></p>"
-          }
-        ]);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
+          handler.getMap().setZoom(15);
 
-        handler.getMap().setZoom(15);
+          // if (markers.length == 0) {
+          //   handler.getMap().setZoom(2);
+          // } else if (markers.length == 1) {
+          //   handler.getMap().setZoom(15);
+          // }
 
-        // if (markers.length == 0) {
-        //   handler.getMap().setZoom(2);
-        // } else if (markers.length == 1) {
-        //   handler.getMap().setZoom(15);
-        // }
-
-      });
-    })
-  </script>
+        });
+      })
+    </script>
 <% end %>
 </div>

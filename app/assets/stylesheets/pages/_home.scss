@@ -40,7 +40,11 @@ body{
 .thumbnail{
   background-color: white;
   border-radius: 2%;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+  // box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0,0,0,.1);
+}
+.nav-tabs{
+  margin-bottom:15px;
 }
 .caption  h3{
   font-size: 25px;
