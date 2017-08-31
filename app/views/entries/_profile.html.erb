@@ -1,0 +1,30 @@
+<!-- you have to pass user as a variable -->
+<div class="content-center">
+  <div class="col-xs-12">
+    <%= cl_image_tag(user.facebook_picture_url, { size: '50x50', crop: :thumb, gravity: :face , class: "avatar-ex-large"} ) %>
+  </div>
+  <div class="col-xs-12" >
+    <h6><%= user.first_name %> <%= user.last_name %></h6>
+  </div>
+  <div class="col-xs-12" style="color: grey;font-size: 20px;">
+    <i class="fa fa-home col-xs-1" style="font-size: 25px"></i>
+    <p class="col-xs-10" style="margin-bottom:2px;"><%= user.address %></p>
+  </div>
+
+  <div class="col-xs-12" style="color: grey">
+    <% if user.description %>
+      <p><%= user.description %></p>
+    <% else %>
+      <!-- this is for development -->
+      <i class="fa fa-asterisk col-xs-1" style="font-size: 25px"></i>
+      <p class="col-xs-10">
+        Published on 6 Jun 2015
+        Get an amazing website now! Contact Us -
+        http://www.thewebsitebaba.com
+        An award winning digital agency.
+        Get great deals and custom packages suiting your requirements.
+      </p>
+    <% end %>
+  </div>
+
+</div>

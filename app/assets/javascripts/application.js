@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require fullpage
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
