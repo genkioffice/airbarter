@@ -203,6 +203,7 @@ ar:
       accept: قبول
       actions: أفعال
       edit: تصحيح
+      in_exchange_for: في مقابل
       other: ليس في المخزون
       propose_again: اقترح مرة أخرى
       propose_new: اقتراح معاملة جديدة

@@ -31,9 +31,19 @@
       <div class="form-actions">
         <%= f.button :submit, t(".update"), class: "btn btn-success" %>
       </div>
+      <div>
+
+      </div>
     <% end %>
   </div>
 </div>
+
+<p></p>
+
+<div>
+  <%= link_to 'Public Profile', user_show_path(@user.id), class: "btn btn-success" %>
+</div>
+
 
 <%= link_to t("devise.shared.links.back"), :back %>
 

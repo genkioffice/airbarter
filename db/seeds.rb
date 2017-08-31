@@ -116,8 +116,8 @@ user_claire.facebook_picture_url = user_claire_photo_url
 
 user_carlos.description = "I am a busy teacher and my dog really like to go to the park."
 user_sarah.description = "I have a lot of experience with looking after kids in all ages. I can also cook a meal for the kids."
-user_finn.description = "I am a 52 year old dane living in France. I am a junior Ruby on Rails programmer."
-user_genki.description = "I am Japanese student in Lisbon. I have studied in Belgium."
+user_finn.description = "I am Danish. I am 52 years old and I am living in France."
+user_genki.description = "I am a Japanese student. I am living in Lisbon. I have studied in Belgium."
 user_astrid.description = "I am an older lady with a lot of experience with cooking. I am learning to use the computer."
 user_claire.description = "I grew up in the UK and is quite good with grammar and spelling. I am offering English classes."
 
