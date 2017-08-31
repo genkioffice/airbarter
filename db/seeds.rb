@@ -3,18 +3,23 @@ User.destroy_all
 Entry.destroy_all
 Transaction.destroy_all
 
-bluray_film = Product.create!(name: "Blu-ray Film")
-dvd_film = Product.create!(name: "DVD Film")
-computer = Product.create!(name: "Computer")
-meal = Product.create!(name: "meal")
-cup_of_coffee = Product.create!(name: "cup coffee")
-walking_the_dog = Product.create!(name: "hour of walking the dog")
-garden_work = Product.create!(name: "hour of garden work")
-teaching_english = Product.create!(name: "hour of teaching English")
-teaching_math = Product.create!(name: "hour of teaching Math")
-teaching_programming = Product.create!(name: "hour of teaching Programming")
-babysitting = Product.create!(name: "hour of baby-sitting")
-computer_help = Product.create!(name: "hour of help with the computer")
+bluray_film = Product.create!(name: "Blu-ray")
+dvd_film = Product.create!(name: "DVD")
+computer = Product.create!(name: "Laptop")
+meal = Product.create!(name: "Meal")
+cup_of_coffee = Product.create!(name: "Cup coffee")
+walking_the_dog = Product.create!(name: "Walking the dog")
+garden_work = Product.create!(name: "Garden work")
+teaching_english = Product.create!(name: "Teaching English")
+teaching_math = Product.create!(name: "Teaching Math")
+teaching_programming = Product.create!(name: "Teaching Programming")
+babysitting = Product.create!(name: "Baby-sitting")
+computer_help = Product.create!(name: "Computer Basics")
+teaching_surf = Product.create!(name: "Teaching Surfing")
+teaching_french = Product.create!(name: "Teaching French")
+teaching_karate = Product.create!(name: "Teaching Karate")
+teaching_yoga = Product.create!(name: "Teaching Yoga")
+computer_game = Product.create!(name: "Computer Game")
 
 bluray1_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504004770/StarWars_nyra08.jpg" # Star Wars
 bluray2_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504004770/HarryPotter_taaakz.jpg" # Harry Potter
