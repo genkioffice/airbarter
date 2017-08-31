@@ -212,6 +212,7 @@ da:
       propose_new: Foreslå ny transaktion
       title:
         accepted: Accepteret transaktioner
+        all: Alle transaktioner
         proposed: Foreslået transaktioner
         removed: Fjernet transaktioner
     new:

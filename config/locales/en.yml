@@ -211,6 +211,7 @@ en:
       propose_new: Propose New Transaction
       title:
         accepted: Accepted Transactions
+        all: All Transactions
         proposed: Proposed Transactions
         removed: Removed Transactions
     new:

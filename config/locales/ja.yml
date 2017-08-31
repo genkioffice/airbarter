@@ -208,6 +208,7 @@ ja:
       propose_new: 新しい取引を提案する
       title:
         accepted: 受け入れられたトランザクション
+        all: 全取引
         proposed: 提案された取引
         removed: 削除されたトランザクション
     new:

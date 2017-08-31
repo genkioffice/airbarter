@@ -211,6 +211,7 @@ fr:
       propose_new: Proposer une nouvelle transaction
       title:
         accepted: Transactions acceptées
+        all: toutes transactions
         proposed: Transactions proposées
         removed: Transactions supprimées
     new:

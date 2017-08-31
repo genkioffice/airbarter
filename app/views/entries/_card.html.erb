@@ -4,7 +4,7 @@
    url('<%= cl_image_path entry.product.photo.path, crop: :fill %>'); height: 20vh; background-position: center; background-size: cover; border-radius: 4%; padding:10px;margin-right: 10px;margin-bottom: 10px;">
       <!-- this is primary info for a card -->
     <div class="caption col-xs-12" style="display: inline-flex">
-      <div class="caption-title" style="font-size: 25px;color: white"><%= entry.quantity %> <%= entry.product.name %></div>
+      <div class="caption-title" style="font-size: 25px;color: white"><%= entry.quantity %> <%= entry.product.translated_name %></div>
     </div>
   <% end %>
     <div class="action-icons hidden">
