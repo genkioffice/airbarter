@@ -1,47 +1,49 @@
 <% content_for(:title, t('activerecord.models.entry.other')) %>
-<!--   <% @my_entries.each do |entry| %>
-    <%= render 'shared/circle', entry:entry %>
-  <% end %>
- -->
+
 <!-- this is cards layout -->
-<div class="my-entries-cards col-xs-12">
-  <h3><%= t('.title') %></h3>
-  <% @my_entries.each do |entry| %>
-    <%= render 'card', entry:entry %>
-  <% end %>
+<div class="wrapper-short wrapper-top">
+  <div class="col-xs-3 radius-card profile-space" style="height:50vh;background-color: white">
+    <%= render 'profile', user:current_user %>
+  </div>
+  <div class="my-entries-cards col-xs-8"  style="height:80vh;margin-bottom: 15vh ;padding-left: 5vw;background-color: white; border-radius: 4%;box-shadow: 2px 2px 6px #bfbfbf;">
+    <div class="cards-container col-xs-12">
+      <h3><%= t('.title') %></h3>
+      <% @my_entries.each do |entry| %>
+        <%= render 'card', entry:entry %>
+      <% end %>
+    </div>
+    <div class="col-xs-8" style="padding-bottom: 1px">
+      <table class="table" style="background-color: white/*; margin-bottom:0px !important*/;">
+        <tbody>
+          <% if policy(Entry).new? %>
+            <%= render 'form', entry: @entry, remote: true %>
+          <% end %>
+        </tbody>
+      </table>
+      <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+          $(document).ready(function(){
+            $('.card')
+            .mouseover(function(){
+              $(this).find(".action-icons").removeClass("hidden")
+            })
+            .mouseleave(function(){
+              $(this).find(".action-icons").addClass("hidden")
+            });
+          });
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="my-entries-cards col-xs-6"  style="height:100vh;padding-left: 5vw;background-color: white;height:100vh">
+    <h3>Accepted Transactions</h3>
+    <%= render 'transaction-card', transactions: @accepted_transactions %>
+    <%= will_paginate @accepted_transactions, renderer: BootstrapPagination::Rails %>
+  </div>
+  <div class="my-entries-cards col-xs-6"  style="height:100vh;padding-left: 5vw;background-color: white; height:100vh;">
+    <h3>Proposed Transactions</h3>
+    <%= render 'transaction-card', transactions: @proposed_transactions %>
+    <%= will_paginate @proposed_transactions, renderer: BootstrapPagination::Rails %>
+  </div>
 </div>
-<!-- this line below is previous -->
-<table class="table" style="background-color: #F4F4F4/*; margin-bottom:0px !important*/;">
-  <thead>
-    <tr>
-      <th style="text-align:right"><%= t('activerecord.attributes.entry.quantity') %></th>
-      <th><%= t('activerecord.attributes.entry.product') %></th>
-      <th colspan="3" style="text-align:center"><%= t('.actions') %></th>
-    </tr>
-  </thead>
 
-  <tbody id="appended_table">
-    <% @my_entries.each do |entry| %>
-      <%= render 'index-element-table', entry: entry %>
-    <% end %>
-  </tbody>
-  <tbody>
-
-    <% if policy(Entry).new? %>
-      <%= render 'form', entry: @entry, remote: true %>
-    <% end %>
-
-  </tbody>
-</table>
-
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function(){
-      $('.card').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 3
-      });
-    });
-  <% end %>
-<% end %>

@@ -1,14 +1,8 @@
 <% if @entry.errors.any? %>
-  $('#new_entry').html("<%= j render 'entries/form' %>")
+  $('.my-entries-cards').html("<%= j render 'entries/form' %>")
 <% else %>
-  $('#appended_table').append(
-      "<%= j render 'index-element-table', entry: @entry %>"
-  )
-  $('.my-entries-cards').append(
+  $('.cards-container').append(
       "<%= j render 'entries/card', entry: @entry %>"
+
     )
-  $('#new_entry').html("<%= j render 'entries/form', remote:true %>")
-
 <% end %>
-
-
