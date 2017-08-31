@@ -1,7 +1,20 @@
 <% content_for(:title, t('.title')) %>
+<div class="container">
 <h1><%= t('.title') %></h1>
 
-<%= render 'form', product: @product %>
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :photo, as: :attachinary %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
 
 <br>
 <%= link_to t('activerecord.models.product.other'), products_path, class: "btn btn-success" %>
+</div>
