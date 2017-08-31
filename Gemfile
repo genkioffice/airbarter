@@ -36,6 +36,13 @@ gem 'geocoder'
 gem "coffee-rails"
 gem "gmaps4rails"
 
+# to slide page better
+gem 'fullpage-rails'
+
+# to make cards fit in container
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end

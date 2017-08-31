@@ -99,6 +99,8 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    fullpage-rails (0.0.1)
+      jquery-rails (>= 1.0.0)
     geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -255,6 +257,9 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    will_paginate (3.1.6)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
@@ -272,6 +277,7 @@ DEPENDENCIES
   easy_translate
   figaro
   font-awesome-sass
+  fullpage-rails
   geocoder
   gmaps4rails
   jbuilder (~> 2.0)
@@ -293,6 +299,8 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   uglifier
   web-console (>= 3.3.0)
+  will_paginate (~> 3.1.0)
+  will_paginate-bootstrap
 
 RUBY VERSION
    ruby 2.3.4p301
