@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:url"         content="http://www.airbarter.ovh" />
+    <meta property="og:title"       content="AirBarter" />
+    <meta property="og:description" content="Exchange items and services and improve your life." />
+    <meta property="og:image"       content="http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,g_auto,h_630,w_1200,x_0,y_0/v1504180371/camels_orti2f_drmofa.jpg" />
+
     <title><%= yield(:title).blank? ? 'AirBarter' : yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
