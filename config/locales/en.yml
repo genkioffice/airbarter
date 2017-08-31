@@ -209,6 +209,11 @@ en:
       other: Not in inventory
       propose_again: Propose Again
       propose_new: Propose New Transaction
+      tab:
+        accepted: Accepted
+        all: All Transactions
+        proposed: Proposed
+        removed: Removed
       title:
         accepted: Accepted Transactions
         all: All Transactions

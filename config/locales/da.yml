@@ -210,6 +210,11 @@ da:
       other: Ikke på lager
       propose_again: Foreslå igen
       propose_new: Foreslå ny transaktion
+      tab:
+        accepted: Accepteret
+        all: Alle transaktioner
+        proposed: Foreslog
+        removed: fjernet
       title:
         accepted: Accepteret transaktioner
         all: Alle transaktioner

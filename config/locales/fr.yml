@@ -209,6 +209,11 @@ fr:
       other: Pas en inventaire
       propose_again: Proposer de nouveau
       propose_new: Proposer une nouvelle transaction
+      tab:
+        accepted: Accepté
+        all: Toutes transactions
+        proposed: Proposé
+        removed: Supprimé
       title:
         accepted: Transactions acceptées
         all: toutes transactions
