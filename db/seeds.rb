@@ -93,12 +93,12 @@ teaching_programming.translate_name! if translate_names
 babysitting.translate_name! if translate_names
 computer_help.translate_name! if translate_names
 
-user_carlos = User.create!(email: "carlos@gmail.com", password: "123456", first_name: "Carlos", address: "Av. Casal Ribeiro 28, 1000-092 Lisboa, Portugal")
-user_sarah = User.create!(email: "sarah@gmail.com", password: "123456", first_name: "Sarah", address: "Praça Marechal Humberto Delgado, 1549-004 Lisboa, Portugal")
-user_finn = User.create!(email: "finn@gmail.com", password: "123456", first_name: "Finn", address: "Avenida de Berna 20, Lisbon, Portugal")
-user_genki = User.create!(email: "genki@gmail.com", password: "123456", first_name: "Genki", address: "Av. Brasília 352, 1350 Lisboa, Portugal")
-user_astrid = User.create!(email: "astrid@gmail.com", password: "123456", first_name: "Astrid", address: "Praça do Duque de Saldanha 4, 1050-094 Lisboa, Portugal")
-user_claire = User.create!(email: "claire@gmail.com", password: "123456", first_name: "Claire", address: "Parque Eduardo VII, 1070-051 Lisboa, Portugal")
+user_carlos = User.create!(email: "carlos@gmail.com", password: "123456", first_name: "Carlos", last_name: "Mendes", address: "Av. Casal Ribeiro 28, 1000-092 Lisboa, Portugal")
+user_sarah = User.create!(email: "sarah@gmail.com", password: "123456", first_name: "Sarah", last_name: "Pedersen", address: "Praça Marechal Humberto Delgado, 1549-004 Lisboa, Portugal")
+user_finn = User.create!(email: "finn@gmail.com", password: "123456", first_name: "Finn", last_name: "Pedersen", address: "Avenida de Berna 20, Lisbon, Portugal")
+user_genki = User.create!(email: "genki@gmail.com", password: "123456", first_name: "Genki", last_name: "Takahashi", address: "Av. Brasília 352, 1350 Lisboa, Portugal")
+user_astrid = User.create!(email: "astrid@gmail.com", password: "123456", first_name: "Astrid", last_name: "Ferreira", address: "Praça do Duque de Saldanha 4, 1050-094 Lisboa, Portugal")
+user_claire = User.create!(email: "claire@gmail.com", password: "123456", first_name: "Claire", last_name: "Santos", address: "Parque Eduardo VII, 1070-051 Lisboa, Portugal")
 
 user_carlos_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,h_3000,w_3000/v1504014055/IMG_6396_luylah.jpg" # Carlos
 user_sarah_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504013385/sarah_yx5v2j.jpg" # Sarah
