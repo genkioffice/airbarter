@@ -4,7 +4,7 @@
     <%= cl_image_tag(user.facebook_picture_url, { size: '50x50', crop: :thumb, gravity: :face , class: "avatar-ex-large"} ) %>
   </div>
   <div class="col-xs-12" >
-    <h6><%= user.first_name %> <%= user.last_name %></h6>
+    <h4><strong><%= user.first_name %> <%= user.last_name %></strong></h4>
   </div>
   <div class="col-xs-12" style="color: grey;font-size: 20px;">
     <i class="fa fa-home col-xs-1" style="font-size: 25px"></i>
