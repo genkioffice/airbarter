@@ -6,7 +6,7 @@
       <div class="user-info">
         <%= cl_image_tag @user.facebook_picture_url, width: 400, crop: :fill %>
         <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-        <p><%= @user.description %></p>
+        <p><%= @user.translated_description %></p>
         <p><%= @user.address %></p>
         <p><%= @user.email %></p>
       </div>
@@ -15,7 +15,7 @@
   <div class="col-xs-12">
     <h4><%= t('activerecord.models.entry.other') %></h4>
 
-    <table class="table table-striped">
+    <table class="table">
       <thead>
         <tr>
           <th><%= t('activerecord.attributes.entry.product') %></th>

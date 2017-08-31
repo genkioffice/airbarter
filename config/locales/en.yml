@@ -12,6 +12,7 @@ en:
         name_da: Danish
         name_fr: French
         name_ja: Japanese
+        photo: Photo
       transaction:
         accepted_by_user: Accepted by User
         address: Address
@@ -204,6 +205,7 @@ en:
       accept: Accept
       actions: Actions
       edit: Edit
+      in_exchange_for: In exchange for
       other: Not in inventory
       propose_again: Propose Again
       propose_new: Propose New Transaction

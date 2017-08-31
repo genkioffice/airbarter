@@ -12,6 +12,7 @@ da:
         name_da: Dansk
         name_fr: Fransk
         name_ja: Japansk
+        photo: Foto
       transaction:
         accepted_by_user: Accepteret af bruger
         address: Adresse
@@ -205,6 +206,7 @@ da:
       accept: Accepter
       actions: Funktioner
       edit: Ret
+      in_exchange_for: I bytte for
       other: Ikke på lager
       propose_again: Foreslå igen
       propose_new: Foreslå ny transaktion

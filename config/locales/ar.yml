@@ -12,6 +12,7 @@ ar:
         name_da: دانماركي
         name_fr: الفرنسية
         name_ja: اليابانية
+        photo: صورة فوتوغرافية
       transaction:
         accepted_by_user: مقبول من قبل المستخدم
         address: عنوان
@@ -202,6 +203,7 @@ ar:
       accept: قبول
       actions: أفعال
       edit: تصحيح
+      in_exchange_for: في مقابل
       other: ليس في المخزون
       propose_again: اقترح مرة أخرى
       propose_new: اقتراح معاملة جديدة

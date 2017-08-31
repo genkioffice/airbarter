@@ -12,6 +12,15 @@ class Transaction < ApplicationRecord
   validates :proposed_product_quantity, :numericality => {:greater_than => 0}, presence: true
   validates :wanted_product_quantity, :numericality => {:greater_than => 0}, presence: true
 
+  def translated_description
+    if I18n.locale == :en
+      return self.description
+    else
+      EasyTranslate.api_key = ENV['GOOGLE_TRANSLATE_API_KEY']
+      return EasyTranslate.translate(self.description, to: I18n.locale)
+    end
+  end
+
   def change_status!(status)
     self.status = status
     self.save
