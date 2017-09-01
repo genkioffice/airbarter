@@ -38,8 +38,12 @@ fr:
         one: Produit
         other: Produits
       transaction:
-        one: Transaction
-        other: Transactions
+        one: Echange
+        other: Echanges
+        status:
+          accepted: Accepté
+          proposed: Proposé
+          removed: Supprimé
       user:
         one: Utilisateur
         other: Utilisateurs
@@ -115,7 +119,7 @@ fr:
       title: Mise à jour de l'entrée
     index:
       actions: Actions
-      propose_new_transaction: Proposer une nouvelle transaction
+      propose_new_transaction: Proposer un nouvel échange
       show: Afficher
       title: Mes entrées
       title_other: Autres entrées de personnes
@@ -138,8 +142,8 @@ fr:
         destroy: Supprimer définitivement le produit
         update: Sauvegarder les modifications
       transaction:
-        create: Ajouter une transaction
-        destroy: Supprimer définitivement la transaction
+        create: Ajouter un échange
+        destroy: Supprimer définitivement l'échange
         update: Sauvegarder les modifications
   pages:
     home:
@@ -170,9 +174,10 @@ fr:
       japanese: 日本語
       products: Produits
       profile: Profil
+      search_placeholder: Rechercher
       sign_in: Se connecter
       sign_out: Déconnexion
-      transactions: Transactions
+      transactions: Echanges
   simple_form:
     hints:
       transaction:
@@ -192,15 +197,15 @@ fr:
       product:
         name: Nom du produit
       transaction:
-        address: Adresse de la transaction
+        address: Adresse de l'échange
   transactions:
     create:
-      notice: La transaction a été créée avec succès.
+      notice: L'échange a été créé avec succès.
     destroy:
-      notice: La transaction a été détruite avec succès.
+      notice: L'échange a été détruit avec succès.
     edit:
-      show: Afficher la transaction
-      title: Mettre à jour la transaction
+      show: Afficher l'échange
+      title: Mettre à jour l'échange
     index:
       accept: Acceptez
       actions: Actions
@@ -208,31 +213,35 @@ fr:
       in_exchange_for: En échange de
       other: Pas en inventaire
       propose_again: Proposer de nouveau
-      propose_new: Proposer une nouvelle transaction
+      propose_new: Proposer un nouvel échange
       tab:
         accepted: Accepté
-        all: Toutes transactions
+        all: Tous les échanges
         proposed: Proposé
         removed: Supprimé
       title:
-        accepted: Transactions acceptées
-        all: toutes transactions
-        proposed: Transactions proposées
-        removed: Transactions supprimées
+        accepted: Echanges acceptés
+        all: Toutes les échanges
+        proposed: Echanges proposés
+        removed: Echanges supprimés
+    map:
+      accepted_by: Accepté par
+      in_exchange_for: En échange de
+      proposes: Propose
     new:
-      title: Nouvelle transaction
+      title: Nouvel échange
     show:
       accept: Acceptez
-      delete_confirmation: Êtes-vous sûr de vouloir supprimer la transaction?
+      delete_confirmation: Êtes-vous sûr de vouloir supprimer l'échange?
       edit: Modifier
       insufficient_info: 'Information: Le produit recherché n''est pas dans votre
         inventaire actuel ou en quantité suffisante'
       propose_again: Proposer de nouveau
       remove: Retirer
       title:
-        accepted: Transaction acceptée
-        other: Transaction
-        proposed: Transaction proposée
-        removed: Transaction supprimée
+        accepted: Echange accepté
+        other: Echange
+        proposed: Echange proposé
+        removed: Echange supprimé
     update:
-      notice: La transaction a été mise à jour avec succès.
+      notice: L'échanges a été mise à jour avec succès.

@@ -4,7 +4,7 @@
     <div class="navbar-wagon-item">
       <%= simple_form_for "", url: transactions_path, method: "get" do |f| %>
         <span><i class="fa fa-search"></i></span>
-        <%= f.input :search, label: false, placeholder: "Search transactions" %>
+        <%= f.input :search, label: false, placeholder: t('.search_placeholder') %>
       <% end %>
     </div>
 

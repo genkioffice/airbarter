@@ -38,8 +38,12 @@ en:
         one: Product
         other: Products
       transaction:
-        one: Transaction
-        other: Transactions
+        one: Exchange
+        other: Exchanges
+        status:
+          accepted: Accepted
+          proposed: Proposed
+          removed: Removed
       user:
         one: User
         other: Users
@@ -115,7 +119,7 @@ en:
       title: Update Entry
     index:
       actions: Actions
-      propose_new_transaction: Propose New Transaction
+      propose_new_transaction: Propose New Exchange
       show: Show
       title: My Entries
       title_other: Other People's Entries
@@ -138,8 +142,8 @@ en:
         destroy: Permanently Delete Product
         update: Save Changes
       transaction:
-        create: Add Transaction
-        destroy: Permanently Delete Transaction
+        create: Add Exchange
+        destroy: Permanently Delete Exchange
         update: Save Changes
   pages:
     home:
@@ -170,9 +174,10 @@ en:
       japanese: 日本語
       products: Products
       profile: Profile
+      search_placeholder: Search exchanges
       sign_in: Sign in
       sign_out: Sign out
-      transactions: Transactions
+      transactions: Exchanges
   simple_form:
     hints:
       transaction:
@@ -192,15 +197,15 @@ en:
       product:
         name: Product name
       transaction:
-        address: Address of the transaction
+        address: Address of the exchange
   transactions:
     create:
-      notice: Transaction was successfully created.
+      notice: Exchange was successfully created.
     destroy:
-      notice: Transaction was successfully destroyed.
+      notice: Exchange was successfully destroyed.
     edit:
-      show: Show Transaction
-      title: Update Transaction
+      show: Show Exchange
+      title: Update Exchange
     index:
       accept: Accept
       actions: Actions
@@ -208,31 +213,35 @@ en:
       in_exchange_for: In exchange for
       other: Not in inventory
       propose_again: Propose Again
-      propose_new: Propose New Transaction
+      propose_new: Propose New Exchange
       tab:
         accepted: Accepted
-        all: All Transactions
+        all: All Exchanges
         proposed: Proposed
         removed: Removed
       title:
-        accepted: Accepted Transactions
-        all: All Transactions
-        proposed: Proposed Transactions
-        removed: Removed Transactions
+        accepted: Accepted Exchanges
+        all: All Exchanges
+        proposed: Proposed Exchanges
+        removed: Removed Exchanges
+    map:
+      accepted_by: Accepted by
+      in_exchange_for: In exchange for
+      proposes: Proposes
     new:
-      title: New Transaction
+      title: New Exchange
     show:
       accept: Accept
-      delete_confirmation: Are you sure you want to delete the transaction?
+      delete_confirmation: Are you sure you want to delete the exchange?
       edit: Edit
       insufficient_info: 'Information: The wanted product is not in your current inventory
         or in sufficient quantity'
       propose_again: Propose Again
       remove: Remove
       title:
-        accepted: Accepted Transaction
-        other: Transaction
-        proposed: Proposed Transaction
-        removed: Removed Transaction
+        accepted: Accepted Exchange
+        other: Exchange
+        proposed: Proposed Exchange
+        removed: Removed Exchange
     update:
-      notice: Transaction was successfully updated.
+      notice: Exchange was successfully updated.
