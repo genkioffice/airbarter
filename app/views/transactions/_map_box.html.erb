@@ -1,8 +1,10 @@
 <strong><%= link_to t('activerecord.models.transaction.one'), transaction %></strong>
 <p>
-  Proposes: <%= transaction.proposed_product_quantity %> <%= transaction.proposed_product.translated_name %>
+  <%= t('transactions.map.proposes') %>: <%= transaction.proposed_product_quantity %> <%= transaction.proposed_product.translated_name %>
 <br>
   <%= t('transactions.index.in_exchange_for') %>: <%= transaction.wanted_product_quantity %> <%= transaction.wanted_product.translated_name %>
 <br>
-  <%= t('activerecords.attributes.transactions.status') %>: <%= transaction.status %>
+  <% if transaction.status == "accepted" %>
+    <%= t('transactions.map.accepted_by') %> <%= transaction.accepted_by_user.first_name %>
+  <% end %>
 </p>

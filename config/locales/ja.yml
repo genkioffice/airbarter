@@ -171,6 +171,7 @@ ja:
       japanese: 日本語
       products: 製品
       profile: プロフィール
+      search_placeholder: 交流の検索
       sign_in: サインイン
       sign_out: サインアウト
       transactions: トランザクション
@@ -221,6 +222,8 @@ ja:
         proposed: 提案された取引
         removed: 削除されたトランザクション
     map:
+      accepted_by: 受け入れた
+      in_exchange_for: 見返りに
       proposes: 提案
     new:
       title: 新規取引
