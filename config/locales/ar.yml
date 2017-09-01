@@ -222,6 +222,8 @@ ar:
         proposed: المعاملات المقترحة
         removed: تمت إزالة المعاملات
     map:
+      accepted_by: قبلها
+      in_exchange_for: في مقابل
       proposes: يقترح
     new:
       title: عملية جديدة
