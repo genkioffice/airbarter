@@ -118,10 +118,10 @@ en:
       show: Show Entry
       title: Update Entry
     index:
-      accepted_transactions: Accepted Transactions
+      accepted_transactions: Accepted Exchanges
       actions: Actions
       propose_new_transaction: Propose New Exchange
-      proposed_transactions: Proposed Transactions
+      proposed_transactions: Proposed Exchanges
       show: Show
       title: My Entries
       title_other: Other People's Entries
