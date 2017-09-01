@@ -147,6 +147,9 @@ ar:
         update: حفظ التغييرات
   pages:
     home:
+      headline: تبادل أي شيء دون المال
+      tagline: المزيد من السلام أو المعرفة لديك.
+      title: وكلما كان هناك كل الآخرين.
       title_html: 'تغيير حياتك: <strong>عناصر الصرف</strong>'
   products:
     create:

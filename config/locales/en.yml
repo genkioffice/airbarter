@@ -150,9 +150,9 @@ en:
   pages:
     home:
       headline: Exchange anything without money
-      tagline: The more peace or knowledge you have. The more there is for all the
-        others.
-      title: Title
+      tagline: The more peace or knowledge you have.
+      title: The more there is for all the others.
+      title_html: Få et ny liv med <strong>Byttehandel</strong>
   products:
     create:
       notice: Product was successfully added.

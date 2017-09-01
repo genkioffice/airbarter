@@ -149,6 +149,9 @@ da:
         update: Gem ændringer
   pages:
     home:
+      headline: Udveksle noget uden penge
+      tagline: Jo mere fred eller viden du har.
+      title: Jo mere der er for alle de andre.
       title_html: Få et ny liv med <strong>Byttehandel</strong>
   products:
     create:

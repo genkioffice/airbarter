@@ -149,6 +149,9 @@ fr:
         update: Sauvegarder les modifications
   pages:
     home:
+      headline: Échangez quelque chose sans argent
+      tagline: Plus vous avez de paix ou de connaissances.
+      title: Plus il y a pour tous les autres.
       title_html: 'Changez votre vie : <strong>Échangez des objets</strong>'
   products:
     create:

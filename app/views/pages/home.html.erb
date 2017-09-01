@@ -3,7 +3,7 @@
     <h2 ><strong><span class="line-anime"><%= t('.headline') %></strong></h2></span>
     <!-- <br> -->
     <p> </p>
-    <h4><span class="font-small"><%= t('.tagline') %></span></h4>
+    <h4><span class="font-small"><%= t('.tagline') %> <%= t('.title') %></span></h4>
     <br>
     <% if user_signed_in? %>
       <%= link_to "<span class='font-small'>AirBarter </span>".html_safe, transactions_path, class:"btn btn-original" %>

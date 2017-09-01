@@ -146,6 +146,9 @@ ja:
         update: 変更内容を保存
   pages:
     home:
+      headline: お金なしで何かを交換する
+      tagline: あなたにはより多くの平和や知識があります。
+      title: 他のすべてのものがあればあるほどです。
       title_html: あなたの人生を変える： <strong>交換アイテム</strong>
   products:
     create:
