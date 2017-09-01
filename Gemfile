@@ -36,8 +36,11 @@ gem 'geocoder'
 gem "coffee-rails"
 gem "gmaps4rails"
 
-# to slide page better
+# to slide page better, it's not used now
 gem 'fullpage-rails'
+
+# this is for placefolder
+gem 'jquery-placeholder-rails'
 
 # to make cards fit in container
 gem 'will_paginate', '~> 3.1.0'
