@@ -12,16 +12,16 @@
 
 <div class="container">
   <div class="wrapper-top">
-    <div class="col-xs-3 profile-space" style="height:85vh;background-color: white; border: 1px solid rgba(0,0,0,.1)!important;">
+    <div class="col-xs-3 profile-space" style="height:87vh;margin-top:5px;background-color: white; border: 1px solid rgba(0,0,0,.1)!important;">
       <%= render 'entries/profile', user: @proposed_by_user%>
     </div>
-  </div>
 
-  <div class="transaction-wrapper">
+
+  <div class="transaction-wrapper col-xs-8" >
     <div id="map-transaction" class="transaction-map"></div>
     <!-- translation -->
     <p></p>
-    <div class="col-xs-7 transaction-description">
+    <div class="col-xs-12 transaction-description">
 
       <% if @transaction.status == "proposed" %>
         <h1><%= t('.title.proposed') %></h1>
@@ -89,7 +89,7 @@
       <% end %>
     </div>
   </div>
-
+  </div>
   <% content_for :after_js do %>
     <script type="text/javascript">
       $(document).on('ready', function() {

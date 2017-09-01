@@ -3,8 +3,11 @@
     <h2 ><strong><span class="line-anime">Exchange anything without money</strong></h2></span>
     <!-- <br> -->
     <p> </p>
-    <h4>The more peace or knowledge you have. The more there is for all the others.</h4>
+    <h4><span class="font-small">The more peace or knowledge you have. The more there is for all the others.</span></h4>
     <br>
+    <% if user_signed_in? %>
+      <%= link_to "<span class='font-small'>AirBarter </span>".html_safe, transactions_path, class:"btn btn-original" %>
+    <% end %>
     <br>
     <br>
     <br>
