@@ -4,10 +4,10 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = policy_scope(Transaction)
-    @proposed_transactions = policy_scope(Transaction).where(status: 0)
-    @accepted_transactions = policy_scope(Transaction).where(status: 1)
-    @removed_transactions = policy_scope(Transaction).where(status: 2)
+    @transactions = policy_scope(Transaction).order(updated_at: :desc)
+    @proposed_transactions = policy_scope(Transaction).where(status: 0).order(updated_at: :desc)
+    @accepted_transactions = policy_scope(Transaction).where(status: 1).order(updated_at: :desc)
+    @removed_transactions = policy_scope(Transaction).where(status: 2).order(updated_at: :desc)
 
     @entries = current_user.entries
 

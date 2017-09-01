@@ -118,8 +118,10 @@ da:
       show: Vis lagerpost
       title: Opdater lagerpost
     index:
+      accepted_transactions: Accepterede Transaktioner
       actions: Funktioner
       propose_new_transaction: Foreslå Ny Transaktion
+      proposed_transactions: Foreslåede transaktioner
       show: Vis
       title: Mine lagerposter
       title_other: De andres lagerposter
@@ -147,6 +149,9 @@ da:
         update: Gem ændringer
   pages:
     home:
+      headline: Udveksle noget uden penge
+      tagline: Jo mere fred eller viden du har.
+      title: Jo mere der er for alle de andre.
       title_html: Få et ny liv med <strong>Byttehandel</strong>
   products:
     create:

@@ -118,8 +118,10 @@ fr:
       show: Afficher l'entrée
       title: Mise à jour de l'entrée
     index:
+      accepted_transactions: Transactions acceptées
       actions: Actions
       propose_new_transaction: Proposer un nouvel échange
+      proposed_transactions: Transactions proposées
       show: Afficher
       title: Mes entrées
       title_other: Autres entrées de personnes
@@ -147,6 +149,9 @@ fr:
         update: Sauvegarder les modifications
   pages:
     home:
+      headline: Échangez quelque chose sans argent
+      tagline: Plus vous avez de paix ou de connaissances.
+      title: Plus il y a pour tous les autres.
       title_html: 'Changez votre vie : <strong>Échangez des objets</strong>'
   products:
     create:

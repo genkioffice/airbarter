@@ -37,12 +37,12 @@
     </div>
   </div>
   <div class="my-entries-cards col-xs-6"  style="height:100vh;padding-left: 5vw;background-color: white;height:100vh">
-    <h3>Accepted Transactions</h3>
+    <h3><%= t('.accepted_transactions') %></h3>
     <%= render 'transaction-card', transactions: @accepted_transactions %>
     <%= will_paginate @accepted_transactions, renderer: BootstrapPagination::Rails %>
   </div>
   <div class="my-entries-cards col-xs-6"  style="height:100vh;padding-left: 5vw;background-color: white; height:100vh;">
-    <h3>Proposed Transactions</h3>
+    <h3><%= t('.proposed_transactions') %></h3>
     <%= render 'transaction-card', transactions: @proposed_transactions %>
     <%= will_paginate @proposed_transactions, renderer: BootstrapPagination::Rails %>
   </div>
