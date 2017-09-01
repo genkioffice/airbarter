@@ -118,10 +118,10 @@ fr:
       show: Afficher l'entrée
       title: Mise à jour de l'entrée
     index:
-      accepted_transactions: Transactions acceptées
+      accepted_transactions: Echanges acceptés
       actions: Actions
       propose_new_transaction: Proposer un nouvel échange
-      proposed_transactions: Transactions proposées
+      proposed_transactions: Echanges proposés
       show: Afficher
       title: Mes entrées
       title_other: Autres entrées de personnes
