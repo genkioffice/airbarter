@@ -118,8 +118,10 @@ en:
       show: Show Entry
       title: Update Entry
     index:
+      accepted_transactions: Accepted Transactions
       actions: Actions
       propose_new_transaction: Propose New Exchange
+      proposed_transactions: Proposed Transactions
       show: Show
       title: My Entries
       title_other: Other People's Entries
@@ -147,7 +149,10 @@ en:
         update: Save Changes
   pages:
     home:
-      title_html: "<strong>Exchange Purse for Camel</strong>"
+      headline: Exchange anything without money
+      tagline: The more peace or knowledge you have. The more there is for all the
+        others.
+      title: Title
   products:
     create:
       notice: Product was successfully added.

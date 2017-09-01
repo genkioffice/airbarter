@@ -116,8 +116,10 @@ ar:
       show: إظهار الدخول
       title: تحديث الإدخال
     index:
+      accepted_transactions: المعاملات المقبولة
       actions: أفعال
       propose_new_transaction: اقتراح معاملة جديدة
+      proposed_transactions: المعاملات المقترحة
       show: تبين
       title: مقالاتي
       title_other: إدخالات الأشخاص الآخرين

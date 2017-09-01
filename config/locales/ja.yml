@@ -115,8 +115,10 @@ ja:
       show: エントリーを表示する
       title: エントリを更新する
     index:
+      accepted_transactions: 受け入れられたトランザクション
       actions: 行動
       propose_new_transaction: 新しい取引を提案する
+      proposed_transactions: 提案された取引
       show: ショー
       title: 私のエントリー
       title_other: 他の人のエントリ
