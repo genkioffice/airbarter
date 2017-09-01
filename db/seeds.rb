@@ -171,12 +171,38 @@ address19 = ""
 address20 = ""
 
 
-transaction1 = Transaction.create!(
+Transaction.create!(
+  address: user_sarah.address,
+  proposed_product: meal,
+  proposed_product_quantity: 1,
+  proposed_by_user: user_sarah,
+  wanted_product: meal,
+  wanted_product_quantity: 1,
+  status: 0,
+  photo_urls: [meal3_photo_url],
+  description: "I can cook a meal for us today, then you can cook tomorrow." +
+              "I  like to cook health meals with vegetables and meat."
+  )
+
+Transaction.create!(
+  address: address05, # user_carlos.address,
+  proposed_product: bluray_film,
+  proposed_product_quantity: 1,
+  proposed_by_user: user_carlos,
+  wanted_product: bluray_film,
+  wanted_product_quantity: 1,
+  status: 0,
+# accepted_by_user: user_sarah,
+  photo_urls: [bluray2_photo_url],
+  description: "Let us exchange movies. Maybe I have a movie that you have not seen yet. "
+  )
+
+Transaction.create!(
   address: user_genki.address,
   proposed_product: meal,
   proposed_product_quantity: 1,
   proposed_by_user: user_genki,
-  wanted_product:bluray_film,
+  wanted_product: bluray_film,
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [meal1_photo_url],
@@ -201,7 +227,7 @@ Transaction.create!(
   proposed_product: babysitting,
   proposed_product_quantity: 20,
   proposed_by_user: user_sarah,
-  wanted_product:computer,
+  wanted_product: computer,
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [baby_sitting2],
@@ -214,7 +240,7 @@ Transaction.create!(
   proposed_product: meal,
   proposed_product_quantity: 1,
   proposed_by_user: user_astrid,
-  wanted_product:computer_help,
+  wanted_product: computer_help,
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [meal2_photo_url],
@@ -223,11 +249,24 @@ Transaction.create!(
   )
 
 Transaction.create!(
+  address: user_sarah.address,
+  proposed_product: meal,
+  proposed_product_quantity: 1,
+  proposed_by_user: user_sarah,
+  wanted_product: teaching_programming,
+  wanted_product_quantity: 1,
+  status: 0,
+  photo_urls: [teacher_programming_photo_url],
+  description: "I can teach you basic computer skills. I need help with my English homework." +
+              "I am quite good with computers and can help you set it. I am not an expert. "
+  )
+
+Transaction.create!(
   address: address03, # user_carlos.address,
   proposed_product: teaching_programming,
   proposed_product_quantity: 1,
   proposed_by_user: user_carlos,
-  wanted_product:walking_the_dog,
+  wanted_product: walking_the_dog,
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [teacher_programming_photo_url],
@@ -240,7 +279,7 @@ Transaction.create!(
   proposed_product: walking_the_dog,
   proposed_product_quantity: 1,
   proposed_by_user: user_claire,
-  wanted_product:walking_the_dog,
+  wanted_product: walking_the_dog,
   wanted_product_quantity: 1,
   status: 0,
 # accepted_by_user: user_sarah,
@@ -250,25 +289,11 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address: user_claire.address,
-  proposed_product: teaching_english,
-  proposed_product_quantity: 1,
-  proposed_by_user: user_claire,
-  wanted_product:garden_work,
-  wanted_product_quantity: 1,
-  status: 0,
-# accepted_by_user: user_sarah,
-  photo_urls: [teacher_eng_photo_url],
-  description: "I need help to mow the lawn, because I have a problem with my back. In exchange I can help with your homework. " +
-              "I grew up in the UK and is quite good with grammar and spelling."
-  )
-
-Transaction.create!(
   address: user_carlos.address,
   proposed_product: teaching_english,
   proposed_product_quantity: 1,
   proposed_by_user: user_carlos,
-  wanted_product:walking_the_dog,
+  wanted_product: walking_the_dog,
   wanted_product_quantity: 1,
   status: 1,
   accepted_by_user: user_sarah,
@@ -278,11 +303,25 @@ Transaction.create!(
   )
 
 Transaction.create!(
+  address: user_claire.address,
+  proposed_product: teaching_english,
+  proposed_product_quantity: 1,
+  proposed_by_user: user_claire,
+  wanted_product: garden_work,
+  wanted_product_quantity: 1,
+  status: 0,
+# accepted_by_user: user_sarah,
+  photo_urls: [teacher_eng_photo_url],
+  description: "I need help to mow the lawn, because I have a problem with my back. In exchange I can help with your homework. " +
+              "I grew up in the UK and is quite good with grammar and spelling."
+  )
+
+Transaction.create!(
   address: address04, # user_carlos.address,
   proposed_product: teaching_math,
   proposed_product_quantity: 1,
   proposed_by_user: user_carlos,
-  wanted_product:walking_the_dog,
+  wanted_product: walking_the_dog,
   wanted_product_quantity: 1,
   status: 1,
   accepted_by_user: user_sarah,
@@ -292,24 +331,11 @@ Transaction.create!(
   )
 
 Transaction.create!(
-  address: address05, # user_carlos.address,
-  proposed_product: bluray_film,
-  proposed_product_quantity: 1,
-  proposed_by_user: user_carlos,
-  wanted_product:bluray_film,
-  wanted_product_quantity: 1,
-  status: 0,
-# accepted_by_user: user_sarah,
-  photo_urls: [bluray2_photo_url],
-  description: "Let us exchange movies. Maybe I have a movie that you have not seen yet. "
-  )
-
-Transaction.create!(
   address: user_carlos.address,
   proposed_product: teaching_english,
   proposed_product_quantity: 1,
   proposed_by_user: user_carlos,
-  wanted_product:walking_the_dog,
+  wanted_product: walking_the_dog,
   wanted_product_quantity: 1,
   status: 0,
 # accepted_by_user: user_sarah,
@@ -323,7 +349,7 @@ Transaction.create!(
   proposed_product: babysitting,
   proposed_product_quantity: 2,
   proposed_by_user: user_sarah,
-  wanted_product:meal,
+  wanted_product: meal,
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [baby_sitting2],
@@ -334,23 +360,10 @@ Transaction.create!(
 
 Transaction.create!(
   address: user_sarah.address,
-  proposed_product: meal,
-  proposed_product_quantity: 1,
-  proposed_by_user: user_sarah,
-  wanted_product:meal,
-  wanted_product_quantity: 1,
-  status: 0,
-  photo_urls: [meal3_photo_url],
-  description: "I can cook a meal for us today, then you can cook tomorrow." +
-              "I  like to cook health meals with vegetables and meat."
-  )
-
-Transaction.create!(
-  address: user_sarah.address,
   proposed_product: bluray_film,
   proposed_product_quantity: 1,
   proposed_by_user: user_sarah,
-  wanted_product:meal,
+  wanted_product: meal,
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [bluray1_photo_url],
@@ -363,25 +376,12 @@ Transaction.create!(
   proposed_product: garden_work,
   proposed_product_quantity: 1,
   proposed_by_user: user_sarah,
-  wanted_product:teaching_english,
+  wanted_product: teaching_english,
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [garden3_photo_url],
   description: "I can help with mowing the lawn and other garden work. I need help with my English homework." +
               "I have experience from helping my dad. "
-  )
-
-Transaction.create!(
-  address: user_sarah.address,
-  proposed_product: computer_help,
-  proposed_product_quantity: 1,
-  proposed_by_user: user_sarah,
-  wanted_product:meal,
-  wanted_product_quantity: 1,
-  status: 0,
-  photo_urls: [teacher_programming_photo_url],
-  description: "I can teach you basic computer skills. I need help with my English homework." +
-              "I am quite good with computers and can help you set it. I am not an expert. "
   )
 
 
@@ -443,12 +443,6 @@ Entry.create!(
   quantity: 10,
   user: user_finn,
   product: computer_help
-  )
-
-Entry.create!(
-  quantity: 10,
-  user: user_finn,
-  product: teaching_programming
   )
 
 Entry.create!(
