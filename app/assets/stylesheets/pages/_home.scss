@@ -14,7 +14,10 @@ body{
   // font-family: "Roboto";
   font-family:'Raleway';
   font-size: 33px !important;
-
+}
+.font-small{
+  font-weight: 300 !important;
+  font-family: "Helvetica";
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -25,7 +28,6 @@ body{
   /* Pad bottom by footer height */
   padding: 0 0 60px;
 }
-
 .banner {
   color: white;
   text-align: center;
@@ -39,6 +41,14 @@ body{
 }
 .line-anime{
   animation:boxShadow .3s 1s ease forwards;
+}
+.btn-original{
+  background-color: rgba(0,0,0,.0);
+  color:white;
+  font-size:29px;
+  font-weight:300 !important;
+  border:1px solid white;
+  padding: 0px 10px;
 }
 .banner h1 {
   font-size: 50px;
