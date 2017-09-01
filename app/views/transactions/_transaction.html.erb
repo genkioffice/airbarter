@@ -35,7 +35,7 @@
                 <!-- this is sub continent for a card -->
                 <div class="card-description col-xs-12" style="color: grey; font-size: 14px">
                   <p><%= t('transactions.index.in_exchange_for') %>: <strong><%= t.wanted_product_quantity %> <%= t.wanted_product.translated_name %></strong></p>
-                  <p><%= t.description %></p>
+                  <span class="font-larger"><p><%= t.description %></p></span>
                   <% if t.status == "accepted" %>
                     <p><strong><%= t('transactions.map.accepted_by') %> <%= t.accepted_by_user.first_name %></strong></p>
                   <% end %>

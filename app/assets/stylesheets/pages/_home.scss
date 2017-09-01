@@ -7,9 +7,15 @@ html, body{
 }
 
 body{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: "Roboto", Arial, sans-serif !important;
 }
 
+.line-anime {
+  // font-family: "Roboto";
+  font-family:'Raleway';
+  font-size: 33px !important;
+
+}
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -28,9 +34,11 @@ body{
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  background-image: url("http://res.cloudinary.com/df4gltzir/image/upload/v1503949574/camels_orti2f.jpg")
+  align-items: center;
+  justify-content: center;
+}
+.line-anime{
+  animation:boxShadow .3s 1s ease forwards;
 }
 .banner h1 {
   font-size: 50px;

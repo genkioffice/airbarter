@@ -1,5 +1,5 @@
 
-<div class="navbar-wagon <%= "bg-black" if controller_name == "transactions" && action_name == "index" %> <%= "bg-black-light" if controller_name != "pages" %>">
+<div class="navbar-wagon <%= "bg-black" if controller_name == "transactions" && action_name == "index" %> <%= "bg-black-light" if controller_name != "pages" %> <%= "bg-black-light" if controller_name == "pages" && action_name == "profile" %>">
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <div class="navbar-wagon-item">
       <%= simple_form_for "", url: transactions_path, method: "get" do |f| %>
