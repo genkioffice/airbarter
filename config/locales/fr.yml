@@ -224,6 +224,8 @@ fr:
         proposed: Transactions proposées
         removed: Transactions supprimées
     map:
+      accepted_by: Accepté par
+      in_exchange_for: En échange de
       proposes: Propose
     new:
       title: Nouvelle transaction

@@ -225,6 +225,8 @@ da:
         proposed: Foreslået transaktioner
         removed: Fjernet transaktioner
     map:
+      accepted_by: Accepteret af
+      in_exchange_for: I bytte for
       proposes: foreslår
     new:
       title: Ny transaktion

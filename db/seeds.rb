@@ -21,6 +21,8 @@ teaching_karate = Product.create!(name: "Teaching Karate")
 teaching_yoga = Product.create!(name: "Teaching Yoga")
 computer_game = Product.create!(name: "Computer Game")
 
+computer_game_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504218850/Super_Mario_Galaxy_3_Xbox_360_avhyno.png"
+
 bluray1_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504004770/StarWars_nyra08.jpg" # Star Wars
 bluray2_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504004770/HarryPotter_taaakz.jpg" # Harry Potter
 bluray3_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504011716/Matrix2_vftodm.jpg" # Matrix
@@ -70,6 +72,7 @@ teaching_math.photo_url = teacher_math_photo_url
 teaching_programming.photo_url = teacher_programming_photo_url
 babysitting.photo_url = baby_sitting1
 computer_help.photo_url = old_woman_with_computer1_photo_url
+computer_game.photo_url = computer_game_photo_url
 
 bluray_film.save!
 dvd_film.save!
@@ -83,6 +86,7 @@ teaching_math.save!
 teaching_programming.save!
 babysitting.save!
 computer_help.save!
+computer_game.save!
 
 translate_names = true
 bluray_film.translate_name! if translate_names
@@ -98,12 +102,20 @@ teaching_programming.translate_name! if translate_names
 babysitting.translate_name! if translate_names
 computer_help.translate_name! if translate_names
 
+teaching_surf.translate_name! if translate_names
+teaching_french.translate_name! if translate_names
+teaching_karate.translate_name! if translate_names
+teaching_yoga.translate_name! if translate_names
+computer_game.translate_name! if translate_names
+
+
 user_carlos = User.create!(email: "carlos@gmail.com", password: "123456", first_name: "Carlos", last_name: "Mendes", address: "Av. Casal Ribeiro 28, 1000-092 Lisboa, Portugal")
 user_sarah = User.create!(email: "sarah@gmail.com", password: "123456", first_name: "Sarah", last_name: "Pedersen", address: "Praça Marechal Humberto Delgado, 1549-004 Lisboa, Portugal")
 user_finn = User.create!(email: "finn@gmail.com", password: "123456", first_name: "Finn", last_name: "Pedersen", address: "Avenida de Berna 20, Lisbon, Portugal")
 user_genki = User.create!(email: "genki@gmail.com", password: "123456", first_name: "Genki", last_name: "Takahashi", address: "Av. Brasília 352, 1350 Lisboa, Portugal")
 user_astrid = User.create!(email: "astrid@gmail.com", password: "123456", first_name: "Astrid", last_name: "Ferreira", address: "Praça do Duque de Saldanha 4, 1050-094 Lisboa, Portugal")
 user_claire = User.create!(email: "claire@gmail.com", password: "123456", first_name: "Claire", last_name: "Santos", address: "Parque Eduardo VII, 1070-051 Lisboa, Portugal")
+user_john = User.create!(email: "john@gmail.com", password: "123456", first_name: "John", last_name: "Jackson", address: "Av. 24 de Julho 49, 1200-109 Lisboa, Portugal")
 
 user_carlos_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,h_3000,w_3000/v1504014055/IMG_6396_luylah.jpg" # Carlos
 user_sarah_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/v1504013385/sarah_yx5v2j.jpg" # Sarah
@@ -111,6 +123,7 @@ user_finn_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,h
 user_genki_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,h_500,w_500/v1504013776/IMG_6346_kqhsfb.jpg" # Genki
 user_astrid_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,g_face,h_500,w_500,x_0/v1504024508/older-woman-using-laptop_d7y8nf.jpg" # Old woman
 user_claire_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,g_face,h_700,w_700,x_0/v1504089289/young-woman-dog_u5ezb9.jpg"
+user_john_photo_url = "http://res.cloudinary.com/dwag6dz8c/image/upload/c_crop,g_face,h_500,w_500/v1504197911/uy4hbtt5s4uu9ymgz6by.jpg"
 
 user_carlos.facebook_picture_url = user_carlos_photo_url
 user_sarah.facebook_picture_url = user_sarah_photo_url
@@ -118,6 +131,7 @@ user_finn.facebook_picture_url = user_finn_photo_url
 user_genki.facebook_picture_url = user_genki_photo_url
 user_astrid.facebook_picture_url = user_astrid_photo_url
 user_claire.facebook_picture_url = user_claire_photo_url
+user_john.facebook_picture_url = user_john_photo_url
 
 user_carlos.description = "I am a busy teacher and my dog really like to go to the park."
 user_sarah.description = "I have a lot of experience with looking after kids in all ages. I can also cook a meal for the kids."
@@ -125,6 +139,7 @@ user_finn.description = "I am Danish. I am 52 years old and I am living in Franc
 user_genki.description = "I am a Japanese student. I am living in Lisbon. I have studied in Belgium."
 user_astrid.description = "I am an older lady with a lot of experience with cooking. I am learning to use the computer."
 user_claire.description = "I grew up in the UK and is quite good with grammar and spelling. I am offering English classes."
+user_john.description = "I am playing computer games and would like to exchange games and play together with others."
 
 user_carlos.save!
 user_sarah.save!
@@ -132,6 +147,7 @@ user_finn.save!
 user_genki.save!
 user_astrid.save!
 user_claire.save!
+user_john.save!
 
 address01 = "221, Alameda dos Oceanos, 1990 Lisboa, Portugal"
 address02 = "Praça Cidade Salazar 174, 1800-093 Lisboa, Portugal"
@@ -170,14 +186,14 @@ transaction1 = Transaction.create!(
 Transaction.create!(
   address: address01, # user_carlos.address,
   proposed_product: dvd_film,
-  proposed_product_quantity: 3,
+  proposed_product_quantity: 1,
   proposed_by_user: user_carlos,
-  wanted_product:bluray_film,
+  wanted_product:dvd_film,
   wanted_product_quantity: 1,
   status: 0,
   photo_urls: [dvds_photo_url],
-  description: "I would like to exchage my DVD collection to BluRay. I give 3 DVDs for 1 BluRay movie. " +
-              "I many different genres, but I like action movies, romantic movies and movies about football."
+  description: "I would like to exchage some of my DVDs for movies that I have not seen yet. " +
+              "I have many different genres, but I like action movies, romantic movies and movies about football."
   )
 
 Transaction.create!(
@@ -226,8 +242,8 @@ Transaction.create!(
   proposed_by_user: user_claire,
   wanted_product:walking_the_dog,
   wanted_product_quantity: 1,
-  status: 1,
-  accepted_by_user: user_sarah,
+  status: 0,
+# accepted_by_user: user_sarah,
   photo_urls: [walking_dog3_photo_url],
   description: "Let us optimize our time. I propose to walk your dog today, if you will walk my dog tomorrow. " +
               "My dog is really nice and will not give you any trouble. "
@@ -240,8 +256,8 @@ Transaction.create!(
   proposed_by_user: user_claire,
   wanted_product:garden_work,
   wanted_product_quantity: 1,
-  status: 1,
-  accepted_by_user: user_sarah,
+  status: 0,
+# accepted_by_user: user_sarah,
   photo_urls: [teacher_eng_photo_url],
   description: "I need help to mow the lawn, because I have a problem with my back. In exchange I can help with your homework. " +
               "I grew up in the UK and is quite good with grammar and spelling."
@@ -282,8 +298,8 @@ Transaction.create!(
   proposed_by_user: user_carlos,
   wanted_product:bluray_film,
   wanted_product_quantity: 1,
-  status: 1,
-  accepted_by_user: user_sarah,
+  status: 0,
+# accepted_by_user: user_sarah,
   photo_urls: [bluray2_photo_url],
   description: "Let us exchange movies. Maybe I have a movie that you have not seen yet. "
   )
@@ -295,8 +311,8 @@ Transaction.create!(
   proposed_by_user: user_carlos,
   wanted_product:walking_the_dog,
   wanted_product_quantity: 1,
-  status: 1,
-  accepted_by_user: user_sarah,
+  status: 0,
+# accepted_by_user: user_sarah,
   photo_urls: [teacher_eng_photo_url],
   description: "I will give you English classes, if you will walk my dog." +
               "I am a busy teacher and my dog really like to go to the park."
@@ -379,6 +395,18 @@ Entry.create!(
   quantity: 10,
   user: user_carlos,
   product: dvd_film
+  )
+
+Entry.create!(
+  quantity: 10,
+  user: user_sarah,
+  product: garden_work
+  )
+
+Entry.create!(
+  quantity: 10,
+  user: user_sarah,
+  product: computer_help
   )
 
 Entry.create!(
