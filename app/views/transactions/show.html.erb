@@ -20,6 +20,7 @@
   <div class="transaction-wrapper">
     <div id="map-transaction" class="transaction-map"></div>
     <!-- translation -->
+    <p></p>
     <div class="col-xs-7 transaction-description">
 
       <% if @transaction.status == "proposed" %>
@@ -34,7 +35,7 @@
       <p>
         <strong><%= t('transactions.map.proposes') %>:</strong>
         <%= @transaction.proposed_product_quantity %>
-        <%= @transaction.proposed_product.translated_name %>
+        <%= @transaction.proposed_product.translated_name %> -----
         <strong><%= t('transactions.map.in_exchange_for') %>:</strong>
         <%= @transaction.wanted_product_quantity %>
         <%= @transaction.wanted_product.translated_name %>
